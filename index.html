@@ -5,7 +5,7 @@
   <title>ZIRCON ZONE | It's all about shine and sparkle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts -->
@@ -36,7 +36,7 @@
 
 <script>
 const INSTAGRAM_URL = "https://www.instagram.com/zirconzone";
-const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=100092590311027";
+const FACEBOOK_URL = "https://www.facebook.com/zirconzone";
 </script>
 
 <!-- HEADER -->
@@ -56,16 +56,13 @@ const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=100092590311027";
 <!-- HERO -->
 <section id="home" class="py-24 text-center bg-gradient-to-br from-white via-gray-50 to-white">
   <h1 class="text-5xl md:text-6xl font-light mb-4">Zircon Zone</h1>
-
   <p class="italic text-xl md:text-2xl mb-4">
     It's all about shine and sparkle
   </p>
-
   <p class="text-gray-600 max-w-xl mx-auto mb-10">
     Zircon Zone is an online jewelry shop offering carefully selected pieces
     designed for everyday shine.
   </p>
-
   <a href="#products" class="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition">
     Explore Collection
   </a>
@@ -104,7 +101,7 @@ const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=100092590311027";
          class="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition">
         Instagram DM
       </a>
-      <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank"
+      <a href="https://www.facebook.com/zirconzone" target="_blank"
          class="border px-8 py-3 rounded-md hover:bg-black hover:text-white transition">
         Facebook Message
       </a>
@@ -124,11 +121,11 @@ const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=100092590311027";
 <!-- SCRIPT -->
 <script>
 const products = [
-  { name: "Luna Necklace", price: 39.99, category: "Necklaces" },
-  { name: "Celestial Earrings", price: 29.99, category: "Earrings" },
-  { name: "Infinity Bracelet", price: 34.99, category: "Bracelets" },
-  { name: "Eternal Ring", price: 24.99, category: "Rings" },
-  { name: "Harmony Set", price: 79.99, category: "Sets" }
+  { name: "Luna Necklace", price: 39.99, category: "Necklaces", image: "images/luna_necklace.jpg" },
+  { name: "Celestial Earrings", price: 29.99, category: "Earrings", image: "images/celestial_earrings.jpg" },
+  { name: "Infinity Bracelet", price: 34.99, category: "Bracelets", image: "images/infinity_bracelet.jpg" },
+  { name: "Eternal Ring", price: 24.99, category: "Rings", image: "images/eternal_ring.jpg" },
+  { name: "Harmony Set", price: 79.99, category: "Sets", image: "images/harmony_set.jpg" }
 ];
 
 const grid = document.getElementById("productGrid");
@@ -138,11 +135,11 @@ function renderProducts(list) {
   list.forEach(p => {
     grid.innerHTML += `
       <div class="bg-white p-4 rounded-md shadow hover:shadow-lg transition">
-        <div class="h-48 bg-gray-200 mb-4 rounded-md flex items-center justify-center">
-          <span class="text-gray-400 text-sm">Product Image</span>
+        <div class="h-48 mb-4 rounded-md overflow-hidden flex items-center justify-center">
+          <img src="${p.image}" alt="${p.name}" class="object-cover h-full w-full">
         </div>
         <h3 class="font-medium mb-1">${p.name}</h3>
-        <p class="text-gray-500 text-sm">$${p.price}</p>
+        <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
       </div>
     `;
   });
