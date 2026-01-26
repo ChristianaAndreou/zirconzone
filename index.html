@@ -5,7 +5,7 @@
   <title>ZIRCON ZONE | Modern Jewelry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts -->
@@ -17,6 +17,7 @@
   <style>
     body { font-family: 'Montserrat', sans-serif; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
     .filter-btn {
       text-transform: uppercase;
       font-size: 0.8rem;
@@ -28,18 +29,11 @@
     .filter-btn.active {
       border-color: #000;
     }
-    .product-card img {
-      transition: transform 0.4s ease;
-    }
-    .product-card:hover img {
-      transform: scale(1.05);
-    }
   </style>
 </head>
 
 <body class="bg-white text-gray-900">
 
-<!-- LINKS -->
 <script>
 const INSTAGRAM_URL = "https://www.instagram.com/zirconzone";
 const FACEBOOK_URL = "https://www.facebook.com/zirconzone";
@@ -48,7 +42,12 @@ const FACEBOOK_URL = "https://www.facebook.com/zirconzone";
 <!-- HEADER -->
 <header class="sticky top-0 bg-white border-b z-50">
   <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-    <h1 class="text-xl tracking-widest font-semibold">ZIRCON ZONE</h1>
+
+    <!-- LOGO -->
+    <a href="#home" class="flex items-center">
+      <img src="zz.png" alt="Zircon Zone Logo" class="h-8 md:h-10 object-contain">
+    </a>
+
     <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
       <a href="#home" class="hover:text-black">Home</a>
       <a href="#products" class="hover:text-black">Shop</a>
@@ -60,8 +59,9 @@ const FACEBOOK_URL = "https://www.facebook.com/zirconzone";
 <!-- HERO -->
 <section id="home" class="py-24 text-center bg-gradient-to-br from-white via-gray-50 to-white">
   <h1 class="text-5xl md:text-6xl font-light mb-6">Modern Jewelry</h1>
+
   <p class="text-gray-600 max-w-xl mx-auto mb-10">
-    Designed for everyday shine. Minimal. Timeless. Zircon Zone.
+    Designed for everyday shine. Minimal. Timeless.
   </p>
 
   <div class="flex justify-center gap-4">
@@ -74,8 +74,8 @@ const FACEBOOK_URL = "https://www.facebook.com/zirconzone";
   </div>
 
   <div class="mt-10 flex justify-center gap-6 text-xl">
-    <a href="${INSTAGRAM_URL}" class="hover:text-black"><i class="fab fa-instagram"></i></a>
-    <a href="${FACEBOOK_URL}" class="hover:text-black"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/zirconzone" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/zirconzone" target="_blank"><i class="fab fa-facebook"></i></a>
   </div>
 </section>
 
@@ -106,10 +106,12 @@ const FACEBOOK_URL = "https://www.facebook.com/zirconzone";
     <p class="text-gray-600 mb-8">Orders & inquiries via Instagram or Facebook</p>
 
     <div class="flex justify-center gap-4">
-      <a href="${INSTAGRAM_URL}" class="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition">
+      <a href="https://www.instagram.com/zirconzone" target="_blank"
+         class="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition">
         Instagram DM
       </a>
-      <a href="${FACEBOOK_URL}" class="border px-8 py-3 rounded-md hover:bg-black hover:text-white transition">
+      <a href="https://www.facebook.com/zirconzone" target="_blank"
+         class="border px-8 py-3 rounded-md hover:bg-black hover:text-white transition">
         Facebook Message
       </a>
     </div>
@@ -118,7 +120,7 @@ const FACEBOOK_URL = "https://www.facebook.com/zirconzone";
 
 <!-- FOOTER -->
 <footer class="bg-black text-white py-10 text-center">
-  <h2 class="tracking-widest mb-4">ZIRCON ZONE</h2>
+  <img src="zz.png" alt="Zircon Zone Logo" class="h-8 mx-auto mb-4">
   <p class="text-gray-400 text-sm">© 2026 Zircon Zone. All rights reserved.</p>
 </footer>
 
@@ -138,7 +140,7 @@ function renderProducts(list) {
   grid.innerHTML = "";
   list.forEach(p => {
     grid.innerHTML += `
-      <div class="product-card bg-white p-4 rounded-md shadow hover:shadow-lg transition">
+      <div class="bg-white p-4 rounded-md shadow hover:shadow-lg transition">
         <div class="h-48 bg-gray-200 mb-4 rounded-md flex items-center justify-center">
           <span class="text-gray-400 text-sm">Product Image</span>
         </div>
