@@ -74,12 +74,12 @@ const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=100092590311027";
     <h2 class="text-3xl text-center font-light mb-12">Our Collection</h2>
 
     <div class="flex justify-center gap-6 mb-12 flex-wrap">
-      <button onclick="filterProducts('All')" class="filter-btn active">All</button>
-      <button onclick="filterProducts('Sets')" class="filter-btn">Sets</button>
-      <button onclick="filterProducts('Earrings')" class="filter-btn">Earrings</button>
-      <button onclick="filterProducts('Necklaces')" class="filter-btn">Necklaces</button>
-      <button onclick="filterProducts('Bracelets')" class="filter-btn">Bracelets</button>
-      <button onclick="filterProducts('Rings')" class="filter-btn">Rings</button>
+      <button onclick="filterProducts(event, 'All')" class="filter-btn active">All</button>
+      <button onclick="filterProducts(event, 'Sets')" class="filter-btn">Sets</button>
+      <button onclick="filterProducts(event, 'Earrings')" class="filter-btn">Earrings</button>
+      <button onclick="filterProducts(event, 'Necklaces')" class="filter-btn">Necklaces</button>
+      <button onclick="filterProducts(event, 'Bracelets')" class="filter-btn">Bracelets</button>
+      <button onclick="filterProducts(event, 'Rings')" class="filter-btn">Rings</button>
       
     </div>
 
