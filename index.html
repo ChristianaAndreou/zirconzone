@@ -161,10 +161,16 @@ function renderProducts(list) {
   });
 }
 
-function filterProducts(category) {
+function filterProducts(e, category) {
   document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-  event.target.classList.add("active");
-  renderProducts(category === "All" ? products : products.filter(p => p.category === category));
+  e.target.classList.add("active");
+
+  renderProducts(
+    category === "All"
+      ? products
+      : products.filter(p => p.category === category)
+  );
+}
 }
 
 renderProducts(products);
