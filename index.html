@@ -137,11 +137,15 @@ const products = [
 
   { name: "Ring 1", price: 24.99, category: "Rings", image: "images/R1.png" },
   { name: "Ring 1", price: 24.99, category: "Rings", image: "images/R2.png" },
+  { name: "Ring 1", price: 24.99, category: "Rings", image: "images/R3.png" },
 
   { name: "Set 1", price: 79.99, category: "Sets", image: "images/S1.png" },
   { name: "Set 1", price: 79.99, category: "Sets", image: "images/S2.png" },
   { name: "Set 1", price: 79.99, category: "Sets", image: "images/S3.png" },
   { name: "Set 1", price: 79.99, category: "Sets", image: "images/S4.png" },
+  { name: "Set 1", price: 79.99, category: "Sets", image: "images/S5.png" },
+  { name: "Set 1", price: 79.99, category: "Sets", image: "images/S6.png" },
+  { name: "Set 1", price: 79.99, category: "Sets", image: "images/S7.png" },
 ];
 
 const grid = document.getElementById("productGrid");
@@ -165,15 +169,13 @@ function filterProducts(e, category) {
   document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
   e.target.classList.add("active");
 
-  if (category === "All") {
-    renderProducts(products);
-  } else {
-    renderProducts(
-      products.filter(p => 
-        p.category.toLowerCase() === category.toLowerCase()
-      )
-    );
-  }
+  renderProducts(
+    category === "All"
+      ? products
+      : products.filter(p => p.category === category)
+  );
+}
+  
 }
 
 renderProducts(products);
