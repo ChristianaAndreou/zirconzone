@@ -113,85 +113,59 @@
 <script>
 const products = [
 
-  // ✅ SET με gallery
+  // SETS
+  { name: "Set 1", price: 12.00, category: "Sets", images: ["images/S7.png"] },
+  { name: "Set 2", price: 20.00, category: "Sets", images: ["images/S10.jpeg","images/S2.png","images/S1.png"] },
+  { name: "Set 3", price: 12.00, category: "Sets", images: ["images/S5.jpg","images/S6.jpg"] },
+  { name: "Set 4", price: 20.00, category: "Sets", images: ["images/S14.png"] },
+  { name: "Set 5", price: 20.00, category: "Sets", images: ["images/S8.png"] },
+  { name: "Set 6", price: 20.00, category: "Sets", images: ["images/S12.png"] },
+  { name: "Set 7", price: 20.00, category: "Sets", images: ["images/S11.png"] },
+  { name: "Set 8", price: 20.00, category: "Sets", images: ["images/S13.png"] },
+  { name: "Set 9", price: 20.00, category: "Sets", images: ["images/S15.png"] },
+  { name: "Set 10", price: 20.00, category: "Sets", images: ["images/S9.png"] },
 
-  { name: "Set 1", price: 12.00, category: "Sets", image: "images/S7.png" },
-  
-  {
-    name: "Set 2",
-    price: 20.00,
-    category: "Sets",
-    images: ["images/S10.jpeg", "images/S2.png", "images/S1.png"]
-  },
+  // NECKLACES
+  { name: "Necklace 1", price: 17.00, category: "Necklaces", images: ["images/N1.png"] },
+  { name: "Necklace 2", price: 15.00, category: "Necklaces", images: ["images/N2.png","images/N3.png"] },
 
-  {
-    name: "Set 3",
-    price: 12.00,
-    category: "Sets",
-    images: ["images/S5.jpg", "images/S6.jpg"]
-  },
+  // EARRINGS
+  { name: "Earrings 1", price: 29.99, category: "Earrings", images: ["images/E1.png"] },
+  { name: "Earrings 2", price: 31.99, category: "Earrings", images: ["images/E2.png"] },
+  { name: "Earrings 3", price: 31.99, category: "Earrings", images: ["images/E3.png"] },
+  { name: "Earrings 4", price: 31.99, category: "Earrings", images: ["images/E4.png"] },
+  { name: "Earrings 5", price: 31.99, category: "Earrings", images: ["images/E5.png"] },
+  { name: "Earrings 6", price: 31.99, category: "Earrings", images: ["images/E6.png"] },
+  { name: "Earrings 7", price: 31.99, category: "Earrings", images: ["images/E7.jpeg"] },
+  { name: "Earrings 8", price: 31.99, category: "Earrings", images: ["images/E8.png"] },
+  { name: "Earrings 9", price: 31.99, category: "Earrings", images: ["images/E9.jpeg"] },
+  { name: "Earrings 10", price: 31.99, category: "Earrings", images: ["images/E9.jpeg"] },
+  { name: "Earrings 11", price: 31.99, category: "Earrings", images: ["images/E9.jpeg"] },
 
-  { name: "Set 4", price: 20.00, category: "Sets", image: "images/S14.png" },
-  { name: "Set 5", price: 20.00, category: "Sets", image: "images/S8.png" },
-  { name: "Set 6", price: 20.00, category: "Sets", image: "images/S12.png" },
-  { name: "Set 7", price: 20.00, category: "Sets", image: "images/S11.png" },
-  { name: "Set 8", price: 20.00, category: "Sets", image: "images/S13.png" },
-  { name: "Set 9", price: 20.00, category: "Sets", image: "images/S15.png" },
-  { name: "Set 10", price: 20.00, category: "Sets", image: "images/S9.png" },
+  // BRACELETS
+  { name: "Bracelet 1", price: 34.99, category: "Bracelets", images: ["images/B1.png"] },
+  { name: "Bracelet 2", price: 36.99, category: "Bracelets", images: ["images/B2.png"] },
+  { name: "Bracelet 3", price: 36.99, category: "Bracelets", images: ["images/B3.png"] },
+  { name: "Bracelet 4", price: 36.99, category: "Bracelets", images: ["images/B4.png"] },
 
-
-  // ✅ NECKLACES
-  { name: "Necklace 1", price: 17.00, category: "Necklaces", image: "images/N1.png" },
-  {
-    name: "Necklace 2",
-    price: 15.00,
-    category: "Necklaces",
-    images: ["images/N2.png", "images/N3.png"]
-  },
-
-  // ✅ EARRINGS
-  { name: "Earrings 1", price: 29.99, category: "Earrings", image: "images/E1.png" },
-  { name: "Earrings 2", price: 31.99, category: "Earrings", image: "images/E2.png" },
-  { name: "Earrings 3", price: 31.99, category: "Earrings", image: "images/E3.png" },
-  { name: "Earrings 4", price: 31.99, category: "Earrings", image: "images/E4.png" },
-  { name: "Earrings 5", price: 31.99, category: "Earrings", image: "images/E5.png" },
-  { name: "Earrings 6", price: 31.99, category: "Earrings", image: "images/E6.png" },
-  { name: "Earrings 7", price: 31.99, category: "Earrings", image: "images/E7.jpeg" },
-  { name: "Earrings 8", price: 31.99, category: "Earrings", image: "images/E8.png" },
-  { name: "Earrings 9", price: 31.99, category: "Earrings", image: "images/E9.jpeg" },
-  { name: "Earrings 10", price: 31.99, category: "Earrings", image: "images/E9.jpeg" },
-  { name: "Earrings 11", price: 31.99, category: "Earrings", image: "images/E9.jpeg" },
-  
-
-
-  // ✅ BRACELETS
-  { name: "Bracelet 1", price: 34.99, category: "Bracelets", image: "images/B1.png" },
-  { name: "Bracelet 2", price: 36.99, category: "Bracelets", image: "images/B2.png" },
-  { name: "Bracelet 2", price: 36.99, category: "Bracelets", image: "images/B3.png" },
-  { name: "Bracelet 2", price: 36.99, category: "Bracelets", image: "images/B4.png" },
-
-
-  // ✅ RINGS
-  { name: "Ring 1", price: 24.99, category: "Rings", image: "images/R1.png" },
-  { name: "Ring 1", price: 24.99, category: "Rings", image: "images/R2.png" },
-  { name: "Ring 1", price: 24.99, category: "Rings", image: "images/R3.png" },
-
+  // RINGS
+  { name: "Ring 1", price: 24.99, category: "Rings", images: ["images/R1.png"] },
+  { name: "Ring 2", price: 24.99, category: "Rings", images: ["images/R2.png"] },
+  { name: "Ring 3", price: 24.99, category: "Rings", images: ["images/R3.png"] },
 
 ];
 
-const grid = document.getElementById("productGrid");
-
-  function renderProducts(list) {
+function renderProducts(list) {
   const grid = document.getElementById("productGrid");
   grid.innerHTML = "";
 
   list.forEach((p, index) => {
 
-    // Αν το προϊόν δεν έχει currentImage, το αρχικοποιούμε
-    if (p.currentImage === undefined) p.currentImage = 0;
-
     // Αν δεν υπάρχει images array (προϊόν με μία μόνο εικόνα), το δημιουργούμε
     if (!p.images) p.images = [p.image];
+
+    // Αν το προϊόν δεν έχει currentImage, το αρχικοποιούμε
+    if (p.currentImage === undefined) p.currentImage = 0;
 
     grid.innerHTML += `
       <div class="bg-white p-4 rounded-md shadow hover:shadow-lg transition">
@@ -205,7 +179,6 @@ const grid = document.getElementById("productGrid");
               class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">
               ◀
             </button>
-
             <button onclick="changeImage(${index}, 1)" 
               class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">
               ▶
@@ -221,20 +194,9 @@ const grid = document.getElementById("productGrid");
   });
 }
 
-       
-
-        </div>
-
-        <h3 class="font-medium mb-1">${p.name}</h3>
-        <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
-      </div>
-    `;
-  });
-}
-
 function changeImage(index, direction) {
   const product = products[index];
-  if (!product.images) return;
+  if (!product.images || product.images.length === 1) return;
 
   product.currentImage =
     (product.currentImage + direction + product.images.length) %
