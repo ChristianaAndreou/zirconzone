@@ -159,8 +159,7 @@ function renderProducts(list) {
   const grid = document.getElementById("productGrid");
   grid.innerHTML = "";
 
-  list.forEach((p, index) => {
-
+  list.forEach((p) => {
     // Αν δεν υπάρχει images array (προϊόν με μία μόνο εικόνα), το δημιουργούμε
     if (!p.images) p.images = [p.image];
 
@@ -172,14 +171,14 @@ function renderProducts(list) {
 
         <div class="relative h-64 md:h-72 lg:h-80 mb-4 rounded-md overflow-hidden flex items-center justify-center bg-white">
 
-          <img id="img-${index}" src="${p.images[p.currentImage]}" class="object-contain w-full h-full">
+          <img id="img-${p.realIndex}" src="${p.images[p.currentImage]}" class="object-contain w-full h-full">
 
           ${p.images.length > 1 ? `
-            <button onclick="changeImage(${index}, -1)" 
+            <button onclick="changeImage(${p.realIndex}, -1)" 
               class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">
               ◀
             </button>
-            <button onclick="changeImage(${index}, 1)" 
+            <button onclick="changeImage(${p.realIndex}, 1)" 
               class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">
               ▶
             </button>
@@ -210,14 +209,14 @@ function filterProducts(e, category) {
   document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
   e.target.classList.add("active");
 
-  renderProducts(
-    category === "All"
-      ? products
-      : products.filter(p => p.category === category)
-  );
+  const filtered = products.map((p, i) => ({ ...p, realIndex: i }));
+  const finalList = category === "All" ? filtered : filtered.filter(p => p.category === category);
+
+  renderProducts(finalList);
 }
 
-renderProducts(products);
+// Αρχική φόρτωση
+filterProducts({ target: document.querySelector(".filter-btn.active") }, "All");
 </script>
 
 </body>
