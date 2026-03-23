@@ -112,6 +112,8 @@
 
 <script>
 const products = [
+
+  // ✅ SET με gallery
   {
     name: "Set 1",
     price: 79.99,
@@ -119,10 +121,48 @@ const products = [
     images: ["images/S1.png", "images/S2.png", "images/S3.jpg"]
   },
 
+  {
+    name: "Set 2",
+    price: 85.99,
+    category: "Sets",
+    images: ["images/S4.png", "images/S5.jpg", "images/S6.jpg"]
+  },
+
+  { name: "Set 1", price: 79.99, category: "Sets", image: "images/S3.jpg" },
+  { name: "Set 1", price: 79.99, category: "Sets", image: "images/S4.png" },
+  { name: "Set 1", price: 79.99, category: "Sets", image: "images/S5.jpg" },
+  { name: "Set 1", price: 79.99, category: "Sets", image: "images/S6.jpg" },
+  { name: "Set 1", price: 79.99, category: "Sets", image: "images/S7.png" },
+  { name: "Set 1", price: 79.99, category: "Sets", image: "images/S8.png" },
+  { name: "Set 1", price: 79.99, category: "Sets", image: "images/S9.png" },
+
+
+  // ✅ NECKLACES
   { name: "Necklace 1", price: 39.99, category: "Necklaces", image: "images/N1.png" },
+  { name: "Necklace 2", price: 42.99, category: "Necklaces", image: "images/N2.png" },
+
+  // ✅ EARRINGS
   { name: "Earrings 1", price: 29.99, category: "Earrings", image: "images/E1.png" },
+  { name: "Earrings 2", price: 31.99, category: "Earrings", image: "images/E2.png" },
+  { name: "Earrings 2", price: 31.99, category: "Earrings", image: "images/E3.png" },
+  { name: "Earrings 2", price: 31.99, category: "Earrings", image: "images/E4.png" },
+  { name: "Earrings 2", price: 31.99, category: "Earrings", image: "images/E5.png" },
+  { name: "Earrings 2", price: 31.99, category: "Earrings", image: "images/E6.png" },
+
+
+  // ✅ BRACELETS
   { name: "Bracelet 1", price: 34.99, category: "Bracelets", image: "images/B1.png" },
-  { name: "Ring 1", price: 24.99, category: "Rings", image: "images/R1.png" }
+  { name: "Bracelet 2", price: 36.99, category: "Bracelets", image: "images/B2.png" },
+  { name: "Bracelet 2", price: 36.99, category: "Bracelets", image: "images/B3.png" },
+  { name: "Bracelet 2", price: 36.99, category: "Bracelets", image: "images/B4.png" },
+
+
+  // ✅ RINGS
+  { name: "Ring 1", price: 24.99, category: "Rings", image: "images/R1.png" },
+  { name: "Ring 1", price: 24.99, category: "Rings", image: "images/R2.png" },
+  { name: "Ring 1", price: 24.99, category: "Rings", image: "images/R3.png" },
+
+
 ];
 
 const grid = document.getElementById("productGrid");
