@@ -150,7 +150,7 @@ const products = [ { name: "Set 1", price: 12.00, category: "Sets", images: ["im
                  
                  ];
 
-// Κρατάμε το τρέχον image index για κάθε προϊόν
+// Κρατάμε το τρέχον index εικόνας για κάθε προϊόν
 products.forEach(p => p.currentImage = 0);
 
 // Render προϊόντων
@@ -158,32 +158,55 @@ function renderProducts(list) {
   const grid = document.getElementById("productGrid");
   grid.innerHTML = "";
 
-  list.forEach((p, idx) => {
-    grid.innerHTML += `
-      <div class="bg-white p-4 rounded-md shadow hover:shadow-lg transition">
-        <div class="relative h-64 md:h-72 lg:h-80 mb-4 rounded-md overflow-hidden flex items-center justify-center bg-white">
-          <img id="img-${idx}" src="${p.images[p.currentImage]}" class="object-contain w-full h-full">
-          ${p.images.length > 1 ? `
-            <button onclick="changeImage('${p.name}', -1, ${idx})" 
-              class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">◀</button>
-            <button onclick="changeImage('${p.name}', 1, ${idx})" 
-              class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">▶</button>
-          ` : ""}
-        </div>
-        <h3 class="font-medium mb-1">${p.name}</h3>
-        <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
-      </div>
-    `;
+  list.forEach(p => {
+    const productDiv = document.createElement("div");
+    productDiv.className = "bg-white p-4 rounded-md shadow hover:shadow-lg transition";
+
+    const imgContainer = document.createElement("div");
+    imgContainer.className = "relative h-64 md:h-72 lg:h-80 mb-4 rounded-md overflow-hidden flex items-center justify-center bg-white";
+
+    const imgEl = document.createElement("img");
+    imgEl.src = p.images[p.currentImage];
+    imgEl.className = "object-contain w-full h-full";
+
+    imgContainer.appendChild(imgEl);
+
+    // Αν υπάρχουν πάνω από μία εικόνες, βάζουμε τα κουμπιά
+    if (p.images.length > 1) {
+      const prevBtn = document.createElement("button");
+      prevBtn.innerText = "◀";
+      prevBtn.className = "absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow";
+      prevBtn.onclick = () => changeImage(p, -1, imgEl);
+
+      const nextBtn = document.createElement("button");
+      nextBtn.innerText = "▶";
+      nextBtn.className = "absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow";
+      nextBtn.onclick = () => changeImage(p, 1, imgEl);
+
+      imgContainer.appendChild(prevBtn);
+      imgContainer.appendChild(nextBtn);
+    }
+
+    const h3 = document.createElement("h3");
+    h3.className = "font-medium mb-1";
+    h3.innerText = p.name;
+
+    const price = document.createElement("p");
+    price.className = "text-gray-500 text-sm";
+    price.innerText = `€${p.price.toFixed(2)}`;
+
+    productDiv.appendChild(imgContainer);
+    productDiv.appendChild(h3);
+    productDiv.appendChild(price);
+
+    grid.appendChild(productDiv);
   });
 }
 
 // Αλλαγή εικόνας
-function changeImage(name, direction, idx) {
-  const product = products.find(p => p.name === name);
-  if (!product) return;
-
+function changeImage(product, direction, imgEl) {
   product.currentImage = (product.currentImage + direction + product.images.length) % product.images.length;
-  document.getElementById(`img-${idx}`).src = product.images[product.currentImage];
+  imgEl.src = product.images[product.currentImage];
 }
 
 // Φιλτράρισμα προϊόντων
@@ -203,6 +226,6 @@ document.addEventListener("DOMContentLoaded", () => {
   filterProducts({ target: firstBtn }, "All");
 });
 </script>
-
+  
 </body>
 </html>
