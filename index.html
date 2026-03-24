@@ -157,17 +157,14 @@ function renderProducts(list) {
   grid.innerHTML = "";
 
   list.forEach((p, idx) => {
-    p.displayIndex = idx; // index στη φιλτραρισμένη λίστα
-
     grid.innerHTML += `
       <div class="bg-white p-4 rounded-md shadow hover:shadow-lg transition">
         <div class="relative h-64 md:h-72 lg:h-80 mb-4 rounded-md overflow-hidden flex items-center justify-center bg-white">
           <img id="img-${idx}" src="${p.images[p.currentImage]}" class="object-contain w-full h-full">
-
           ${p.images.length > 1 ? `
-            <button onclick="changeImage(${idx}, -1)" 
+            <button onclick="changeImageFiltered(${idx}, -1, '${p.name}')" 
               class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">◀</button>
-            <button onclick="changeImage(${idx}, 1)" 
+            <button onclick="changeImageFiltered(${idx}, 1, '${p.name}')" 
               class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">▶</button>
           ` : ""}
         </div>
@@ -176,6 +173,15 @@ function renderProducts(list) {
       </div>
     `;
   });
+}
+
+// Νέα function που βρίσκει το προϊόν με βάση το όνομά του
+function changeImageFiltered(idx, direction, name) {
+  const product = products.find(p => p.name === name);
+  if (!product) return;
+
+  product.currentImage = (product.currentImage + direction + product.images.length) % product.images.length;
+  document.getElementById(`img-${idx}`).src = product.images[product.currentImage];
 }
 
 function changeImage(displayIndex, direction) {
