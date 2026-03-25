@@ -150,19 +150,20 @@ const products = [ { name: "Set 1", price: 12.00, category: "Sets", images: ["im
                  
                  ];
 
-// Κρατάμε το τρέχον index εικόνας για κάθε προϊόν
+// init image index
 products.forEach(p => p.currentImage = 0);
 
 function renderProducts(list) {
   const grid = document.getElementById('productGrid');
   grid.innerHTML = '';
+
   list.forEach(product => {
     const div = document.createElement('div');
     div.className = 'border p-2 rounded';
 
     const imgContainer = document.createElement('div');
     imgContainer.className = 'relative h-48 flex items-center justify-center mb-2';
-    
+
     const imgEl = document.createElement('img');
     imgEl.src = product.images[product.currentImage];
     imgEl.className = 'object-contain h-full w-full';
@@ -171,46 +172,59 @@ function renderProducts(list) {
     if(product.images.length > 1){
       const prev = document.createElement('button');
       prev.innerText = '◀';
-      prev.className = 'absolute left-1 top-1/2 transform -translate-y-1/2 bg-white/70 px-2 py-1 rounded';
+      prev.className = 'absolute left-1 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded';
       prev.onclick = ()=> changeImage(product, -1, imgEl);
-      imgContainer.appendChild(prev);
 
       const next = document.createElement('button');
       next.innerText = '▶';
-      next.className = 'absolute right-1 top-1/2 transform -translate-y-1/2 bg-white/70 px-2 py-1 rounded';
+      next.className = 'absolute right-1 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded';
       next.onclick = ()=> changeImage(product, 1, imgEl);
+
+      imgContainer.appendChild(prev);
       imgContainer.appendChild(next);
     }
 
     const h3 = document.createElement('h3');
     h3.innerText = product.name;
+
     const p = document.createElement('p');
     p.innerText = `€${product.price.toFixed(2)}`;
 
     div.appendChild(imgContainer);
     div.appendChild(h3);
     div.appendChild(p);
+
     grid.appendChild(div);
   });
 }
 
 function changeImage(product, dir, imgEl){
-  product.currentImage = (product.currentImage + dir + product.images.length) % product.images.length;
+  product.currentImage =
+    (product.currentImage + dir + product.images.length) % product.images.length;
+
   imgEl.src = product.images[product.currentImage];
 }
 
 function filterProducts(category){
   document.querySelectorAll('.filter-btn').forEach(b=>{
     b.classList.remove('active');
-    if(b.innerText===category) b.classList.add('active');
+    if(b.innerText === category) b.classList.add('active');
   });
-  const filtered = category==='All'? products : products.filter(p=>p.category===category);
+
+  const filtered =
+    category === 'All'
+      ? products
+      : products.filter(p => p.category === category);
+
   renderProducts(filtered);
 }
 
-// Αρχική φόρτωση
+// initial load
 renderProducts(products);
 </script>
-  
+
 </body>
 </html>
+     
+ 
+
