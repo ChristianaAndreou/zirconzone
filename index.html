@@ -162,7 +162,6 @@ function renderProducts(list) {
 
     grid.innerHTML += `
       <div class="bg-white p-4 rounded-md shadow hover:shadow-lg transition">
-
         <div class="relative h-64 md:h-72 lg:h-80 mb-4 rounded-md overflow-hidden flex items-center justify-center bg-white">
           <img id="img-${index}" src="${p.images[0]}" class="object-contain w-full h-full">
 
@@ -178,19 +177,19 @@ function renderProducts(list) {
 
         <h3 class="font-medium mb-1">${p.name}</h3>
         <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
+      </div>
+    `;
+  });
+}
+
+        <h3 class="font-medium mb-1">${p.name}</h3>
+        <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
 
       </div>
     `;
   });
 }
 
-            <h3 class="font-medium mb-1">${p.name}</h3>
-            <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
-
-          </div>
-        `;
-      });
-    }
 
     function changeImage(index, direction) {
       const product = products[index];
