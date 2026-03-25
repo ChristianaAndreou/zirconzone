@@ -156,8 +156,8 @@
     function renderProducts(list) {
       grid.innerHTML = "";
 
-      list.forEach((p, index) => {
-        let images = p.images || [p.image];
+      list.forEach((p) => {
+  const index = products.indexOf(p);
         p.currentImage = 0;
 
         grid.innerHTML += `
