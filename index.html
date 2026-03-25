@@ -34,7 +34,6 @@
 
 <body class="bg-white text-gray-900">
 
-<!-- HEADER -->
 <header class="sticky top-0 bg-white border-b z-50">
   <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
     <a href="#home">
@@ -48,7 +47,6 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section id="home" class="py-24 text-center bg-gradient-to-br from-white via-gray-50 to-white">
   <h1 class="text-5xl md:text-6xl font-light mb-4">Zircon Zone</h1>
   <p class="italic text-xl md:text-2xl mb-4">
@@ -63,25 +61,24 @@
   </a>
 </section>
 
-<!-- PRODUCTS -->
 <section id="products" class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4">
     <h2 class="text-3xl text-center font-light mb-12">Our Collection</h2>
 
     <div class="flex justify-center gap-6 mb-12 flex-wrap">
-      <button onclick="filterProducts(event, 'All')" class="filter-btn active">All</button>
-      <button onclick="filterProducts(event, 'Sets')" class="filter-btn">Sets</button>
-      <button onclick="filterProducts(event, 'Earrings')" class="filter-btn">Earrings</button>
-      <button onclick="filterProducts(event, 'Necklaces')" class="filter-btn">Necklaces</button>
-      <button onclick="filterProducts(event, 'Bracelets')" class="filter-btn">Bracelets</button>
-      <button onclick="filterProducts(event, 'Rings')" class="filter-btn">Rings</button>
+      <!-- FIXED onclick -->
+      <button onclick="filterProducts('All')" class="filter-btn active">All</button>
+      <button onclick="filterProducts('Sets')" class="filter-btn">Sets</button>
+      <button onclick="filterProducts('Earrings')" class="filter-btn">Earrings</button>
+      <button onclick="filterProducts('Necklaces')" class="filter-btn">Necklaces</button>
+      <button onclick="filterProducts('Bracelets')" class="filter-btn">Bracelets</button>
+      <button onclick="filterProducts('Rings')" class="filter-btn">Rings</button>
     </div>
 
     <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"></div>
   </div>
 </section>
 
-<!-- ORDERS -->
 <section id="orders" class="py-20 text-center">
   <div class="max-w-2xl mx-auto px-4">
     <h2 class="text-3xl font-light mb-4">Orders & Availability</h2>
@@ -102,12 +99,17 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="bg-black text-white py-10 text-center">
   <p class="text-gray-400 text-sm">
     © 2026 Zircon Zone. All rights reserved.
   </p>
 </footer>
+
+   
+  
+
+    
+     
 
 <!-- SCRIPT -->
 <script>
