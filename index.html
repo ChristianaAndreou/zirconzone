@@ -153,28 +153,36 @@
 
     const grid = document.getElementById("productGrid");
 
-    function renderProducts(list) {
-      grid.innerHTML = "";
+function renderProducts(list) {
+  grid.innerHTML = "";
 
-      list.forEach((p) => {
-  const index = products.indexOf(p);
-        p.currentImage = 0;
+  list.forEach((p) => {
+    const index = products.indexOf(p);
+    p.currentImage = 0;
 
-        grid.innerHTML += `
-          <div class="bg-white p-4 rounded-md shadow hover:shadow-lg transition">
+    grid.innerHTML += `
+      <div class="bg-white p-4 rounded-md shadow hover:shadow-lg transition">
 
-            <div class="relative h-64 md:h-72 lg:h-80 mb-4 rounded-md overflow-hidden flex items-center justify-center bg-white">
-              <img id="img-${index}" src="${images[0]}" class="object-contain w-full h-full">
+        <div class="relative h-64 md:h-72 lg:h-80 mb-4 rounded-md overflow-hidden flex items-center justify-center bg-white">
+          <img id="img-${index}" src="${p.images[0]}" class="object-contain w-full h-full">
 
-              ${
-                images.length > 1
-                  ? `
-                  <button onclick="changeImage(${index}, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">◀</button>
-                  <button onclick="changeImage(${index}, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">▶</button>
-                  `
-                  : ""
-              }
-            </div>
+          ${
+            p.images.length > 1
+              ? `
+              <button onclick="changeImage(${index}, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">◀</button>
+              <button onclick="changeImage(${index}, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">▶</button>
+              `
+              : ""
+          }
+        </div>
+
+        <h3 class="font-medium mb-1">${p.name}</h3>
+        <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
+
+      </div>
+    `;
+  });
+}
 
             <h3 class="font-medium mb-1">${p.name}</h3>
             <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
