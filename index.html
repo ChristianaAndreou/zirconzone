@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ZIRCON ZONE</title>
+  <title>ZIRCON ZONE | It's all about shine and sparkle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Tailwind CSS -->
@@ -15,13 +15,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-    }
+    body { font-family: 'Montserrat', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
     .filter-btn {
       text-transform: uppercase;
@@ -31,7 +26,6 @@
       border-bottom: 2px solid transparent;
       cursor: pointer;
     }
-
     .filter-btn.active {
       border-color: #000;
     }
@@ -40,184 +34,198 @@
 
 <body class="bg-white text-gray-900">
 
-  <!-- HEADER -->
-  <header class="sticky top-0 bg-white border-b z-50">
-    <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-      <a href="#home">
-        <img src="images/zz.jpg" class="h-10 md:h-12 object-contain">
-      </a>
-
-      <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-        <a href="#home">Home</a>
-        <a href="#products">Collection</a>
-        <a href="#orders">Orders</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section id="home" class="py-24 text-center bg-gradient-to-br from-white via-gray-50 to-white">
-    <h1 class="text-5xl md:text-6xl font-light mb-4">Zircon Zone</h1>
-
-    <p class="italic text-xl md:text-2xl mb-4">
-      It's all about shine and sparkle
-    </p>
-
-    <p class="text-gray-600 max-w-xl mx-auto mb-10">
-      Zircon Zone is an online jewelry shop offering carefully selected pieces designed for everyday shine.
-    </p>
-
-    <a href="#products" class="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition">
-      Explore Collection
+<!-- HEADER -->
+<header class="sticky top-0 bg-white border-b z-50">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+    <a href="#home">
+      <img src="images/zz.jpg" class="h-10 md:h-12 object-contain">
     </a>
-  </section>
+    <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+      <a href="#home">Home</a>
+      <a href="#products">Collection</a>
+      <a href="#orders">Orders</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- PRODUCTS -->
-  <section id="products" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
+<!-- HERO -->
+<section id="home" class="py-24 text-center bg-gradient-to-br from-white via-gray-50 to-white">
+  <h1 class="text-5xl md:text-6xl font-light mb-4">Zircon Zone</h1>
+  <p class="italic text-xl md:text-2xl mb-4">
+    It's all about shine and sparkle
+  </p>
+  <p class="text-gray-600 max-w-xl mx-auto mb-10">
+    Zircon Zone is an online jewelry shop offering carefully selected pieces
+    designed for everyday shine.
+  </p>
+  <a href="#products" class="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition">
+    Explore Collection
+  </a>
+</section>
 
-      <h2 class="text-3xl text-center font-light mb-12">Our Collection</h2>
+<!-- PRODUCTS -->
+<section id="products" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl text-center font-light mb-12">Our Collection</h2>
 
-      <div class="flex justify-center gap-6 mb-12 flex-wrap">
-        <button onclick="filterProducts(event, 'All')" class="filter-btn active">All</button>
-        <button onclick="filterProducts(event, 'Sets')" class="filter-btn">Sets</button>
-        <button onclick="filterProducts(event, 'Earrings')" class="filter-btn">Earrings</button>
-        <button onclick="filterProducts(event, 'Necklaces')" class="filter-btn">Necklaces</button>
-        <button onclick="filterProducts(event, 'Bracelets')" class="filter-btn">Bracelets</button>
-        <button onclick="filterProducts(event, 'Rings')" class="filter-btn">Rings</button>
-      </div>
-
-      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"></div>
+    <div class="flex justify-center gap-6 mb-12 flex-wrap">
+      <button onclick="filterProducts(event, 'All')" class="filter-btn active">All</button>
+      <button onclick="filterProducts(event, 'Sets')" class="filter-btn">Sets</button>
+      <button onclick="filterProducts(event, 'Earrings')" class="filter-btn">Earrings</button>
+      <button onclick="filterProducts(event, 'Necklaces')" class="filter-btn">Necklaces</button>
+      <button onclick="filterProducts(event, 'Bracelets')" class="filter-btn">Bracelets</button>
+      <button onclick="filterProducts(event, 'Rings')" class="filter-btn">Rings</button>
     </div>
-  </section>
 
-  <!-- ORDERS -->
-  <section id="orders" class="py-20 text-center">
-    <div class="max-w-2xl mx-auto px-4">
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"></div>
+  </div>
+</section>
 
-      <h2 class="text-3xl font-light mb-4">Orders & Availability</h2>
-
-      <p class="text-gray-600 mb-8">
-        All orders are placed via Instagram or Facebook.
-      </p>
-
-      <div class="flex justify-center gap-4">
-        <a href="https://www.instagram.com/zirconzone" target="_blank" class="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition">
-          Instagram
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" class="border px-8 py-3 rounded-md hover:bg-black hover:text-white transition">
-          Facebook
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-black text-white py-10 text-center">
-    <img src="images/zz.jpg" class="h-8 mx-auto mb-4">
-    <p class="text-gray-400 text-sm">
-      © 2026 Zircon Zone. All rights reserved.
+<!-- ORDERS -->
+<section id="orders" class="py-20 text-center">
+  <div class="max-w-2xl mx-auto px-4">
+    <h2 class="text-3xl font-light mb-4">Orders & Availability</h2>
+    <p class="text-gray-600 mb-8">
+      All orders are placed via Instagram or Facebook.
     </p>
-  </footer>
 
-  <!-- SCRIPT -->
-  <script>
-    let currentCategory = "All";
+    <div class="flex justify-center gap-4">
+      <a href="https://www.instagram.com/zirconzone" target="_blank"
+         class="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition">
+        Instagram
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank"
+         class="border px-8 py-3 rounded-md hover:bg-black hover:text-white transition">
+        Facebook
+      </a>
+    </div>
+  </div>
+</section>
 
-    const products = [
-      { name: "Set 1", price: 12.00, category: "Sets", images: ["/images/S7.png"] },
-      { name: "Set 2", price: 20.00, category: "Sets", images: ["/images/S10.jpeg", "/images/S2.png", "/images/S1.png"] },
-      { name: "Set 3", price: 12.00, category: "Sets", images: ["/images/S5.jpg", "/images/S6.jpg"] },
-      { name: "Set 4", price: 20.00, category: "Sets", images: ["/images/S14.png"] },
-      { name: "Set 5", price: 20.00, category: "Sets", images: ["/images/S8.png"] },
-      { name: "Set 6", price: 20.00, category: "Sets", images: ["/images/S12.png"] },
-      { name: "Set 7", price: 20.00, category: "Sets", images: ["/images/S11.png"] },
-      { name: "Set 8", price: 20.00, category: "Sets", images: ["/images/S13.png"] },
-      { name: "Set 9", price: 20.00, category: "Sets", images: ["/images/S15.png"] },
-      { name: "Set 10", price: 20.00, category: "Sets", images: ["/images/S9.png"] },
+<!-- FOOTER -->
+<footer class="bg-black text-white py-10 text-center">
+  <p class="text-gray-400 text-sm">
+    © 2026 Zircon Zone. All rights reserved.
+  </p>
+</footer>
 
-      { name: "Necklace 1", price: 17.00, category: "Necklaces", images: ["/images/N1.png"] },
-      { name: "Necklace 2", price: 15.00, category: "Necklaces", images: ["/images/N2.png", "/images/N3.png"] },
+<!-- SCRIPT -->
+<script>
+let currentCategory = "All";
 
-      { name: "Earrings 1", price: 29.99, category: "Earrings", images: ["/images/E1.png"] },
-      { name: "Earrings 2", price: 31.99, category: "Earrings", images: ["/images/E2.png"] },
+const products = [ { name: "Set 1", price: 12.00, category: "Sets", images: ["images/S7.png"] }, 
+                  { name: "Set 2", price: 20.00, category: "Sets", images: ["images/S10.jpeg", "images/S2.png", "images/S1.png"] }, 
+                  { name: "Set 3", price: 12.00, category: "Sets", images: ["images/S5.jpg", "images/S6.jpg"] }, 
+                  { name: "Set 4", price: 20.00, category: "Sets", images: ["images/S14.png"] }, 
+                  { name: "Set 5", price: 20.00, category: "Sets", images: ["images/S8.png"] }, 
+                  { name: "Set 6", price: 20.00, category: "Sets", images: ["images/S12.png"] }, 
+                  { name: "Set 7", price: 20.00, category: "Sets", images: ["images/S11.png"] }, 
+                  { name: "Set 8", price: 20.00, category: "Sets", images: ["images/S13.png"] }, 
+                  { name: "Set 9", price: 20.00, category: "Sets", images: ["images/S15.png"] }, 
+                  { name: "Set 10", price: 20.00, category: "Sets", images: ["images/S9.png"] }
+                  , 
+                  { name: "Necklace 1", price: 17.00, category: "Necklaces", images: ["images/N1.png"] }, 
+                  { name: "Necklace 2", price: 15.00, category: "Necklaces", images: ["images/N2.png", "images/N3.png"] }, 
+                  
+                  { name: "Earrings 1", price: 29.99, category: "Earrings", images: ["images/E1.png"] }, 
+                  { name: "Earrings 2", price: 31.99, category: "Earrings", images: ["images/E2.png"] }, 
+                  { name: "Earrings 3", price: 31.99, category: "Earrings", images: ["images/E3.png"] }, 
+                  { name: "Earrings 4", price: 31.99, category: "Earrings", images: ["images/E4.png"] }, 
+                  { name: "Earrings 5", price: 31.99, category: "Earrings", images: ["images/E5.png"] }, 
+                  { name: "Earrings 6", price: 31.99, category: "Earrings", images: ["images/E6.png"] }, 
+                  { name: "Earrings 7", price: 31.99, category: "Earrings", images: ["images/E7.jpeg"] }, 
+                  { name: "Earrings 8", price: 31.99, category: "Earrings", images: ["images/E8.png"] }, 
+                  { name: "Earrings 9", price: 31.99, category: "Earrings", images: ["images/E9.jpeg"] }, 
+                  { name: "Earrings 10", price: 31.99, category: "Earrings", images: ["images/E9.jpeg"] }, 
+                  { name: "Earrings 11", price: 31.99, category: "Earrings", images: ["images/E9.jpeg"] }, 
+                  
+                  { name: "Bracelet 1", price: 07.00, category: "Bracelets", images: ["images/B1.png"] }, 
+                  { name: "Bracelet 2", price: 03.00, category: "Bracelets", images: ["images/B2.png"] }, 
+                  { name: "Bracelet 3", price: 07.00, category: "Bracelets", images: ["images/B3.png"] }, 
+                  { name: "Bracelet 4", price: 10.00, category: "Bracelets", images: ["images/B4.png"] }, 
+                  
+                  { name: "Ring 1", price: 24.99, category: "Rings", images: ["images/R1.png"] }, 
+                  { name: "Ring 2", price: 24.99, category: "Rings", images: ["images/R2.png"] }, 
+                  { name: "Ring 3", price: 24.99, category: "Rings", images: ["images/R3.png"] }, 
+                 
+                 ];
 
-      { name: "Bracelet 1", price: 07.00, category: "Bracelets", images: ["/images/B1.png"] },
-      { name: "Bracelet 2", price: 03.00, category: "Bracelets", images: ["/images/B2.png"] },
+// Κρατάμε το τρέχον index εικόνας για κάθε προϊόν
+products.forEach(p => p.currentImage = 0);
 
-      { name: "Ring 1", price: 24.99, category: "Rings", images: ["/images/R1.png"] },
-      { name: "Ring 2", price: 24.99, category: "Rings", images: ["/images/R2.png"] }
-    ];
-
-    const grid = document.getElementById("productGrid");
-
+// Render προϊόντων
 function renderProducts(list) {
+  const grid = document.getElementById("productGrid");
   grid.innerHTML = "";
 
-  list.forEach((p) => {
-    const index = products.indexOf(p);
-    p.currentImage = 0;
+  list.forEach(p => {
+    const productDiv = document.createElement("div");
+    productDiv.className = "bg-white p-4 rounded-md shadow hover:shadow-lg transition";
 
-    grid.innerHTML += `
-      <div class="bg-white p-4 rounded-md shadow hover:shadow-lg transition">
-        <div class="relative h-64 md:h-72 lg:h-80 mb-4 rounded-md overflow-hidden flex items-center justify-center bg-white">
-          <img id="img-${index}" src="${p.images[0]}" class="object-contain w-full h-full">
+    const imgContainer = document.createElement("div");
+    imgContainer.className = "relative h-64 md:h-72 lg:h-80 mb-4 rounded-md overflow-hidden flex items-center justify-center bg-white";
 
-          ${
-            p.images.length > 1
-              ? `
-              <button onclick="changeImage(${index}, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">◀</button>
-              <button onclick="changeImage(${index}, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">▶</button>
-              `
-              : ""
-          }
-        </div>
+    const imgEl = document.createElement("img");
+    imgEl.src = p.images[p.currentImage];
+    imgEl.className = "object-contain w-full h-full";
 
-        <h3 class="font-medium mb-1">${p.name}</h3>
-        <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
-      </div>
-    `;
+    imgContainer.appendChild(imgEl);
+
+    // Αν υπάρχουν πάνω από μία εικόνες, βάζουμε τα κουμπιά
+    if (p.images.length > 1) {
+      const prevBtn = document.createElement("button");
+      prevBtn.innerText = "◀";
+      prevBtn.className = "absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow";
+      prevBtn.onclick = () => changeImage(p, -1, imgEl);
+
+      const nextBtn = document.createElement("button");
+      nextBtn.innerText = "▶";
+      nextBtn.className = "absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow";
+      nextBtn.onclick = () => changeImage(p, 1, imgEl);
+
+      imgContainer.appendChild(prevBtn);
+      imgContainer.appendChild(nextBtn);
+    }
+
+    const h3 = document.createElement("h3");
+    h3.className = "font-medium mb-1";
+    h3.innerText = p.name;
+
+    const price = document.createElement("p");
+    price.className = "text-gray-500 text-sm";
+    price.innerText = `€${p.price.toFixed(2)}`;
+
+    productDiv.appendChild(imgContainer);
+    productDiv.appendChild(h3);
+    productDiv.appendChild(price);
+
+    grid.appendChild(productDiv);
   });
 }
 
-        <h3 class="font-medium mb-1">${p.name}</h3>
-        <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
-
-      </div>
-    `;
-  });
+// Αλλαγή εικόνας
+function changeImage(product, direction, imgEl) {
+  product.currentImage = (product.currentImage + direction + product.images.length) % product.images.length;
+  imgEl.src = product.images[product.currentImage];
 }
 
+// Φιλτράρισμα προϊόντων
+function filterProducts(e, category) {
+  currentCategory = category;
 
-    function changeImage(index, direction) {
-      const product = products[index];
-      if (!product.images) return;
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  e.target.classList.add("active");
 
-      product.currentImage =
-        (product.currentImage + direction + product.images.length) % product.images.length;
+  const filtered = category === "All" ? products : products.filter(p => p.category === category);
+  renderProducts(filtered);
+}
 
-      document.getElementById(`img-${index}`).src =
-        product.images[product.currentImage];
-    }
-
-    function filterProducts(e, category) {
-      document.querySelectorAll(".filter-btn").forEach(btn =>
-        btn.classList.remove("active")
-      );
-
-      e.target.classList.add("active");
-
-      renderProducts(
-        category === "All"
-          ? products
-          : products.filter(p => p.category === category)
-      );
-    }
-
-    renderProducts(products);
-  </script>
-
+// Αρχική φόρτωση
+document.addEventListener("DOMContentLoaded", () => {
+  const firstBtn = document.querySelector(".filter-btn.active") || document.querySelector(".filter-btn");
+  filterProducts({ target: firstBtn }, "All");
+});
+</script>
+  
 </body>
 </html>
