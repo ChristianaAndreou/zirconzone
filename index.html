@@ -199,8 +199,7 @@ function filterProducts(e, category) {
 
 // Αρχική φόρτωση
 document.addEventListener("DOMContentLoaded", () => {
-  const firstBtn = document.querySelector(".filter-btn.active") || document.querySelector(".filter-btn");
-  filterProducts({ target: firstBtn }, "All");
+  renderProducts(products);
 });
 </script>
   
