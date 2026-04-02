@@ -2,20 +2,173 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Market | Zircon Zone</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+  --accent:#d14c8e;
+  --accent-dark:#b83f7a;
+  --accent-soft:#fde7f1;
+}
+
+body{
+  font-family:Montserrat,sans-serif;
+}
+
+h1,h2,h3,h4{
+  font-family:'Playfair Display',serif;
+}
+
+.nav-link{
+  position:relative;
+  transition:.25s;
+}
+
+.nav-link:hover{
+  color:var(--accent);
+}
+
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:var(--accent);
+  transition:.3s;
+}
+
+.nav-link:hover::after{
+  width:100%;
+}
+
+.section-label{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:.78rem;
+  font-weight:600;
+}
+
+.card{
+  transition:.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 16px 35px rgba(0,0,0,.08);
+}
+
+.social-icon{
+  color:#9ca3af;
+  transition:.25s;
+}
+
+.social-icon:hover{
+  color:var(--accent);
+}
+</style>
 </head>
 
-<body class="text-center">
+<body class="bg-white text-gray-900">
 
-<h1 class="text-4xl mt-10">Orama Market</h1>
+<header class="sticky top-0 bg-white border-b z-50">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
 
-<div class="grid md:grid-cols-3 gap-6 p-10">
-<img src="images/bazaar1.jpg">
-<img src="images/bazaar2.jpg">
-<img src="images/bazaar3.jpg">
-</div>
+    <a href="index.html">
+      <img src="images/zz.jpg" class="h-10" alt="Zircon Zone logo">
+    </a>
+
+    <nav class="hidden md:flex gap-6 text-sm uppercase tracking-widest">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="collection.html" class="nav-link">Collection</a>
+      <a href="customers.html" class="nav-link">Customers</a>
+      <a href="market.html" class="nav-link">Market</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="orders.html" class="nav-link">Orders</a>
+    </nav>
+
+    <button onclick="toggleMenu()" id="menuBtn" class="md:hidden text-xl" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="hidden border-t bg-white">
+    <nav class="flex flex-col px-4 py-4 uppercase text-sm">
+      <a href="index.html" class="py-3 border-b nav-link">Home</a>
+      <a href="collection.html" class="py-3 border-b nav-link">Collection</a>
+      <a href="customers.html" class="py-3 border-b nav-link">Customers</a>
+      <a href="market.html" class="py-3 border-b nav-link">Market</a>
+      <a href="about.html" class="py-3 border-b nav-link">About</a>
+      <a href="orders.html" class="py-3 nav-link">Orders</a>
+    </nav>
+  </div>
+</header>
+
+<section class="py-20 text-center bg-gradient-to-br from-white via-gray-50 to-white">
+  <p class="section-label mb-3">Market</p>
+  <h1 class="text-4xl md:text-5xl mb-4">Orama Market</h1>
+  <p class="text-gray-600 max-w-2xl mx-auto px-4">
+    From online to real-life events.
+  </p>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div class="card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <img src="images/bazaar1.jpg" alt="Orama Market 1" class="w-full h-[460px] object-cover">
+      </div>
+
+      <div class="card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <img src="images/bazaar2.jpg" alt="Orama Market 2" class="w-full h-[460px] object-cover">
+      </div>
+
+      <div class="card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <img src="images/bazaar3.jpg" alt="Orama Market 3" class="w-full h-[460px] object-cover">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="bg-black text-white py-10">
+  <div class="flex justify-center gap-6 text-xl mb-4">
+    <a href="https://www.instagram.com/zirconzone" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.tiktok.com/@zircon_zone" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="mailto:zirconzonejewelry@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+  </div>
+
+  <p class="text-center text-gray-400 text-sm">
+    © 2026 Zircon Zone. All rights reserved.
+  </p>
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu=document.getElementById("mobileMenu");
+  const icon=document.querySelector("#menuBtn i");
+
+  menu.classList.toggle("hidden");
+
+  if(menu.classList.contains("hidden")){
+    icon.classList.remove("fa-xmark");
+    icon.classList.add("fa-bars");
+  }else{
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-xmark");
+  }
+}
+</script>
 
 </body>
 </html>
