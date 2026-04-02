@@ -1,341 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collection | Zircon Zone</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection | Zircon Zone</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-<style>
-:root{
-  --accent:#d14c8e;
-  --accent-dark:#b83f7a;
-  --accent-soft:#fde7f1;
-}
+  <style>
+    :root{
+      --accent:#d14c8e;
+      --accent-dark:#b83f7a;
+      --accent-soft:#fde7f1;
+    }
 
-body{
-  font-family:Montserrat,sans-serif;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-h1,h2,h3,h4{
-  font-family:'Playfair Display',serif;
-}
+    body{
+      font-family:Montserrat,sans-serif;
+    }
 
-.nav-link{
-  position:relative;
-  transition:.25s;
-}
+    h1,h2,h3,h4{
+      font-family:'Playfair Display',serif;
+    }
 
-.nav-link:hover{
-  color:var(--accent);
-}
+    .nav-link{
+      position:relative;
+      transition:.25s;
+    }
 
-.nav-link::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-5px;
-  width:0;
-  height:2px;
-  background:var(--accent);
-  transition:.3s;
-}
+    .nav-link:hover{
+      color:var(--accent);
+    }
 
-.nav-link:hover::after{
-  width:100%;
-}
+    .nav-link::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      width:0;
+      height:2px;
+      background:var(--accent);
+      transition:.3s;
+    }
 
-.section-label{
-  color:var(--accent);
-  text-transform:uppercase;
-  letter-spacing:.22em;
-  font-size:.78rem;
-  font-weight:600;
-}
+    .nav-link:hover::after{
+      width:100%;
+    }
 
-.filter-btn{
-  text-transform:uppercase;
-  font-size:.78rem;
-  letter-spacing:.16em;
-  padding:.55rem 1rem;
-  border-bottom:2px solid transparent;
-  cursor:pointer;
-  transition:.25s;
-  color:#444;
-}
+    .section-label{
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:.78rem;
+      font-weight:600;
+    }
 
-.filter-btn:hover{
-  color:var(--accent);
-}
+    .filter-btn{
+      text-transform:uppercase;
+      font-size:.78rem;
+      letter-spacing:.16em;
+      padding:.55rem 1rem;
+      border-bottom:2px solid transparent;
+      cursor:pointer;
+      transition:.25s;
+      color:#444;
+    }
 
-.filter-btn.active{
-  border-color:var(--accent);
-  color:var(--accent-dark);
-}
+    .filter-btn:hover{
+      color:var(--accent);
+    }
 
-.product-card{
-  transition:transform .3s ease, box-shadow .3s ease;
-}
+    .filter-btn.active{
+      border-color:var(--accent);
+      color:var(--accent-dark);
+    }
 
-.product-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 16px 35px rgba(0,0,0,.08);
-}
+    .product-card{
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
 
-.product-image{
-  transition:transform .35s ease;
-}
+    .product-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 16px 35px rgba(0,0,0,.08);
+    }
 
-.product-card:hover .product-image{
-  transform:scale(1.03);
-}
+    .product-image{
+      transition:transform .35s ease;
+    }
 
-.soft-badge{
-  background:var(--accent-soft);
-  color:var(--accent-dark);
-}
+    .product-card:hover .product-image{
+      transform:scale(1.03);
+    }
 
-.social-icon{
-  color:#9ca3af;
-  transition:.25s;
-}
+    .soft-badge{
+      background:var(--accent-soft);
+      color:var(--accent-dark);
+    }
 
-.social-icon:hover{
-  color:var(--accent);
-}
-</style>
+    .social-icon{
+      color:#9ca3af;
+      transition:.25s;
+    }
+
+    .social-icon:hover{
+      color:var(--accent);
+    }
+  </style>
 </head>
 
 <body class="bg-white text-gray-900">
 
-<!-- HEADER -->
-<header class="sticky top-0 bg-white border-b z-50">
-  <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+  <!-- HEADER -->
+  <header class="sticky top-0 bg-white border-b z-50">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
 
-    <a href="index.html">
-      <img src="images/zz.jpg" class="h-10" alt="Zircon Zone logo">
-    </a>
+      <a href="index.html">
+        <img src="images/zz.jpg" class="h-10" alt="Zircon Zone logo">
+      </a>
 
-    <nav class="hidden md:flex gap-6 text-sm uppercase tracking-widest">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="collection.html" class="nav-link">Collection</a>
-      <a href="customers.html" class="nav-link">Customers</a>
-      <a href="market.html" class="nav-link">Market</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="orders.html" class="nav-link">Orders</a>
-    </nav>
+      <nav class="hidden md:flex gap-6 text-sm uppercase tracking-widest">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="collection.html" class="nav-link">Collection</a>
+        <a href="customers.html" class="nav-link">Customers</a>
+        <a href="market.html" class="nav-link">Market</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="orders.html" class="nav-link">Orders</a>
+      </nav>
 
-    <button onclick="toggleMenu()" id="menuBtn" class="md:hidden text-xl" aria-label="Open menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </div>
-
-  <div id="mobileMenu" class="hidden border-t bg-white">
-    <nav class="flex flex-col px-4 py-4 uppercase text-sm">
-      <a href="index.html" class="py-3 border-b nav-link">Home</a>
-      <a href="collection.html" class="py-3 border-b nav-link">Collection</a>
-      <a href="customers.html" class="py-3 border-b nav-link">Customers</a>
-      <a href="market.html" class="py-3 border-b nav-link">Market</a>
-      <a href="about.html" class="py-3 border-b nav-link">About</a>
-      <a href="orders.html" class="py-3 nav-link">Orders</a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="py-20 text-center bg-gradient-to-br from-white via-gray-50 to-white">
-  <p class="section-label mb-3">Collection</p>
-  <h1 class="text-4xl md:text-5xl mb-4">Discover our Collection</h1>
-  <p class="text-gray-600 max-w-2xl mx-auto px-4">
-    Discover carefully selected pieces designed for everyday shine.
-  </p>
-</section>
-
-<!-- FILTERS + PRODUCTS -->
-<section class="py-12 bg-white">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="flex justify-center gap-5 mb-12 flex-wrap">
-      <button onclick="filterProducts(event, 'All')" class="filter-btn active">All</button>
-      <button onclick="filterProducts(event, 'Sets')" class="filter-btn">Sets</button>
-      <button onclick="filterProducts(event, 'Earrings')" class="filter-btn">Earrings</button>
-      <button onclick="filterProducts(event, 'Necklaces')" class="filter-btn">Necklaces</button>
-      <button onclick="filterProducts(event, 'Bracelets')" class="filter-btn">Bracelets</button>
-      <button onclick="filterProducts(event, 'Rings')" class="filter-btn">Rings</button>
+      <button onclick="toggleMenu()" id="menuBtn" class="md:hidden text-xl" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
 
-    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
-  </div>
-</section>
+    <div id="mobileMenu" class="hidden border-t bg-white">
+      <nav class="flex flex-col px-4 py-4 uppercase text-sm">
+        <a href="index.html" class="py-3 border-b nav-link">Home</a>
+        <a href="collection.html" class="py-3 border-b nav-link">Collection</a>
+        <a href="customers.html" class="py-3 border-b nav-link">Customers</a>
+        <a href="market.html" class="py-3 border-b nav-link">Market</a>
+        <a href="about.html" class="py-3 border-b nav-link">About</a>
+        <a href="orders.html" class="py-3 nav-link">Orders</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- FOOTER -->
-<footer class="bg-black text-white py-10">
-  <div class="flex justify-center gap-6 text-xl mb-4">
-    <a href="https://www.instagram.com/zirconzone" target="_blank" class="social-icon">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
+  <!-- HERO -->
+  <section class="py-20 text-center bg-gradient-to-br from-white via-gray-50 to-white">
+    <p class="section-label mb-3">Collection</p>
+    <h1 class="text-4xl md:text-5xl mb-4">Discover our Collection</h1>
+    <p class="text-gray-600 max-w-2xl mx-auto px-4">
+      Discover carefully selected pieces designed for everyday shine.
+    </p>
+  </section>
 
-    <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" class="social-icon">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-
-    <a href="https://www.tiktok.com/@zircon_zone" target="_blank" class="social-icon">
-      <i class="fa-brands fa-tiktok"></i>
-    </a>
-
-    <a href="mailto:zirconzonejewelry@gmail.com" class="social-icon">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
-  </div>
-
-  <p class="text-center text-gray-400 text-sm">
-    © 2026 Zircon Zone. All rights reserved.
-  </p>
-</footer>
-
-<script>
-function toggleMenu(){
-  const menu = document.getElementById("mobileMenu");
-  const icon = document.querySelector("#menuBtn i");
-
-  menu.classList.toggle("hidden");
-
-  if(menu.classList.contains("hidden")){
-    icon.classList.remove("fa-xmark");
-    icon.classList.add("fa-bars");
-  } else {
-    icon.classList.remove("fa-bars");
-    icon.classList.add("fa-xmark");
-  }
-}
-
-let currentCategory = "All";
-
-const products = [
-  { name: "Set 1", price: 12.00, category: "Sets", images: ["images/S7.png"] }, 
-  { name: "Set 2", price: 20.00, category: "Sets", images: ["images/S2.png", "images/S10.jpeg", "images/S1.png"] }, 
-  { name: "Set 3", price: 12.00, category: "Sets", images: ["images/S5.jpg", "images/S6.jpg"] }, 
-  { name: "Set 4", price: 20.00, category: "Sets", images: ["images/S16.jpg", "images/S8.png"] }, 
-  { name: "Set 5", price: 20.00, category: "Sets", images: ["images/S12.png"] }, 
-  { name: "Set 6", price: 20.00, category: "Sets", images: ["images/S11.png"] }, 
-  { name: "Set 7", price: 20.00, category: "Sets", images: ["images/S13.png"] }, 
-  { name: "Set 8", price: 20.00, category: "Sets", images: ["images/S15.png"] }, 
-  { name: "Set 9", price: 20.00, category: "Sets", images: ["images/S9.png"] },
-  { name: "Set 10", price: 20.00, category: "Sets", images: ["images/S14.png"] }, 
-
-  { name: "Necklace 1", price: 17.00, category: "Necklaces", images: ["images/N1.png"] }, 
-  { name: "Necklace 2", price: 15.00, category: "Necklaces", images: ["images/N4.png"]}, 
-  { name: "Necklace 3", price: 15.00, category: "Necklaces", images: ["images/N2.png", "images/N3.png"] }, 
-  { name: "Necklace 4", price: 15.00, category: "Necklaces", images: ["images/N7.png", "images/N8.png"] },
-  { name: "Necklace 5", price: 12.00, category: "Necklaces", images: ["images/N9.png"] },
-  { name: "Necklace 6", price: 8.00, category: "Necklaces", images: ["images/N5.png"] }, 
-  { name: "Necklace 7", price: 8.00, category: "Necklaces", images: ["images/N6.png"] }, 
-   
-  { name: "Earrings 1", price: 14.00, category: "Earrings", images: ["images/E38.png", "images/E1.png"] }, 
-  { name: "Earrings 2", price: 20.00, category: "Earrings", images: ["images/E43.png", "images/E44.png"] }, 
-  { name: "Earrings 3", price: 20.00, category: "Earrings", images: ["images/E5.png", "images/E35.png"] },
-  { name: "Earrings 4", price: 20.00, category: "Earrings", images: ["images/E25.png", "images/E26.png", "images/E27.png", "images/E28.png"] }, 
-  { name: "Earrings 5", price: 20.00, category: "Earrings", images: ["images/E42.png"] }, 
-  { name: "Earrings 6", price: 20.00, category: "Earrings", images: ["images/E47.png", "images/E29.png"] }, 
-  { name: "Earrings 7", price: 20.00, category: "Earrings", images: ["images/E19.png", "images/E41.png"] }, 
-  { name: "Earrings 8", price: 20.00, category: "Earrings", images: ["images/E16.png"] }, 
-  { name: "Earrings 9", price: 20.00, category: "Earrings", images: ["images/E8.png"] }, 
-  { name: "Earrings 10", price: 20.00, category: "Earrings", images: ["images/E33.png"] }, 
-  { name: "Earrings 11", price: 20.00, category: "Earrings", images: ["images/E48.png"] }, 
-  { name: "Earrings 12", price: 15.00, category: "Earrings", images: ["images/E46.png", "images/E12.png"] }, 
-  { name: "Earrings 13", price: 14.00, category: "Earrings", images: ["images/E14.png"] }, 
-  { name: "Earrings 14", price: 17.00, category: "Earrings", images: ["images/E2.png", "images/E37.jpg"] },
-  { name: "Earrings 15", price: 15.00, category: "Earrings", images: ["images/E20.png", "images/E21.png","images/E22.png", "images/E23.png", "images/E13.png"] }, 
-  { name: "Earrings 16", price: 15.00, category: "Earrings", images: ["images/E49.png", "images/E3.png"] }, 
-  { name: "Earrings 17", price: 20.00, category: "Earrings", images: ["images/E18.png", "images/E17.png"] }, 
-  { name: "Earrings 18", price: 20.00, category: "Earrings", images: ["images/E45.png", "images/E32.png"] }, 
-  { name: "Earrings 19", price: 20.00, category: "Earrings", images: ["images/E34.png"] }, 
-  { name: "Earrings 20", price: 14.00, category: "Earrings", images: ["images/E39.png"] }, 
-  { name: "Earrings 21", price: 20.00, category: "Earrings", images: ["images/E30.png", "images/E40.png"] }, 
-  { name: "Earrings 22", price: 20.00, category: "Earrings", images: ["images/E15.png"] }, 
-  
-  { name: "Bracelet 1", price: 7.00, category: "Bracelets", images: ["images/B7.png"] }, 
-  { name: "Bracelet 2 (for men)", price: 10.00, category: "Bracelets", images: ["images/B4.png"] }, 
-  { name: "Bracelet 3", price: 7.00, category: "Bracelets", images: ["images/B10.png", "images/B1.png"] }, 
-  { name: "Bracelet 4", price: 3.00, category: "Bracelets", images: ["images/B2.png", "images/B6.png"] }, 
-  { name: "Bracelet 5", price: 7.00, category: "Bracelets", images: ["images/B5.png"] }, 
-  { name: "Bracelet 6 (for men)", price: 10.00, category: "Bracelets", images: ["images/B9.png"] },
-  { name: "Bracelet 7", price: 5.00, category: "Bracelets", images: ["images/B11.png"] },
-  
-  { name: "Ring 1", price: 10.00, category: "Rings", images: ["images/R3.png"] }, 
-  { name: "Ring 2", price: 7.00, category: "Rings", images: ["images/R1.png"] }, 
-  { name: "Ring 3", price: 7.00, category: "Rings", images: ["images/R2.png"] }
-];
-
-products.forEach(p => p.currentImage = 0);
-
-function renderProducts(list) {
-  const grid = document.getElementById("productGrid");
-  grid.innerHTML = "";
-
-  list.forEach((p, idx) => {
-    grid.innerHTML += `
-      <div class="product-card bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-100">
-        <div class="relative h-64 md:h-72 lg:h-80 mb-5 rounded-2xl overflow-hidden flex items-center justify-center bg-white">
-          <span class="absolute top-3 left-3 text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-full soft-badge z-10">
-            ${p.category}
-          </span>
-
-          <img id="img-${idx}" src="${p.images[p.currentImage]}" class="product-image object-contain w-full h-full" alt="${p.name}">
-          
-          ${p.images.length > 1 ? `
-            <button onclick="changeImage('${p.name}', -1, ${idx})" 
-              class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white px-3 py-2 rounded-full shadow text-sm transition">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button onclick="changeImage('${p.name}', 1, ${idx})" 
-              class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white px-3 py-2 rounded-full shadow text-sm transition">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
-          ` : ""}
-        </div>
-
-        <div class="text-center">
-          <h3 class="text-lg font-medium mb-1">${p.name}</h3>
-          <p class="text-base font-semibold">€${p.price.toFixed(2)}</p>
-        </div>
+  <!-- FILTERS + PRODUCTS -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-center gap-5 mb-12 flex-wrap">
+        <button onclick="filterProducts(event, 'All')" class="filter-btn active">All</button>
+        <button onclick="filterProducts(event, 'Sets')" class="filter-btn">Sets</button>
+        <button onclick="filterProducts(event, 'Earrings')" class="filter-btn">Earrings</button>
+        <button onclick="filterProducts(event, 'Necklaces')" class="filter-btn">Necklaces</button>
+        <button onclick="filterProducts(event, 'Bracelets')" class="filter-btn">Bracelets</button>
+        <button onclick="filterProducts(event, 'Rings')" class="filter-btn">Rings</button>
       </div>
-    `;
-  });
-}
 
-function changeImage(name, direction, idx) {
-  const product = products.find(p => p.name === name);
-  if (!product) return;
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+    </div>
+  </section>
 
-  product.currentImage =
-    (product.currentImage + direction + product.images.length) % product.images.length;
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-10">
+    <div class="flex justify-center gap-6 text-xl mb-4">
+      <a href="https://www.instagram.com/zirconzone" target="_blank" class="social-icon">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
 
-  document.getElementById(`img-${idx}`).src =
-    product.images[product.currentImage];
-}
+      <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" class="social-icon">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
 
-function filterProducts(e, category) {
-  currentCategory = category;
+      <a href="https://www.tiktok.com/@zircon_zone" target="_blank" class="social-icon">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
 
-  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-  if (e && e.target) e.target.classList.add("active");
+      <a href="mailto:zirconzonejewelry@gmail.com" class="social-icon">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
 
-  const filtered =
-    category === "All"
-      ? products
-      : products.filter(p => p.category === category);
+    <p class="text-center text-gray-400 text-sm">
+      © 2026 Zircon Zone. All rights reserved.
+    </p>
+  </footer>
 
-  renderProducts(filtered);
-}
+  <script>
+    function toggleMenu(){
+      const menu = document.getElementById("mobileMenu");
+      const icon = document.querySelector("#menuBtn i");
 
-document.addEventListener("DOMContentLoaded", () => {
-  renderProducts(products);
-});
-</script>
+      menu.classList.toggle("hidden");
+
+      if(menu.classList.contains("hidden")){
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+      } else {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+      }
+    }
+
+    let currentCategory = "All";
+
+    const products = [
+      { id: "set-1", name: "Set 1", price: 12.00, category: "Sets", images: ["images/S7.png"] }, 
+      { id: "set-2", name: "Set 2", price: 20.00, category: "Sets", images: ["images/S2.png", "images/S10.jpeg", "images/S1.png"] }, 
+      { id: "set-3", name: "Set 3", price: 12.00, category: "Sets", images: ["images/S5.jpg", "images/S6.jpg"] }, 
+      { id: "set-4", name: "Set 4", price: 20.00, category: "Sets", images: ["images/S16.jpg", "images/S8.png"] }, 
+      { id: "set-5", name: "Set 5", price: 20.00, category: "Sets", images: ["images/S12.png"] }, 
+      { id: "set-6", name: "Set 6", price: 20.00, category: "Sets", images: ["images/S11.png"] }, 
+      { id: "set-7", name: "Set 7", price: 20.00, category: "Sets", images: ["images/S13.png"] }, 
+      { id: "set-8", name: "Set 8", price: 20.00, category: "Sets", images: ["images/S15.png"] }, 
+      { id: "set-9", name: "Set 9", price: 20.00, category: "Sets", images: ["images/S9.png"] },
+      { id: "set-10", name: "Set 10", price: 20.00, category: "Sets", images: ["images/S14.png"] }, 
+
+      { id: "necklace-1", name: "Necklace 1", price: 17.00, category: "Necklaces", images: ["images/N1.png"] }, 
+      { id: "necklace-2", name: "Necklace 2", price: 15.00, category: "Necklaces", images: ["images/N4.png"] }, 
+      { id: "necklace-3", name: "Necklace 3", price: 15.00, category: "Necklaces", images: ["images/N2.png", "images/N3.png"] }, 
+      { id: "necklace-4", name: "Necklace 4", price: 15.00, category: "Necklaces", images: ["images/N7.png", "images/N8.png"] },
+      { id: "necklace-5", name: "Necklace 5", price: 12.00, category: "Necklaces", images: ["images/N9.png"] },
+      { id: "necklace-6", name: "Necklace 6", price: 8.00, category: "Necklaces", images: ["images/N5.png"] }, 
+      { id: "necklace-7", name: "Necklace 7", price: 8.00, category: "Necklaces", images: ["images/N6.png"] }, 
+       
+      { id: "earrings-1", name: "Earrings 1", price: 14.00, category: "Earrings", images: ["images/E38.png", "images/E1.png"] }, 
+      { id: "earrings-2", name: "Earrings 2", price: 20.00, category: "Earrings", images: ["images/E43.png", "images/E44.png"] }, 
+      { id: "earrings-3", name: "Earrings 3", price: 20.00, category: "Earrings", images: ["images/E5.png", "images/E35.png"] },
+      { id: "earrings-4", name: "Earrings 4", price: 20.00, category: "Earrings", images: ["images/E25.png", "images/E26.png", "images/E27.png", "images/E28.png"] }, 
+      { id: "earrings-5", name: "Earrings 5", price: 20.00, category: "Earrings", images: ["images/E42.png"] }, 
+      { id: "earrings-6", name: "Earrings 6", price: 20.00, category: "Earrings", images: ["images/E47.png", "images/E29.png"] }, 
+      { id: "earrings-7", name: "Earrings 7", price: 20.00, category: "Earrings", images: ["images/E19.png", "images/E41.png"] }, 
+      { id: "earrings-8", name: "Earrings 8", price: 20.00, category: "Earrings", images: ["images/E16.png"] }, 
+      { id: "earrings-9", name: "Earrings 9", price: 20.00, category: "Earrings", images: ["images/E8.png"] }, 
+      { id: "earrings-10", name: "Earrings 10", price: 20.00, category: "Earrings", images: ["images/E33.png"] }, 
+      { id: "earrings-11", name: "Earrings 11", price: 20.00, category: "Earrings", images: ["images/E48.png"] }, 
+      { id: "earrings-12", name: "Earrings 12", price: 15.00, category: "Earrings", images: ["images/E46.png", "images/E12.png"] }, 
+      { id: "earrings-13", name: "Earrings 13", price: 14.00, category: "Earrings", images: ["images/E14.png"] }, 
+      { id: "earrings-14", name: "Earrings 14", price: 17.00, category: "Earrings", images: ["images/E2.png", "images/E37.jpg"] },
+      { id: "earrings-15", name: "Earrings 15", price: 15.00, category: "Earrings", images: ["images/E20.png", "images/E21.png","images/E22.png", "images/E23.png", "images/E13.png"] }, 
+      { id: "earrings-16", name: "Earrings 16", price: 15.00, category: "Earrings", images: ["images/E49.png", "images/E3.png"] }, 
+      { id: "earrings-17", name: "Earrings 17", price: 20.00, category: "Earrings", images: ["images/E18.png", "images/E17.png"] }, 
+      { id: "earrings-18", name: "Earrings 18", price: 20.00, category: "Earrings", images: ["images/E45.png", "images/E32.png"] }, 
+      { id: "earrings-19", name: "Earrings 19", price: 20.00, category: "Earrings", images: ["images/E34.png"] }, 
+      { id: "earrings-20", name: "Earrings 20", price: 14.00, category: "Earrings", images: ["images/E39.png"] }, 
+      { id: "earrings-21", name: "Earrings 21", price: 20.00, category: "Earrings", images: ["images/E30.png", "images/E40.png"] }, 
+      { id: "earrings-22", name: "Earrings 22", price: 20.00, category: "Earrings", images: ["images/E15.png"] }, 
+      
+      { id: "bracelet-1", name: "Bracelet 1", price: 7.00, category: "Bracelets", images: ["images/B7.png"] }, 
+      { id: "bracelet-2", name: "Bracelet 2 (for men)", price: 10.00, category: "Bracelets", images: ["images/B4.png"] }, 
+      { id: "bracelet-3", name: "Bracelet 3", price: 7.00, category: "Bracelets", images: ["images/B10.png", "images/B1.png"] }, 
+      { id: "bracelet-4", name: "Bracelet 4", price: 3.00, category: "Bracelets", images: ["images/B2.png", "images/B6.png"] }, 
+      { id: "bracelet-5", name: "Bracelet 5", price: 7.00, category: "Bracelets", images: ["images/B5.png"] }, 
+      { id: "bracelet-6", name: "Bracelet 6 (for men)", price: 10.00, category: "Bracelets", images: ["images/B9.png"] },
+      { id: "bracelet-7", name: "Bracelet 7", price: 5.00, category: "Bracelets", images: ["images/B11.png"] },
+      
+      { id: "ring-1", name: "Ring 1", price: 10.00, category: "Rings", images: ["images/R3.png"] }, 
+      { id: "ring-2", name: "Ring 2", price: 7.00, category: "Rings", images: ["images/R1.png"] }, 
+      { id: "ring-3", name: "Ring 3", price: 7.00, category: "Rings", images: ["images/R2.png"] }
+    ];
+
+    products.forEach(p => p.currentImage = 0);
+
+    function renderProducts(list) {
+      const grid = document.getElementById("productGrid");
+      grid.innerHTML = "";
+
+      list.forEach((p, idx) => {
+        grid.innerHTML += `
+          <div id="${p.id}" class="product-card bg-white p-4 md:p-5 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
+            <div class="relative h-64 md:h-72 lg:h-80 mb-5 rounded-2xl overflow-hidden flex items-center justify-center bg-white">
+              <span class="absolute top-3 left-3 text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-full soft-badge z-10">
+                ${p.category}
+              </span>
+
+              <img id="img-${idx}" src="${p.images[p.currentImage]}" class="product-image object-contain w-full h-full" alt="${p.name}">
+              
+              ${p.images.length > 1 ? `
+                <button onclick="changeImage('${p.name}', -1, ${idx})" 
+                  class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white px-3 py-2 rounded-full shadow text-sm transition">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button onclick="changeImage('${p.name}', 1, ${idx})" 
+                  class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/85 hover:bg-white px-3 py-2 rounded-full shadow text-sm transition">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              ` : ""}
+            </div>
+
+            <div class="text-center">
+              <h3 class="text-lg font-medium mb-1">${p.name}</h3>
+              <p class="text-base font-semibold">€${p.price.toFixed(2)}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function changeImage(name, direction, idx) {
+      const product = products.find(p => p.name === name);
+      if (!product) return;
+
+      product.currentImage =
+        (product.currentImage + direction + product.images.length) % product.images.length;
+
+      document.getElementById(`img-${idx}`).src =
+        product.images[product.currentImage];
+    }
+
+    function filterProducts(e, category) {
+      currentCategory = category;
+
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      if (e && e.target) e.target.classList.add("active");
+
+      const filtered =
+        category === "All"
+          ? products
+          : products.filter(p => p.category === category);
+
+      renderProducts(filtered);
+      scrollToHashProduct();
+    }
+
+    function scrollToHashProduct() {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      setTimeout(() => {
+        const target = document.querySelector(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 120);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderProducts(products);
+      scrollToHashProduct();
+    });
+  </script>
 
 </body>
 </html>
