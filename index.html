@@ -1,35 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ZIRCON ZONE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zircon Zone</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+:root{
+  --accent:#d14c8e;
+  --accent-dark:#b83f7a;
+  --accent-soft:#fde7f1;
+}
 
-  <style>
-    body { font-family: 'Montserrat', sans-serif; }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+body{
+  font-family:Montserrat,sans-serif;
+}
 
-    .filter-btn {
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      padding: 0.5rem 1rem;
-      border-bottom: 2px solid transparent;
-      cursor: pointer;
-    }
-    .filter-btn.active {
-      border-color: #000;
-    }
-  </style>
+h1,h2,h3,h4{
+  font-family:'Playfair Display',serif;
+}
+
+.nav-link{
+  position:relative;
+  transition:.25s;
+}
+
+.nav-link:hover{
+  color:var(--accent);
+}
+
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:var(--accent);
+  transition:.3s;
+}
+
+.nav-link:hover::after{
+  width:100%;
+}
+
+.section-label{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:.78rem;
+  font-weight:600;
+}
+
+.btn{
+  background:black;
+  color:white;
+  padding:12px 26px;
+  border-radius:999px;
+  transition:.3s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.btn:hover{
+  background:var(--accent);
+}
+
+.card{
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.social-icon{
+  color:#9ca3af;
+  transition:.25s;
+}
+
+.social-icon:hover{
+  color:var(--accent);
+}
+</style>
 </head>
 
 <body class="bg-white text-gray-900">
@@ -37,197 +97,196 @@
 <!-- HEADER -->
 <header class="sticky top-0 bg-white border-b z-50">
   <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-    <a href="#home">
-      <img src="images/zz.jpg" class="h-10 md:h-12 object-contain">
+
+    <a href="index.html">
+      <img src="images/zz.jpg" class="h-10" alt="Zircon Zone logo">
     </a>
-    <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-      <a href="#home">Home</a>
-      <a href="#products">Collection</a>
-      <a href="#orders">Orders</a>
+
+    <nav class="hidden md:flex gap-6 text-sm uppercase tracking-widest">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="collection.html" class="nav-link">Collection</a>
+      <a href="customers.html" class="nav-link">Customers</a>
+      <a href="market.html" class="nav-link">Market</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="orders.html" class="nav-link">Orders</a>
+    </nav>
+
+    <button onclick="toggleMenu()" id="menuBtn" class="md:hidden text-xl" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="hidden border-t bg-white">
+    <nav class="flex flex-col px-4 py-4 uppercase text-sm">
+      <a href="index.html" class="py-3 border-b nav-link">Home</a>
+      <a href="collection.html" class="py-3 border-b nav-link">Collection</a>
+      <a href="customers.html" class="py-3 border-b nav-link">Customers</a>
+      <a href="market.html" class="py-3 border-b nav-link">Market</a>
+      <a href="about.html" class="py-3 border-b nav-link">About</a>
+      <a href="orders.html" class="py-3 nav-link">Orders</a>
     </nav>
   </div>
 </header>
 
 <!-- HERO -->
-<section id="home" class="py-24 text-center bg-gradient-to-br from-white via-gray-50 to-white">
-  <h1 class="text-5xl md:text-6xl font-light mb-4">Zircon Zone</h1>
-  <p class="italic text-xl md:text-2xl mb-4">
+<section class="py-24 text-center bg-gradient-to-br from-white via-gray-50 to-white">
+  <h1 class="text-5xl md:text-6xl mb-4">Zircon Zone</h1>
+
+  <p class="italic text-xl mb-4 text-[var(--accent)]">
     It's all about shine and sparkle
   </p>
+
   <p class="text-gray-600 max-w-xl mx-auto mb-10">
-    Zircon Zone is an online jewelry shop offering carefully selected pieces
-    designed for everyday shine.
+    Zircon Zone is an online jewelry shop offering carefully selected pieces designed for everyday shine.
   </p>
-  <a href="#products" class="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition">
-    Explore Collection
-  </a>
+
+  <a href="collection.html" class="btn">Explore Collection</a>
 </section>
 
-<!-- PRODUCTS -->
-<section id="products" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl text-center font-light mb-12">Our Collection</h2>
+<!-- NEW IN -->
+<section class="py-20 text-center">
+  <p class="section-label mb-3">New In</p>
+  <h2 class="text-3xl mb-10">Fresh Arrivals</h2>
 
-    <div class="flex justify-center gap-6 mb-12 flex-wrap">
-      <button onclick="filterProducts(event, 'All')" class="filter-btn active">All</button>
-      <button onclick="filterProducts(event, 'Sets')" class="filter-btn">Sets</button>
-      <button onclick="filterProducts(event, 'Earrings')" class="filter-btn">Earrings</button>
-      <button onclick="filterProducts(event, 'Necklaces')" class="filter-btn">Necklaces</button>
-      <button onclick="filterProducts(event, 'Bracelets')" class="filter-btn">Bracelets</button>
-      <button onclick="filterProducts(event, 'Rings')" class="filter-btn">Rings</button>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto">
+    <div class="card">
+      <img src="images/S7.png" alt="Set 1">
     </div>
-
-    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"></div>
+    <div class="card">
+      <img src="images/N1.png" alt="Necklace 1">
+    </div>
+    <div class="card">
+      <img src="images/E38.png" alt="Earrings 1">
+    </div>
+    <div class="card">
+      <img src="images/R3.png" alt="Ring 1">
+    </div>
   </div>
 </section>
 
-<!-- ORDERS -->
-<section id="orders" class="py-20 text-center">
-  <div class="max-w-2xl mx-auto px-4">
-    <h2 class="text-3xl font-light mb-4">Orders & Availability</h2>
-    <p class="text-gray-600 mb-8">
-      All orders are placed via Instagram or Facebook.
-    </p>
+<!-- BEST SELLERS -->
+<section class="py-20 bg-gray-50 text-center">
+  <p class="section-label mb-3">Best Sellers</p>
+  <h2 class="text-3xl mb-10">Most Loved</h2>
 
-    <div class="flex justify-center gap-4">
-      <a href="https://www.instagram.com/zirconzone" target="_blank"
-         class="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition">
-        Instagram
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank"
-         class="border px-8 py-3 rounded-md hover:bg-black hover:text-white transition">
-        Facebook
-      </a>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto">
+    <div class="card">
+      <img src="images/S10.jpeg" alt="Set 2">
     </div>
+    <div class="card">
+      <img src="images/E43.png" alt="Earrings 2">
+    </div>
+    <div class="card">
+      <img src="images/B7.png" alt="Bracelet 1">
+    </div>
+    <div class="card">
+      <img src="images/N4.png" alt="Necklace 2">
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMERS -->
+<section class="py-20 text-center">
+  <p class="section-label mb-3">Customers</p>
+  <h2 class="text-3xl mb-10">Happy Customers</h2>
+
+  <div class="grid md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
+    <img src="images/customer1.jpg" alt="Customer 1" class="rounded-lg">
+    <img src="images/customer2.jpg" alt="Customer 2" class="rounded-lg">
+
+    <video controls class="rounded-lg w-full">
+      <source src="images/customer-video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <a href="customers.html" class="btn mt-10 inline-block">View More</a>
+</section>
+
+<!-- MARKET -->
+<section class="py-20 bg-gray-50 text-center">
+  <p class="section-label mb-3">Market</p>
+  <h2 class="text-3xl mb-6">Orama Market</h2>
+  <p class="text-gray-600 mb-10">From online to real-life events</p>
+
+  <div class="grid md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
+    <img src="images/bazaar1.jpg" alt="Orama Market 1" class="rounded-lg">
+    <img src="images/bazaar2.jpg" alt="Orama Market 2" class="rounded-lg">
+    <img src="images/bazaar3.jpg" alt="Orama Market 3" class="rounded-lg">
+  </div>
+
+  <a href="market.html" class="btn mt-10 inline-block">See More</a>
+</section>
+
+<!-- ABOUT -->
+<section class="py-20 text-center">
+  <p class="section-label mb-3">About</p>
+  <h2 class="text-3xl mb-6">About Zircon Zone</h2>
+  <p class="max-w-xl mx-auto text-gray-600 mb-8">
+    Modern stainless steel jewelry designed for everyday wear.
+    Elegant, durable, and made to shine.
+  </p>
+  <a href="about.html" class="btn">Read More</a>
+</section>
+
+<!-- ORDERS -->
+<section class="py-20 bg-gray-50 text-center">
+  <p class="section-label mb-3">Orders</p>
+  <h2 class="text-3xl mb-6">Order via social media</h2>
+
+  <div class="flex justify-center gap-4 flex-wrap">
+    <a href="https://www.instagram.com/zirconzone" target="_blank" class="btn">
+      <i class="fa-brands fa-instagram"></i>
+      Instagram
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" class="btn">
+      <i class="fa-brands fa-facebook-f"></i>
+      Facebook
+    </a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-black text-white py-10 text-center">
-  <p class="text-gray-400 text-sm">
+<footer class="bg-black text-white py-10">
+  <div class="flex justify-center gap-6 text-xl mb-4">
+    <a href="https://www.instagram.com/zirconzone" target="_blank" class="social-icon">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" class="social-icon">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@zircon_zone" target="_blank" class="social-icon">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+
+    <a href="mailto:zirconzonejewelry@gmail.com" class="social-icon">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+  <p class="text-center text-gray-400 text-sm">
     © 2026 Zircon Zone. All rights reserved.
   </p>
 </footer>
 
 <script>
-let currentCategory = "All";
+function toggleMenu(){
+  const menu = document.getElementById("mobileMenu");
+  const icon = document.querySelector("#menuBtn i");
 
-const products = [
-  { name: "Set 1", price: 12.00, category: "Sets", images: ["images/S7.png"] }, 
-  { name: "Set 2", price: 20.00, category: "Sets", images: ["images/S10.jpeg", "images/S2.png", "images/S1.png"] }, 
-  { name: "Set 3", price: 12.00, category: "Sets", images: ["images/S5.jpg", "images/S6.jpg"] }, 
-  { name: "Set 4", price: 20.00, category: "Sets", images: ["images/S16.jpg", "images/S8.png"] }, 
-  { name: "Set 5", price: 20.00, category: "Sets", images: ["images/S12.png"] }, 
-  { name: "Set 6", price: 20.00, category: "Sets", images: ["images/S11.png"] }, 
-  { name: "Set 7", price: 20.00, category: "Sets", images: ["images/S13.png"] }, 
-  { name: "Set 8", price: 20.00, category: "Sets", images: ["images/S15.png"] }, 
-  { name: "Set 9", price: 20.00, category: "Sets", images: ["images/S9.png"] },
-  { name: "Set 10", price: 20.00, category: "Sets", images: ["images/S14.png"] }, 
+  menu.classList.toggle("hidden");
 
-  { name: "Necklace 1", price: 17.00, category: "Necklaces", images: ["images/N1.png"] }, 
-  { name: "Necklace 2", price: 15.00, category: "Necklaces", images: ["images/N4.png"]}, 
-  { name: "Necklace 3", price: 15.00, category: "Necklaces", images: ["images/N2.png", "images/N3.png"] }, 
-  { name: "Necklace 4", price: 15.00, category: "Necklaces", images: ["images/N7.png", "images/N8.png"] },
-  { name: "Necklace 5", price: 12.00, category: "Necklaces", images: ["images/N9.png"] },
-  { name: "Necklace 6", price: 8.00, category: "Necklaces", images: ["images/N5.png"] }, 
-  { name: "Necklace 7", price: 8.00, category: "Necklaces", images: ["images/N6.png"] }, 
-   
-  { name: "Earrings 1", price: 20.00, category: "Earrings", images: ["images/E38.png", "images/E1.png"] }, 
-  { name: "Earrings 2", price: 20.00, category: "Earrings", images: ["images/E43.png", "images/E44.png"] }, 
-  { name: "Earrings 3", price: 20.00, category: "Earrings", images: ["images/E5.png", "images/E35.png"] },
-  { name: "Earrings 4", price: 20.00, category: "Earrings", images: ["images/E25.png", "images/E26.png", "images/E27.png", "images/E28.png"] }, 
-  { name: "Earrings 5", price: 20.00, category: "Earrings", images: ["images/E42.png"] }, 
-  { name: "Earrings 6", price: 20.00, category: "Earrings", images: ["images/E47.png", "images/E29.png"] }, 
-  { name: "Earrings 7", price: 20.00, category: "Earrings", images: ["images/E19.png", "images/E41.png"] }, 
-  { name: "Earrings 8", price: 20.00, category: "Earrings", images: ["images/E16.png"] }, 
-  { name: "Earrings 9", price: 20.00, category: "Earrings", images: ["images/E8.png"] }, 
-  { name: "Earrings 10", price: 20.00, category: "Earrings", images: ["images/E33.png"] }, 
-  { name: "Earrings 11", price: 20.00, category: "Earrings", images: ["images/E48.png"] }, 
-  { name: "Earrings 12", price: 20.00, category: "Earrings", images: ["images/E46.png", "images/E12.png"] }, 
-  { name: "Earrings 13", price: 20.00, category: "Earrings", images: ["images/E14.png"] }, 
-  { name: "Earrings 14", price: 20.00, category: "Earrings", images: ["images/E2.png", "images/E37.jpg"] },
-  { name: "Earrings 15", price: 20.00, category: "Earrings", images: ["images/E20.png", "images/E21.png","images/E22.png", "images/E23.png", "images/E13.png"] }, 
-  { name: "Earrings 16", price: 20.00, category: "Earrings", images: ["images/E49.png", "images/E3.png"] }, 
-  { name: "Earrings 17", price: 20.00, category: "Earrings", images: ["images/E18.png", "images/E17.png"] }, 
-  { name: "Earrings 18", price: 20.00, category: "Earrings", images: ["images/E45.png", "images/E32.png"] }, 
-  { name: "Earrings 19", price: 20.00, category: "Earrings", images: ["images/E34.png"] }, 
-  { name: "Earrings 20", price: 20.00, category: "Earrings", images: ["images/E39.png"] }, 
-  { name: "Earrings 21", price: 20.00, category: "Earrings", images: ["images/E30.png", "images/E40.png"] }, 
-  { name: "Earrings 22", price: 20.00, category: "Earrings", images: ["images/E15.png"] }, 
-  
-  { name: "Bracelet 1", price: 7.00, category: "Bracelets", images: ["images/B7.png"] }, 
-  { name: "Bracelet 2 (for men)", price: 10.00, category: "Bracelets", images: ["images/B4.png"] }, 
-  { name: "Bracelet 3", price: 7.00, category: "Bracelets", images: ["images/B10.png", "images/B1.png"] }, 
-  { name: "Bracelet 4", price: 3.00, category: "Bracelets", images: ["images/B2.png", "images/B6.png"] }, 
-  { name: "Bracelet 5", price: 7.00, category: "Bracelets", images: ["images/B5.png"] }, 
-  { name: "Bracelet 6 (for men)", price: 10.00, category: "Bracelets", images: ["images/B9.png"] },
-  { name: "Bracelet 7", price: 5.00, category: "Bracelets", images: ["images/B11.png"] },
-  
-  { name: "Ring 1", price: 10.00, category: "Rings", images: ["images/R3.png"] }, 
-  { name: "Ring 2", price: 7.00, category: "Rings", images: ["images/R1.png"] }, 
-  { name: "Ring 3", price: 7.00, category: "Rings", images: ["images/R2.png"] }, 
-];
-
-// αρχικό index εικόνας
-products.forEach(p => p.currentImage = 0);
-
-// render
-function renderProducts(list) {
-  const grid = document.getElementById("productGrid");
-  grid.innerHTML = "";
-
-  list.forEach((p, idx) => {
-    grid.innerHTML += `
-      <div class="bg-white p-4 rounded-md shadow hover:shadow-lg transition">
-        <div class="relative h-64 md:h-72 lg:h-80 mb-4 rounded-md overflow-hidden flex items-center justify-center bg-white">
-          <img id="img-${idx}" src="${p.images[p.currentImage]}" class="object-contain w-full h-full">
-          
-          ${p.images.length > 1 ? `
-            <button onclick="changeImage('${p.name}', -1, ${idx})" 
-              class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">◀</button>
-            <button onclick="changeImage('${p.name}', 1, ${idx})" 
-              class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 px-2 py-1 rounded shadow">▶</button>
-          ` : ""}
-        </div>
-        <h3 class="font-medium mb-1">${p.name}</h3>
-        <p class="text-gray-500 text-sm">€${p.price.toFixed(2)}</p>
-      </div>
-    `;
-  });
+  if(menu.classList.contains("hidden")){
+    icon.classList.remove("fa-xmark");
+    icon.classList.add("fa-bars");
+  } else {
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-xmark");
+  }
 }
-
-// change image
-function changeImage(name, direction, idx) {
-  const product = products.find(p => p.name === name);
-  if (!product) return;
-
-  product.currentImage =
-    (product.currentImage + direction + product.images.length) % product.images.length;
-
-  document.getElementById(`img-${idx}`).src =
-    product.images[product.currentImage];
-}
-
-// filter
-function filterProducts(e, category) {
-  currentCategory = category;
-
-  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-  if (e && e.target) e.target.classList.add("active");
-
-  const filtered =
-    category === "All"
-      ? products
-      : products.filter(p => p.category === category);
-
-  renderProducts(filtered);
-}
-
-// ✅ σωστό initial render
-document.addEventListener("DOMContentLoaded", () => {
-  renderProducts(products);
-});
 </script>
-  
+
 </body>
 </html>
