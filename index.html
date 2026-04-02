@@ -1,366 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zircon Zone</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zircon Zone</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-<style>
-:root{
-  --accent:#d14c8e;
-  --accent-dark:#b83f7a;
-  --accent-soft:#fde7f1;
-}
+  <style>
+    :root{
+      --accent:#d14c8e;
+      --accent-dark:#b83f7a;
+      --accent-soft:#fde7f1;
+    }
 
-html{
-  scroll-behavior:smooth;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-body{
-  font-family:Montserrat,sans-serif;
-}
+    body{
+      font-family:Montserrat,sans-serif;
+    }
 
-h1,h2,h3,h4{
-  font-family:'Playfair Display',serif;
-}
+    h1,h2,h3,h4{
+      font-family:'Playfair Display',serif;
+    }
 
-.nav-link{
-  position:relative;
-  transition:.25s;
-}
+    .nav-link{
+      position:relative;
+      transition:.25s;
+    }
 
-.nav-link:hover{
-  color:var(--accent);
-}
+    .nav-link:hover{
+      color:var(--accent);
+    }
 
-.nav-link::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-5px;
-  width:0;
-  height:2px;
-  background:var(--accent);
-  transition:.3s;
-}
+    .nav-link::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      width:0;
+      height:2px;
+      background:var(--accent);
+      transition:.3s;
+    }
 
-.nav-link:hover::after{
-  width:100%;
-}
+    .nav-link:hover::after{
+      width:100%;
+    }
 
-.section-label{
-  color:var(--accent);
-  text-transform:uppercase;
-  letter-spacing:.22em;
-  font-size:.78rem;
-  font-weight:600;
-}
+    .section-label{
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:.78rem;
+      font-weight:600;
+    }
 
-.btn{
-  background:black;
-  color:white;
-  padding:12px 26px;
-  border-radius:999px;
-  transition:.3s;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-}
+    .btn{
+      background:black;
+      color:white;
+      padding:12px 26px;
+      border-radius:999px;
+      transition:.3s;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
 
-.btn:hover{
-  background:var(--accent);
-}
+    .btn:hover{
+      background:var(--accent);
+    }
 
-.card{
-  transition:.3s;
-}
+    .card{
+      transition:.3s;
+    }
 
-.card:hover{
-  transform:translateY(-5px);
-}
+    .card:hover{
+      transform:translateY(-5px);
+    }
 
-.product-card img,
-.event-card img,
-.customer-card img{
-  transition:transform .35s ease;
-}
+    .product-card img,
+    .event-card img,
+    .customer-card img{
+      transition:transform .35s ease;
+    }
 
-.product-card:hover img,
-.event-card:hover img,
-.customer-card:hover img{
-  transform:scale(1.03);
-}
+    .product-card:hover img,
+    .event-card:hover img,
+    .customer-card:hover img{
+      transform:scale(1.03);
+    }
 
-.social-icon{
-  color:#9ca3af;
-  transition:.25s;
-}
+    .social-icon{
+      color:#9ca3af;
+      transition:.25s;
+    }
 
-.social-icon:hover{
-  color:var(--accent);
-}
-</style>
+    .social-icon:hover{
+      color:var(--accent);
+    }
+  </style>
 </head>
 
 <body class="bg-white text-gray-900">
 
-<!-- HEADER -->
-<header class="sticky top-0 bg-white border-b z-50">
-  <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+  <!-- HEADER -->
+  <header class="sticky top-0 bg-white border-b z-50">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
 
-    <a href="index.html">
-      <img src="images/zz.jpg" class="h-10" alt="Zircon Zone logo">
-    </a>
+      <a href="index.html">
+        <img src="images/zz.jpg" class="h-10" alt="Zircon Zone logo">
+      </a>
 
-    <nav class="hidden md:flex gap-6 text-sm uppercase tracking-widest">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="collection.html" class="nav-link">Collection</a>
-      <a href="customers.html" class="nav-link">Customers</a>
-      <a href="events.html" class="nav-link">Events</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="orders.html" class="nav-link">Orders</a>
-    </nav>
+      <nav class="hidden md:flex gap-6 text-sm uppercase tracking-widest">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="collection.html" class="nav-link">Collection</a>
+        <a href="customers.html" class="nav-link">Customers</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="orders.html" class="nav-link">Orders</a>
+      </nav>
 
-    <button onclick="toggleMenu()" id="menuBtn" class="md:hidden text-xl" aria-label="Open menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </div>
+      <button onclick="toggleMenu()" id="menuBtn" class="md:hidden text-xl" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
 
-  <div id="mobileMenu" class="hidden border-t bg-white">
-    <nav class="flex flex-col px-4 py-4 uppercase text-sm">
-      <a href="index.html" class="py-3 border-b nav-link">Home</a>
-      <a href="collection.html" class="py-3 border-b nav-link">Collection</a>
-      <a href="customers.html" class="py-3 border-b nav-link">Customers</a>
-      <a href="events.html" class="py-3 border-b nav-link">Events</a>
-      <a href="about.html" class="py-3 border-b nav-link">About</a>
-      <a href="orders.html" class="py-3 nav-link">Orders</a>
-    </nav>
-  </div>
-</header>
+    <div id="mobileMenu" class="hidden border-t bg-white">
+      <nav class="flex flex-col px-4 py-4 uppercase text-sm">
+        <a href="index.html" class="py-3 border-b nav-link">Home</a>
+        <a href="collection.html" class="py-3 border-b nav-link">Collection</a>
+        <a href="customers.html" class="py-3 border-b nav-link">Customers</a>
+        <a href="events.html" class="py-3 border-b nav-link">Events</a>
+        <a href="about.html" class="py-3 border-b nav-link">About</a>
+        <a href="orders.html" class="py-3 nav-link">Orders</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- HERO -->
-<section class="min-h-[calc(100vh-64px)] flex items-center justify-center text-center bg-gradient-to-br from-white via-gray-50 to-white">
-  <div class="px-4 max-w-5xl mx-auto">
-    <h1 class="text-6xl md:text-7xl lg:text-8xl mb-6 leading-tight">
-      Zircon Zone
-    </h1>
+  <!-- HERO -->
+  <section class="min-h-[calc(100vh-64px)] flex items-center justify-center text-center bg-gradient-to-br from-white via-gray-50 to-white">
+    <div class="px-4 max-w-5xl mx-auto">
+      <h1 class="text-6xl md:text-7xl lg:text-8xl mb-6 leading-tight">
+        Zircon Zone
+      </h1>
 
-    <p class="italic text-xl md:text-2xl mb-6 text-[var(--accent)]">
-      It's all about shine and sparkle
+      <p class="italic text-xl md:text-2xl mb-6 text-[var(--accent)]">
+        It's all about shine and sparkle
+      </p>
+
+      <p class="text-gray-600 max-w-2xl mx-auto mb-12 leading-8 text-lg">
+        Zircon Zone is an online jewelry shop offering carefully selected pieces
+        designed for everyday shine.
+      </p>
+
+      <a href="collection.html" class="btn text-lg px-8 py-4">
+        Explore Collection
+      </a>
+    </div>
+  </section>
+
+  <!-- NEW IN -->
+  <section class="py-20 text-center">
+    <p class="section-label mb-3">New In</p>
+    <h2 class="text-3xl mb-10">New Arrivals</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto">
+
+      <a href="collection.html#necklace-2" class="block card product-card">
+        <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+          <img src="images/N4.png" alt="Necklace 2" class="w-full aspect-[3/4] object-cover">
+        </div>
+      </a>
+
+      <a href="collection.html#bracelet-2" class="block card product-card">
+        <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+          <img src="images/B4.png" alt="Bracelet 2 for men" class="w-full aspect-[3/4] object-cover">
+        </div>
+      </a>
+
+      <a href="collection.html#set-6" class="block card product-card">
+        <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+          <img src="images/S11.png" alt="Set 6" class="w-full aspect-[3/4] object-cover">
+        </div>
+      </a>
+
+      <a href="collection.html#earrings-5" class="block card product-card">
+        <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+          <img src="images/E42.png" alt="Earrings 5" class="w-full aspect-[3/4] object-cover">
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- BEST SELLERS -->
+  <section class="py-20 bg-gray-50 text-center">
+    <p class="section-label mb-3">Best Sellers</p>
+    <h2 class="text-3xl mb-10">Most Loved</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto">
+      
+      <a href="collection.html#bracelet-1" class="block card product-card">
+        <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+          <img src="images/B7.png" alt="Bracelet 1" class="w-full h-96 object-cover">
+        </div>
+      </a>
+
+      <a href="collection.html#set-4" class="block card product-card">
+        <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+          <img src="images/S16.jpg" alt="Set 4" class="w-full h-96 object-cover">
+        </div>
+      </a>
+
+      <a href="collection.html#earrings-12" class="block card product-card">
+        <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+          <img src="images/E46.png" alt="Earrings 12" class="w-full h-96 object-cover">
+        </div>
+      </a>
+
+      <a href="collection.html#necklace-1" class="block card product-card">
+        <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+          <img src="images/N1.png" alt="Necklace 1" class="w-full h-96 object-cover">
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CUSTOMERS -->
+  <section class="py-20 text-center">
+    <p class="section-label mb-3">Customers</p>
+    <h2 class="text-3xl mb-10">Happy Customers</h2>
+
+    <div class="grid md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
+      
+      <a href="customers.html#customer1" class="block card customer-card">
+        <div class="overflow-hidden rounded-lg">
+          <img src="images/customer1.jpg" class="rounded-lg w-full" alt="Customer 1">
+        </div>
+      </a>
+
+      <a href="customers.html#customer2" class="block card customer-card">
+        <div class="overflow-hidden rounded-lg">
+          <img src="images/customer2.jpg" class="rounded-lg w-full" alt="Customer 2">
+        </div>
+      </a>
+
+      <a href="customers.html#customer3" class="block card customer-card">
+        <div class="overflow-hidden rounded-lg">
+          <img src="images/customer3.jpg" class="rounded-lg w-full" alt="Customer 3">
+        </div>
+      </a>
+
+    </div>
+
+    <a href="customers.html" class="btn mt-10 inline-block">View More</a>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="py-20 bg-gray-50 text-center">
+    <p class="section-label mb-3">Events</p>
+    <h2 class="text-3xl mb-6">Orama Market</h2>
+    <p class="text-gray-600 mb-10">From online to real-life events</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
+
+      <a href="events.html" class="block card event-card">
+        <div class="overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-white">
+          <img src="images/orama1.jpg" alt="Orama Market 1" class="w-full h-[500px] md:h-[620px] object-cover object-top">
+        </div>
+      </a>
+
+      <a href="events.html" class="block card event-card">
+        <div class="overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-white">
+          <img src="images/orama2.png" alt="Orama Market 2" class="w-full h-[500px] md:h-[620px] object-cover object-top">
+        </div>
+      </a>
+
+      <a href="events.html" class="block card event-card">
+        <div class="overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-white">
+          <img src="images/orama3.png" alt="Orama Market 3" class="w-full h-[500px] md:h-[620px] object-cover object-top">
+        </div>
+      </a>
+
+    </div>
+
+    <a href="events.html" class="btn mt-10 inline-block">See More</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="py-20 text-center">
+    <p class="section-label mb-3">About</p>
+    <h2 class="text-3xl mb-6">About Zircon Zone</h2>
+    <p class="max-w-xl mx-auto text-gray-600 mb-8">
+      Modern stainless steel jewelry designed for everyday wear.
+      Elegant, durable, and made to shine.
     </p>
+    <a href="about.html" class="btn">Read More</a>
+  </section>
 
-    <p class="text-gray-600 max-w-2xl mx-auto mb-12 leading-8 text-lg">
-      Zircon Zone is an online jewelry shop offering carefully selected pieces
-      designed for everyday shine.
+  <!-- ORDERS -->
+  <section class="py-20 bg-gray-50 text-center">
+    <p class="section-label mb-3">Orders</p>
+    <h2 class="text-3xl mb-6">Order via social media</h2>
+
+    <div class="flex justify-center gap-4 flex-wrap">
+      <a href="https://www.instagram.com/zirconzone" target="_blank" class="btn">
+        <i class="fa-brands fa-instagram"></i>
+        Instagram
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" class="btn">
+        <i class="fa-brands fa-facebook-f"></i>
+        Facebook
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-10">
+    <div class="flex justify-center gap-6 text-xl mb-4">
+      <a href="https://www.instagram.com/zirconzone" target="_blank" class="social-icon">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" class="social-icon">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+
+      <a href="https://www.tiktok.com/@zircon_zone" target="_blank" class="social-icon">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+
+      <a href="mailto:zirconzonejewelry@gmail.com" class="social-icon">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
+
+    <p class="text-center text-gray-400 text-sm">
+      © 2026 Zircon Zone. All rights reserved.
     </p>
+  </footer>
 
-    <a href="collection.html" class="btn text-lg px-8 py-4">
-      Explore Collection
-    </a>
-  </div>
-</section>
+  <script>
+    function toggleMenu(){
+      const menu = document.getElementById("mobileMenu");
+      const icon = document.querySelector("#menuBtn i");
 
-<!-- NEW IN -->
-<section class="py-20 text-center">
-  <p class="section-label mb-3">New In</p>
-  <h2 class="text-3xl mb-10">New Arrivals</h2>
+      menu.classList.toggle("hidden");
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto">
-
-    <a href="collection.html#product-n4" class="block card product-card">
-      <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
-        <img src="images/N4.png" alt="Necklace 2" class="w-full aspect-[3/4] object-cover">
-      </div>
-    </a>
-
-    <a href="collection.html#product-b4" class="block card product-card">
-      <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
-        <img src="images/B4.png" alt="Bracelet 2 for men" class="w-full aspect-[3/4] object-cover">
-      </div>
-    </a>
-
-    <a href="collection.html#product-b10" class="block card product-card">
-      <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
-        <img src="images/S11.png" alt="Set 6" class="w-full aspect-[3/4] object-cover">
-      </div>
-    </a>
-
-    <a href="collection.html#product-e45" class="block card product-card">
-      <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
-        <img src="images/E42.png" alt="Earrings 5" class="w-full aspect-[3/4] object-cover">
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<!-- BEST SELLERS -->
-<section class="py-20 bg-gray-50 text-center">
-  <p class="section-label mb-3">Best Sellers</p>
-  <h2 class="text-3xl mb-10">Most Loved</h2>
-
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto">
-    
-    <div class="card">
-      <img src="images/B7.png" alt="Bracelet 1" class="w-full h-96 object-cover">
-    </div>
-
-    <div class="card">
-      <img src="images/S16.jpg" alt="Set 4" class="w-full h-96 object-cover">
-    </div>
-
-    <div class="card">
-      <img src="images/E46.png" alt="Earrings 11" class="w-full h-96 object-cover">
-    </div>
-
-    <div class="card">
-      <img src="images/N1.png" alt="Necklace 1" class="w-full h-96 object-cover">
-    </div>
-
-  </div>
-</section>
-
-  </div>
-</section>
-  
-
-<!-- CUSTOMERS -->
-<section class="py-20 text-center">
-  <p class="section-label mb-3">Customers</p>
-  <h2 class="text-3xl mb-10">Happy Customers</h2>
-
-  <div class="grid md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
-    
-    <a href="customers.html#customer1" class="block card customer-card">
-      <div class="overflow-hidden rounded-lg">
-        <img src="images/customer1.jpg" class="rounded-lg w-full" alt="Customer 1">
-      </div>
-    </a>
-
-    <a href="customers.html#customer2" class="block card customer-card">
-      <div class="overflow-hidden rounded-lg">
-        <img src="images/customer2.jpg" class="rounded-lg w-full" alt="Customer 2">
-      </div>
-    </a>
-
-    <a href="customers.html#customer3" class="block card customer-card">
-      <div class="overflow-hidden rounded-lg">
-        <img src="images/customer3.jpg" class="rounded-lg w-full" alt="Customer 3">
-      </div>
-    </a>
-
-  </div>
-
-  <a href="customers.html" class="btn mt-10 inline-block">View More</a>
-</section>
-
-<!-- EVENTS -->
-<section class="py-20 bg-gray-50 text-center">
-  <p class="section-label mb-3">Events</p>
-  <h2 class="text-3xl mb-6">Orama Market</h2>
-  <p class="text-gray-600 mb-10">From online to real-life events</p>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
-
-    <a href="events.html" class="block card event-card">
-      <div class="overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-white">
-        <img src="images/orama1.jpg" alt="Orama Market 1" class="w-full h-[500px] md:h-[620px] object-cover object-top">
-      </div>
-    </a>
-
-    <a href="events.html" class="block card event-card">
-      <div class="overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-white">
-        <img src="images/orama2.png" alt="Orama Market 2" class="w-full h-[500px] md:h-[620px] object-cover object-top">
-      </div>
-    </a>
-
-    <a href="events.html" class="block card event-card">
-      <div class="overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-white">
-        <img src="images/orama3.png" alt="Orama Market 3" class="w-full h-[500px] md:h-[620px] object-cover object-top">
-      </div>
-    </a>
-
-  </div>
-
-  <a href="events.html" class="btn mt-10 inline-block">See More</a>
-</section>
-
-<!-- ABOUT -->
-<section class="py-20 text-center">
-  <p class="section-label mb-3">About</p>
-  <h2 class="text-3xl mb-6">About Zircon Zone</h2>
-  <p class="max-w-xl mx-auto text-gray-600 mb-8">
-    Modern stainless steel jewelry designed for everyday wear.
-    Elegant, durable, and made to shine.
-  </p>
-  <a href="about.html" class="btn">Read More</a>
-</section>
-
-<!-- ORDERS -->
-<section class="py-20 bg-gray-50 text-center">
-  <p class="section-label mb-3">Orders</p>
-  <h2 class="text-3xl mb-6">Order via social media</h2>
-
-  <div class="flex justify-center gap-4 flex-wrap">
-    <a href="https://www.instagram.com/zirconzone" target="_blank" class="btn">
-      <i class="fa-brands fa-instagram"></i>
-      Instagram
-    </a>
-
-    <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" class="btn">
-      <i class="fa-brands fa-facebook-f"></i>
-      Facebook
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-black text-white py-10">
-  <div class="flex justify-center gap-6 text-xl mb-4">
-    <a href="https://www.instagram.com/zirconzone" target="_blank" class="social-icon">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-
-    <a href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" class="social-icon">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-
-    <a href="https://www.tiktok.com/@zircon_zone" target="_blank" class="social-icon">
-      <i class="fa-brands fa-tiktok"></i>
-    </a>
-
-    <a href="mailto:zirconzonejewelry@gmail.com" class="social-icon">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
-  </div>
-
-  <p class="text-center text-gray-400 text-sm">
-    © 2026 Zircon Zone. All rights reserved.
-  </p>
-</footer>
-
-<script>
-function toggleMenu(){
-  const menu = document.getElementById("mobileMenu");
-  const icon = document.querySelector("#menuBtn i");
-
-  menu.classList.toggle("hidden");
-
-  if(menu.classList.contains("hidden")){
-    icon.classList.remove("fa-xmark");
-    icon.classList.add("fa-bars");
-  } else {
-    icon.classList.remove("fa-bars");
-    icon.classList.add("fa-xmark");
-  }
-}
-</script>
+      if(menu.classList.contains("hidden")){
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+      } else {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+      }
+    }
+  </script>
 
 </body>
 </html>
