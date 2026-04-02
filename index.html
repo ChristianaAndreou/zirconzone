@@ -17,6 +17,10 @@
   --accent-soft:#fde7f1;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:Montserrat,sans-serif;
 }
@@ -81,6 +85,18 @@ h1,h2,h3,h4{
   transform:translateY(-5px);
 }
 
+.product-card img,
+.event-card img,
+.customer-card img{
+  transition:transform .35s ease;
+}
+
+.product-card:hover img,
+.event-card:hover img,
+.customer-card:hover img{
+  transform:scale(1.03);
+}
+
 .social-icon{
   color:#9ca3af;
   transition:.25s;
@@ -129,11 +145,8 @@ h1,h2,h3,h4{
 </header>
 
 <!-- HERO -->
-<!-- HERO -->
 <section class="min-h-[calc(100vh-64px)] flex items-center justify-center text-center bg-gradient-to-br from-white via-gray-50 to-white">
-  
   <div class="px-4 max-w-5xl mx-auto">
-
     <h1 class="text-6xl md:text-7xl lg:text-8xl mb-6 leading-tight">
       Zircon Zone
     </h1>
@@ -150,9 +163,7 @@ h1,h2,h3,h4{
     <a href="collection.html" class="btn text-lg px-8 py-4">
       Explore Collection
     </a>
-
   </div>
-
 </section>
 
 <!-- NEW IN -->
@@ -161,18 +172,31 @@ h1,h2,h3,h4{
   <h2 class="text-3xl mb-10">Fresh Arrivals</h2>
 
   <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-7xl mx-auto">
-    <div class="card">
-      <img src="images/S7.png" alt="Set 1">
-    </div>
-    <div class="card">
-      <img src="images/N1.png" alt="Necklace 1">
-    </div>
-    <div class="card">
-      <img src="images/E38.png" alt="Earrings 1">
-    </div>
-    <div class="card">
-      <img src="images/R3.png" alt="Ring 1">
-    </div>
+
+    <a href="collection.html#product-n4" class="block card product-card">
+      <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+        <img src="images/N4.png" alt="Necklace 2" class="w-full aspect-[3/4] object-cover">
+      </div>
+    </a>
+
+    <a href="collection.html#product-b4" class="block card product-card">
+      <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+        <img src="images/B4.png" alt="Bracelet 2 for men" class="w-full aspect-[3/4] object-cover">
+      </div>
+    </a>
+
+    <a href="collection.html#product-b10" class="block card product-card">
+      <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+        <img src="images/B10.png" alt="Bracelet 3" class="w-full aspect-[3/4] object-cover">
+      </div>
+    </a>
+
+    <a href="collection.html#product-e45" class="block card product-card">
+      <div class="overflow-hidden rounded-xl bg-white shadow-sm border border-gray-100">
+        <img src="images/E45.png" alt="Earrings 18" class="w-full aspect-[3/4] object-cover">
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -192,7 +216,7 @@ h1,h2,h3,h4{
       <img src="images/B7.png" alt="Bracelet 1">
     </div>
     <div class="card">
-      <img src="images/N4.png" alt="Necklace 2">
+      <img src="images/N1.png" alt="Necklace 1">
     </div>
   </div>
 </section>
@@ -204,16 +228,22 @@ h1,h2,h3,h4{
 
   <div class="grid md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
     
-    <a href="customers.html#customer1" class="block card">
-      <img src="images/customer1.jpg" class="rounded-lg hover:scale-105 transition">
+    <a href="customers.html#customer1" class="block card customer-card">
+      <div class="overflow-hidden rounded-lg">
+        <img src="images/customer1.jpg" class="rounded-lg w-full" alt="Customer 1">
+      </div>
     </a>
 
-    <a href="customers.html#customer2" class="block card">
-      <img src="images/customer2.jpg" class="rounded-lg hover:scale-105 transition">
+    <a href="customers.html#customer2" class="block card customer-card">
+      <div class="overflow-hidden rounded-lg">
+        <img src="images/customer2.jpg" class="rounded-lg w-full" alt="Customer 2">
+      </div>
     </a>
 
-    <a href="customers.html#customer3" class="block card">
-      <img src="images/customer3.jpg" class="rounded-lg hover:scale-105 transition">
+    <a href="customers.html#customer3" class="block card customer-card">
+      <div class="overflow-hidden rounded-lg">
+        <img src="images/customer3.jpg" class="rounded-lg w-full" alt="Customer 3">
+      </div>
     </a>
 
   </div>
@@ -227,10 +257,26 @@ h1,h2,h3,h4{
   <h2 class="text-3xl mb-6">Orama Market</h2>
   <p class="text-gray-600 mb-10">From online to real-life events</p>
 
-  <div class="grid md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
-    <img src="images/bazaar1.jpg" alt="Orama Market 1" class="rounded-lg">
-    <img src="images/bazaar2.jpg" alt="Orama Market 2" class="rounded-lg">
-    <img src="images/bazaar3.jpg" alt="Orama Market 3" class="rounded-lg">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
+
+    <a href="events.html" class="block card event-card">
+      <div class="overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-white">
+        <img src="images/orama1.jpg" alt="Orama Market 1" class="w-full h-[500px] md:h-[620px] object-cover object-top">
+      </div>
+    </a>
+
+    <a href="events.html" class="block card event-card">
+      <div class="overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-white">
+        <img src="images/orama2.png" alt="Orama Market 2" class="w-full h-[500px] md:h-[620px] object-cover object-top">
+      </div>
+    </a>
+
+    <a href="events.html" class="block card event-card">
+      <div class="overflow-hidden rounded-2xl shadow-sm border border-gray-100 bg-white">
+        <img src="images/orama3.png" alt="Orama Market 3" class="w-full h-[500px] md:h-[620px] object-cover object-top">
+      </div>
+    </a>
+
   </div>
 
   <a href="events.html" class="btn mt-10 inline-block">See More</a>
