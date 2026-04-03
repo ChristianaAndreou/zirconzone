@@ -100,8 +100,8 @@ h1,h2,h3,h4{
     </a>
 
     <nav class="hidden md:flex gap-6 text-sm uppercase tracking-widest">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link active">About</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="collection.html" class="nav-link">Collection</a>
         <a href="orders.html" class="nav-link">Orders</a>
         <a href="customers.html" class="nav-link">Customers</a>
@@ -189,6 +189,30 @@ function toggleMenu(){
   }
 }
 </script>
+
+  <script>
+  function setActiveNavLink() {
+    // παίρνει το όνομα της σελίδας (πχ collection.html)
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach(link => {
+      const linkPage = link.getAttribute("href");
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setActiveNavLink();
+  });
+</script>
+  
 
 </body>
 </html>
