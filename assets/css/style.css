@@ -990,3 +990,10 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .home .cat-media { aspect-ratio: 4 / 5; }
 .home .cat-tile span { font-size: 1.25rem; }
 @media (max-width: 860px) { .home .cat-grid { width: auto; margin-inline: 0; transform: none; grid-template-columns: repeat(5, 46%); } }
+
+/* Home: ΑΚΡΙΒΩΣ ίδιο μέγεθος καρτών σε New Arrivals, Most Loved και Shop by Category */
+.home { --cat-w: min(100vw - 2 * var(--gutter), calc((min(100vw - 2 * var(--gutter), 1100px) - 48px) / 4 * 5 + 64px)); --card: calc((var(--cat-w) - 64px) / 5); }
+@media (min-width: 861px) {
+  .home .product-grid[data-badge] { grid-template-columns: repeat(4, var(--card)); justify-content: center; column-gap: 16px; }
+  .home .cat-grid { width: var(--cat-w); grid-template-columns: repeat(5, var(--card)); }
+}
