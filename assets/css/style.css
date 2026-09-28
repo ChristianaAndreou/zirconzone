@@ -834,3 +834,10 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 /* Orders: το απαλό ροζ ξεκινάει ακριβώς κάτω από τις γραμμές (κυματιστό) */
 .page-hero-wrap--soft { overflow: hidden; }
 .page-hero-wrap--soft + .section--pink { margin-top: -1px; padding-top: clamp(20px, 3vw, 40px); }
+
+/* Πιο μικρό μαύρο footer */
+.site-footer--simple { padding-block: 22px 18px; }
+.site-footer--simple .socials { margin-bottom: 10px; gap: 12px; }
+.site-footer--simple .socials a { width: 40px; height: 40px; }
+.site-footer--simple .socials svg { width: 17px; height: 17px; }
+.site-footer--simple p { font-size: .8rem; }
