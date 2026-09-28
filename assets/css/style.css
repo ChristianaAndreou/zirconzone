@@ -822,3 +822,11 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .hero-icons .cta-icon { width: 54px; height: 54px; }
 .page-hero-wrap:has(.hero-icons) + .section--pink { margin-top: 0; }
 .page-hero:has(.hero-icons) { padding-bottom: clamp(100px, 10vw, 150px); }
+
+/* Ροζ κορυφές σελίδων: λίγο πιο μικρές */
+.page-hero { padding-top: clamp(28px, 3.4vw, 50px); padding-bottom: clamp(52px, 5.6vw, 80px); }
+.page-hero h1 { font-size: clamp(2.1rem, 4.2vw, 3.5rem); }
+.page-hero .eyebrow { margin-bottom: 12px; }
+.page-hero .lead { margin-top: 14px; }
+.page-hero:has(.hero-icons) { padding-bottom: clamp(84px, 8.5vw, 124px); }
+.hero-icons { margin-top: 20px; }
