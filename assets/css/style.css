@@ -1036,3 +1036,9 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
   .home .hero-media .float { width: 46%; left: -4%; bottom: -10%; }
 }
 @media (max-width: 860px) { .hero-wrap .dias { display: none; } }
+
+/* Home στο κινητό: χωρίς τις 2 φωτογραφίες στην κορυφή, μόνο το κείμενο */
+@media (max-width: 860px) {
+  .home .hero-media { display: none; }
+  .home .hero { padding-block: 36px 44px; }
+}
