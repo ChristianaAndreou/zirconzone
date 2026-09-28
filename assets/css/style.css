@@ -556,3 +556,6 @@ a.ugc { display: block; }
 h1 { font-size: clamp(2.4rem, 5.2vw, 4.4rem); }
 h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 .page-hero { padding-top: clamp(52px, 7vw, 96px); }
+
+/* Events: οι δύο φωτογραφίες κάτω από κάθε event στο ίδιο ύψος (ελάχιστο κόψιμο) */
+.event-gallery img { aspect-ratio: 7 / 10; height: auto; object-fit: cover; object-position: center; }
