@@ -975,3 +975,7 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .home .cat-media { aspect-ratio: 3 / 4; }
 .home .ugc img { aspect-ratio: 4 / 5; }
 .home .split-media img { aspect-ratio: 4 / 5; }
+
+/* Home > About: μόνο κείμενο, στο κέντρο */
+.home-about { text-align: center; max-width: 680px; }
+.home-about .lead { margin-inline: auto; }
