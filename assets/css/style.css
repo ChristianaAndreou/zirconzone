@@ -479,3 +479,13 @@ p { margin: 0; }
 }
 .section--sand + .wave-fill { background: var(--sand); }
 .section--paper + .wave-fill { background: var(--paper); }
+
+/* Header: logo αριστερά, μενού + Order δεξιά */
+.header-inner { display: flex; align-items: center; gap: 40px; }
+.header-inner .nav { margin-left: auto; }
+.header-right { margin-left: 0; }
+@media (max-width: 860px) {
+  .header-inner { display: flex; gap: 18px; }
+  .logo { grid-column: auto; justify-self: auto; }
+  .header-right { margin-left: auto; gap: 18px; }
+}
