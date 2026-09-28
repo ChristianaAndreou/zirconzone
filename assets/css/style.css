@@ -997,3 +997,7 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
   .home .product-grid[data-badge] { grid-template-columns: repeat(4, var(--card)); justify-content: center; column-gap: 16px; }
   .home .cat-grid { width: var(--cat-w); grid-template-columns: repeat(5, var(--card)); }
 }
+
+/* Home hero: μεγαλύτερη η μικρή φωτογραφία (Earrings 19), να κατεβαίνει λίγο πιο χαμηλά */
+.home .hero-media .float { width: 50%; left: -18%; bottom: -8%; }
+@media (max-width: 860px) { .home .hero-media .float { width: 44%; left: -10%; bottom: -6%; } }
