@@ -830,3 +830,7 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .page-hero .lead { margin-top: 14px; }
 .page-hero:has(.hero-icons) { padding-bottom: clamp(84px, 8.5vw, 124px); }
 .hero-icons { margin-top: 20px; }
+
+/* Orders: το απαλό ροζ ξεκινάει ακριβώς κάτω από τις γραμμές (κυματιστό) */
+.page-hero-wrap--soft { overflow: hidden; }
+.page-hero-wrap--soft + .section--pink { margin-top: -1px; padding-top: clamp(20px, 3vw, 40px); }
