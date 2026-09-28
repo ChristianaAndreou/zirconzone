@@ -726,3 +726,8 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 
 /* About: λιγότερο κενό πριν την αλυσίδα */
 .about-brush { padding-top: clamp(110px, 11vw, 160px); padding-bottom: clamp(70px, 8vw, 120px); }
+
+/* Orders: ροζ φόντο στις ερωτήσεις */
+.section--pink { background: var(--accent-soft); }
+.section--pink .faq details { border-bottom-color: rgba(216, 78, 156, .25); }
+.section--pink .faq summary::after { color: var(--accent); }
