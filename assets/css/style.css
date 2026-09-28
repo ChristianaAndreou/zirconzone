@@ -816,3 +816,9 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 #orama { padding-top: 0; }
 .events-list { padding-top: clamp(8px, 1.5vw, 20px); }
 .page-hero-wrap:has(+ .events-list) { margin-bottom: 0; }
+
+/* Orders: ίσιο από πάνω, κυματιστό με γραμμές από κάτω + εικονίδια */
+.hero-icons { display: flex; justify-content: center; gap: 14px; margin-top: 26px; position: relative; z-index: 1; }
+.hero-icons .cta-icon { width: 54px; height: 54px; }
+.page-hero-wrap:has(.hero-icons) + .section--pink { margin-top: 0; }
+.page-hero:has(.hero-icons) { padding-bottom: clamp(100px, 10vw, 150px); }
