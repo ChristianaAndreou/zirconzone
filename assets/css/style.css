@@ -841,3 +841,15 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .site-footer--simple .socials a { width: 40px; height: 40px; }
 .site-footer--simple .socials svg { width: 17px; height: 17px; }
 .site-footer--simple p { font-size: .8rem; }
+
+/* Ίδιο ύψος κύματος σε όλες τις σελίδες (σταθερό, όχι ποσοστό) + λιγότερο κενό στο Orders */
+.page-hero-wrap { --wave-h: clamp(70px, 8.5vw, 130px); background: linear-gradient(to bottom, var(--accent) 0, var(--accent) calc(100% - var(--wave-h) + 2px), transparent calc(100% - var(--wave-h) + 2px)); }
+.page-hero-wrap .wave-lines, .page-hero-wrap .hero-fill { height: var(--wave-h); bottom: 0; }
+.page-hero-wrap--soft .hero-soft { height: var(--wave-h); bottom: 0; }
+.page-hero { padding-bottom: calc(var(--wave-h) * .75); }
+.page-hero:has(.hero-icons) { padding-bottom: calc(var(--wave-h) * .75); }
+.hero-icons { margin-top: 18px; }
+@media (max-width: 860px) {
+  .page-hero-wrap { --wave-h: 64px; }
+  .page-hero-wrap .wave-lines, .page-hero-wrap .hero-fill, .page-hero-wrap--soft .hero-soft { height: var(--wave-h); bottom: 0; }
+}
