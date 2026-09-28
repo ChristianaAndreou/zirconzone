@@ -945,3 +945,8 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .home .split { max-width: 900px; margin-inline: auto; gap: clamp(28px, 5vw, 70px); }
 .home .split-media img { aspect-ratio: 1 / 1; }
 @media (max-width: 860px) { .home .hero-media { max-width: 360px; justify-self: center; } }
+
+/* Home > About: μικρότερη φωτογραφία */
+.home .split { grid-template-columns: 320px 1fr; max-width: 820px; }
+.home .split-media img { max-width: 320px; }
+@media (max-width: 860px) { .home .split { grid-template-columns: 1fr; } .home .split-media img { max-width: 280px; margin-inline: auto; } }
