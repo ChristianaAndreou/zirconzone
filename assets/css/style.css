@@ -696,15 +696,3 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 .cta-band p { margin: 12px auto 26px; }
 .wave-fill { height: clamp(36px, 5vw, 80px); }
 
-/* About: τα διαμαντάκια κινούνται σε σχήμα Z (όπως τα Z του logo) */
-.jewel .spark { animation: z-path 10s ease-in-out infinite; opacity: .85; scale: 1; }
-.jewel .k2 { animation-delay: -2s; } .jewel .k3 { animation-delay: -4s; animation-duration: 12s; }
-.jewel .k4 { animation-delay: -6s; animation-duration: 11s; } .jewel .k5 { animation-delay: -8s; }
-@keyframes z-path {
-  0%   { translate: 0 0; }
-  25%  { translate: 46px 0; }      /* πάνω γραμμή του Z → */
-  50%  { translate: 0 40px; }      /* διαγώνιος ↙ */
-  75%  { translate: 46px 40px; }   /* κάτω γραμμή του Z → */
-  100% { translate: 0 0; }         /* επιστροφή */
-}
-@media (prefers-reduced-motion: reduce) { .jewel .spark { animation: none; } }
