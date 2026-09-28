@@ -696,3 +696,33 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 .cta-band p { margin: 12px auto 26px; }
 .wave-fill { height: clamp(36px, 5vw, 80px); }
 
+
+/* Λιγότερο άδειο λευκό στις κορυφές των σελίδων */
+.page-hero { padding-top: clamp(40px, 5vw, 70px); padding-bottom: clamp(60px, 7vw, 96px); }
+.hero { min-height: auto; padding-block: clamp(32px, 4vw, 56px) clamp(56px, 6vw, 90px); }
+
+/* Διαμαντάκια του logo που λάμπουν στις κορυφές των σελίδων */
+.dias { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.dia { position: absolute; display: block; transform: translate(-50%, -50%); animation: dia-twinkle 5.5s ease-in-out infinite; }
+.dia svg { display: block; width: 100%; height: auto; }
+.dia.d1 { animation-delay: -1.1s; } .dia.d2 { animation-delay: -2.2s; } .dia.d3 { animation-delay: -3.3s; } .dia.d4 { animation-delay: -4.4s; }
+@keyframes dia-twinkle { 0%, 100% { scale: .7; filter: opacity(.35); } 50% { scale: 1.1; filter: opacity(1); } }
+@media (max-width: 700px) { .dia:nth-child(n+4) { display: none; } }
+@media (prefers-reduced-motion: reduce) { .dia { animation: none; } }
+
+/* Μικρότερο ροζ πλαίσιο με μόνο εικονίδια Instagram / Facebook */
+.cta-band.section { padding-block: clamp(30px, 3.6vw, 52px); }
+.cta-band h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+.cta-band .eyebrow { margin-bottom: 10px; }
+.cta-band p { margin: 10px auto 20px; }
+.cta-band .actions { gap: 14px; }
+.cta-icon {
+  width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center;
+  background: #fff; color: var(--accent); transition: transform .3s var(--ease), background .3s var(--ease), color .3s var(--ease);
+}
+.cta-icon svg { width: 22px; height: 22px; }
+.cta-icon:hover { background: var(--ink); color: #fff; transform: translateY(-3px); }
+.wave-fill { height: clamp(28px, 4vw, 60px); }
+
+/* About: λιγότερο κενό πριν την αλυσίδα */
+.about-brush { padding-top: clamp(110px, 11vw, 160px); padding-bottom: clamp(70px, 8vw, 120px); }
