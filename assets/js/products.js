@@ -7,6 +7,20 @@
 
 const IMG = (n) => `images/web/${n}.webp`;
 
+/* Ασφάλεια: αν λείπει η ελαφριά (WebP) έκδοση μιας νέας φωτογραφίας,
+   δείχνουμε αυτόματα το αρχικό αρχείο από τον φάκελο images (png/jpg/jpeg). */
+document.addEventListener("error", (e) => {
+  const img = e.target;
+  if (!(img instanceof HTMLImageElement)) return;
+  const m = img.getAttribute("src")?.match(/images\/web\/(.+)\.webp$/) || img.getAttribute("src")?.match(/images\/(.+)\.(png|jpg)$/);
+  if (!m) return;
+  const tried = (img.dataset.tried || "").split(",").filter(Boolean);
+  const next = ["png", "jpg", "jpeg", "PNG", "JPG"].find((ext) => !tried.includes(ext));
+  if (!next) return;
+  tried.push(next); img.dataset.tried = tried.join(",");
+  img.src = `images/${m[1]}.${next}`;
+}, true);
+
 const PRODUCTS = [
   { id: "set-1", name: "Set 1", price: 12, category: "Sets", images: ["S7"] },
   { id: "set-2", name: "Set 2", price: 20, category: "Sets", images: ["S2", "S10", "S1"] },
