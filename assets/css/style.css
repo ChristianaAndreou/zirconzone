@@ -681,3 +681,8 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 
 /* Home > Markets: οι δύο φωτογραφίες στο ίδιο ύψος */
 .event-teaser img { aspect-ratio: 4 / 7; height: auto; object-fit: cover; object-position: center; }
+
+/* Collection: μεγαλύτερα γράμματα στα φίλτρα και στο Sort */
+.filter-btn { font-size: .82rem; padding: 11px 20px; }
+.sort { font-size: .8rem; }
+.sort select { font-size: .95rem; }
