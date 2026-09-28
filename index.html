@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=73">
+  <link rel="stylesheet" href="assets/css/style.css?v=74">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -142,9 +142,15 @@
           <div><span class="eyebrow">Events</span><h2>Markets</h2><p class="lead">From online presence to real-life events.</p></div>
           <a href="events.html" class="link-arrow">See More</a>
         </div>
-        <div class="event-teasers">
-          <a href="events.html#orama" class="event-teaser reveal"><img src="images/web/orama1.webp" alt="Orama Market" loading="lazy"><div class="overlay"><span>29 | November | 2025</span><h3>Orama Market</h3></div></a>
-          <a href="events.html#fyf" class="event-teaser reveal"><img src="images/web/FYF1.webp" alt="For You(th) Festival" loading="lazy"><div class="overlay"><span>9 | May | 2026</span><h3>For You(th) Festival</h3></div></a>
+        <div class="market-cards">
+          <a href="events.html#orama" class="market-card reveal">
+            <div class="mc-img"><img src="images/web/orama1.webp" alt="Orama Market" loading="lazy"></div>
+            <div class="mc-body"><span class="mc-date">29 | November | 2025</span><h3>Orama Market</h3><span class="link-arrow">See More</span></div>
+          </a>
+          <a href="events.html#fyf" class="market-card reveal">
+            <div class="mc-img"><img src="images/web/FYF1.webp" alt="For You(th) Festival" loading="lazy"></div>
+            <div class="mc-body"><span class="mc-date">9 | May | 2026</span><h3>For You(th) Festival</h3><span class="link-arrow">See More</span></div>
+          </a>
         </div>
       </div>
     </section>
@@ -190,9 +196,9 @@
     </div>
     <p>© 2026 Zircon Zone. All rights reserved.</p>
   </footer>
-  <script src="assets/js/main.js?v=73"></script>
+  <script src="assets/js/main.js?v=74"></script>
 
-  <script src="assets/js/products.js?v=73"></script>
+  <script src="assets/js/products.js?v=74"></script>
   <script>
     document.querySelectorAll(".product-grid[data-badge]").forEach((grid) => {
       grid.innerHTML = PRODUCTS.filter((p) => p.badge === grid.dataset.badge).slice(0, 4).map(productCard).join("");
