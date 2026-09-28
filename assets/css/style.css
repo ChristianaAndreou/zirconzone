@@ -739,3 +739,8 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 .faq summary { padding: 18px 0; }
 .faq details p { padding-bottom: 18px; }
 .channels-wrap { padding-bottom: clamp(44px, 5vw, 72px) !important; }
+
+/* ΔΟΚΙΜΗ: ροζ φόντο στην κορυφή των εσωτερικών σελίδων (όχι στο Home) */
+.page-hero-wrap { background: var(--accent-soft); }
+.page-hero-wrap .wave-lines { opacity: .9; }
+.page-hero-wrap + section.container, .page-hero-wrap + .toolbar { margin-top: 0; } #orama { padding-top: clamp(40px, 5vw, 70px); }
