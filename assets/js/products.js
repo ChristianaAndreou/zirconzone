@@ -45,7 +45,7 @@ const PRODUCTS = [
   { id: "earrings-16", name: "Earrings 16", price: 15, category: "Earrings", images: ["E49", "E3"] },
   { id: "earrings-17", name: "Earrings 17", price: 20, category: "Earrings", images: ["E18", "E17"] },
   { id: "earrings-18", name: "Earrings 18", price: 20, category: "Earrings", images: ["E45", "E32"] },
-  { id: "earrings-19", name: "Earrings 19", price: 20, category: "Earrings", images: ["E19B","E34"] },
+  { id: "earrings-19", name: "Earrings 19", price: 20, category: "Earrings", images: ["E19B", "E34"] },
   { id: "earrings-20", name: "Earrings 20", price: 14, category: "Earrings", images: ["E39", "WE1"] },
   { id: "earrings-21", name: "Earrings 21", price: 20, category: "Earrings", images: ["EB1", "EB2"] },
   { id: "earrings-22", name: "Earrings 22", price: 20, category: "Earrings", images: ["E15"] },
