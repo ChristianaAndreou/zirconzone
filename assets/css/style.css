@@ -811,3 +811,8 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .wave-fill + .orders-band { margin-top: -2px; box-shadow: 0 -4px 0 var(--accent); }
 .orders-band { padding-block: clamp(36px, 4.5vw, 64px) clamp(44px, 5vw, 72px); }
 .orders-band + .section--pink { background: var(--accent-soft); }
+
+/* Events: λιγότερο κενό κάτω από την ροζ κορυφή */
+#orama { padding-top: 0; }
+.events-list { padding-top: clamp(8px, 1.5vw, 20px); }
+.page-hero-wrap:has(+ .events-list) { margin-bottom: 0; }
