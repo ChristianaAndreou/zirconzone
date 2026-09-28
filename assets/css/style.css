@@ -1027,3 +1027,12 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 /* Home hero: η μικρή φωτογραφία πιο αριστερά, να φαίνεται το κολιέ */
 .home .hero-media .float { width: 40%; left: -26%; bottom: -8%; }
 @media (max-width: 860px) { .home .hero-media .float { width: 38%; left: -12%; bottom: -8%; } }
+
+/* Home hero: μεγαλύτερα σκουλαρίκια (πιο κοντινό κάδρο), χωρίς να κρύβουν το κολιέ */
+.home .hero-media .float { aspect-ratio: 4 / 3; width: 50%; left: -32%; bottom: -6%; object-fit: cover; }
+@media (max-width: 860px) { .home .hero-media .float { width: 50%; left: -12%; bottom: -10%; } }
+@media (max-width: 860px) {
+  .home .hero-media { margin-bottom: 44px; }
+  .home .hero-media .float { width: 46%; left: -4%; bottom: -10%; }
+}
+@media (max-width: 860px) { .hero-wrap .dias { display: none; } }
