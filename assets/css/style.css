@@ -979,3 +979,14 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 /* Home > About: μόνο κείμενο, στο κέντρο */
 .home-about { text-align: center; max-width: 680px; }
 .home-about .lead { margin-inline: auto; }
+
+/* Home > Shop by Category: ίδιο μέγεθος με τις κάρτες προϊόντων από πάνω */
+.home .cat-grid {
+  max-width: none;
+  width: min(100vw - 2 * var(--gutter), calc((min(100vw - 2 * var(--gutter), 1100px) - 48px) / 4 * 5 + 64px));
+  margin-inline: 50%; transform: translateX(-50%);
+  gap: 16px;
+}
+.home .cat-media { aspect-ratio: 4 / 5; }
+.home .cat-tile span { font-size: 1.25rem; }
+@media (max-width: 860px) { .home .cat-grid { width: auto; margin-inline: 0; transform: none; grid-template-columns: repeat(5, 46%); } }
