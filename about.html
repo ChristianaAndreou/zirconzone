@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=39">
+  <link rel="stylesheet" href="assets/css/style.css?v=41">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -72,12 +72,11 @@
     </section>
 
     <section class="about-brush">
+      <svg class="chain-svg" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true"><g class="necklace">
+          <path class="chain" d="M-20,154 C240,91 460,217 760,140 C1040,70 1220,126 1460,84" stroke="#d84e9c" stroke-width="7" vector-effect="non-scaling-stroke" fill="none" stroke-linecap="round" stroke-dasharray="14 9" opacity=".55"/>
+          <path class="chain" d="M-20,154 C240,91 460,217 760,140 C1040,70 1220,126 1460,84" stroke="#fff" stroke-width="2.4" vector-effect="non-scaling-stroke" fill="none" stroke-linecap="round" stroke-dasharray="14 9"/>
+        </g></svg>
       <svg class="jewel" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <!-- κολιέ-αλυσίδα που «κρέμεται» στην κορυφή, με μενταγιόν διαμάντι -->
-        <g class="necklace">
-          <path class="chain" d="M-20,114 C240,51 460,177 760,100 C1040,30 1220,86 1460,44" stroke="#d84e9c" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="14 9" opacity=".55"/>
-          <path class="chain" d="M-20,114 C240,51 460,177 760,100 C1040,30 1220,86 1460,44" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-dasharray="14 9"/>
-        </g>
         <!-- λάμψεις -->
         <g fill="#d84e9c">
           <path class="spark k1" transform="translate(250 250) scale(0.72)" d="M-13,-17 H13 Q15,-17 16,-15.5 L20,-8.5 Q21,-7 20,-5.5 L1.5,17 Q0,18.5 -1.5,17 L-20,-5.5 Q-21,-7 -20,-8.5 L-16,-15.5 Q-15,-17 -13,-17Z" stroke="#1b1918" stroke-width="3" stroke-linejoin="round"/><path class="spark k2" transform="translate(1190 260) scale(0.59)" d="M-13,-17 H13 Q15,-17 16,-15.5 L20,-8.5 Q21,-7 20,-5.5 L1.5,17 Q0,18.5 -1.5,17 L-20,-5.5 Q-21,-7 -20,-8.5 L-16,-15.5 Q-15,-17 -13,-17Z" stroke="#1b1918" stroke-width="3" stroke-linejoin="round"/><path class="spark k3" transform="translate(1110 590) scale(0.85)" d="M-13,-17 H13 Q15,-17 16,-15.5 L20,-8.5 Q21,-7 20,-5.5 L1.5,17 Q0,18.5 -1.5,17 L-20,-5.5 Q-21,-7 -20,-8.5 L-16,-15.5 Q-15,-17 -13,-17Z" stroke="#1b1918" stroke-width="3" stroke-linejoin="round"/><path class="spark k4" transform="translate(330 440) scale(0.45)" d="M-13,-17 H13 Q15,-17 16,-15.5 L20,-8.5 Q21,-7 20,-5.5 L1.5,17 Q0,18.5 -1.5,17 L-20,-5.5 Q-21,-7 -20,-8.5 L-16,-15.5 Q-15,-17 -13,-17Z" stroke="#1b1918" stroke-width="3" stroke-linejoin="round"/><path class="spark k5" transform="translate(960 150) scale(0.39)" d="M-13,-17 H13 Q15,-17 16,-15.5 L20,-8.5 Q21,-7 20,-5.5 L1.5,17 Q0,18.5 -1.5,17 L-20,-5.5 Q-21,-7 -20,-8.5 L-16,-15.5 Q-15,-17 -13,-17Z" stroke="#1b1918" stroke-width="3" stroke-linejoin="round"/><path class="spark k2" transform="translate(520 610) scale(0.36)" d="M-13,-17 H13 Q15,-17 16,-15.5 L20,-8.5 Q21,-7 20,-5.5 L1.5,17 Q0,18.5 -1.5,17 L-20,-5.5 Q-21,-7 -20,-8.5 L-16,-15.5 Q-15,-17 -13,-17Z" stroke="#1b1918" stroke-width="3" stroke-linejoin="round"/><path class="spark k4" transform="translate(1350 360) scale(0.33)" d="M-13,-17 H13 Q15,-17 16,-15.5 L20,-8.5 Q21,-7 20,-5.5 L1.5,17 Q0,18.5 -1.5,17 L-20,-5.5 Q-21,-7 -20,-8.5 L-16,-15.5 Q-15,-17 -13,-17Z" stroke="#1b1918" stroke-width="3" stroke-linejoin="round"/>
@@ -133,9 +132,9 @@
     </div>
     <p>© 2026 Zircon Zone. All rights reserved.</p>
   </footer>
-  <script src="assets/js/main.js?v=39"></script>
+  <script src="assets/js/main.js?v=41"></script>
 
-  <script src="assets/js/products.js?v=39"></script>
+  <script src="assets/js/products.js?v=41"></script>
   <script>
     const n = document.querySelector('[data-count="pieces"]'); if (n) n.textContent = PRODUCTS.length;
     const c = document.querySelector('[data-count="categories"]'); if (c) c.textContent = new Set(PRODUCTS.map((p) => p.category)).size;

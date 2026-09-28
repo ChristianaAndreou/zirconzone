@@ -756,3 +756,8 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
   .page-hero-wrap { --fill-top: 76%; }
   .page-hero-wrap .hero-fill { height: 30%; bottom: -6%; }
 }
+.about-brush { padding-top: clamp(150px, 14vw, 200px); }
+
+/* About: η αλυσίδα απλώνεται σε όλο το πλάτος χωρίς να κόβεται */
+.about-brush .chain-svg { position: absolute; left: 0; top: 0; width: 100%; height: clamp(150px, 16vw, 230px); pointer-events: none; overflow: visible; }
+.chain-svg .necklace { transform-origin: 50% 0; transform-box: view-box; animation: sway 12s ease-in-out infinite alternate; }
