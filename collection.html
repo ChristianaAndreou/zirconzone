@@ -79,7 +79,6 @@
             <option value="price-desc">Price: high to low</option>
             <option value="new">New in</option>
             <option value="best">Best sellers</option>
-            <option value="name">Name: A to Z</option>
           </select>
         </label>
       </div>
@@ -156,7 +155,6 @@
       if (sortSel.value === "price-desc") list.sort((a, b) => b.price - a.price);
       if (sortSel.value === "new") list.sort((a, b) => (b.badge === "New") - (a.badge === "New"));
       if (sortSel.value === "best") list.sort((a, b) => (b.badge === "Best seller") - (a.badge === "Best seller"));
-      if (sortSel.value === "name") list.sort((a, b) => a.name.localeCompare(b.name, "en", { numeric: true }));
       grid.innerHTML = list.map(productCard).join("");
       filters.querySelectorAll(".filter-btn").forEach((b) => {
         const on = b.dataset.c === current;
