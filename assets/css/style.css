@@ -575,3 +575,11 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
   .feature + .feature::before { left: 30%; right: 30%; top: 0; bottom: auto; width: auto; height: 1px; }
   .feature { padding-block: 32px; }
 }
+
+/* Orders: κάρτες επικοινωνίας με λίγο ροζ */
+.channel { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--accent); padding: 36px 32px; gap: 12px; }
+.channel svg { width: 22px; height: 22px; box-sizing: content-box; padding: 14px; border-radius: 50%; color: var(--accent); background: var(--accent-soft); transition: background .3s var(--ease), color .3s var(--ease); margin-bottom: 6px; }
+.channel strong { font-size: 1.7rem; }
+.channel span { color: var(--accent); font-size: .92rem; }
+.channel:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 18px 40px -24px rgba(216, 78, 156, .45); }
+.channel:hover svg { background: var(--accent); color: #fff; }
