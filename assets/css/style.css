@@ -908,3 +908,7 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .event-teaser img { aspect-ratio: 3 / 4; object-position: center 30%; }
 @media (max-width: 860px) { .event-teasers { grid-template-columns: 1fr 1fr; gap: 12px; } .event-teaser .overlay h3 { font-size: 1.3rem; } }
 .event-teasers { max-width: 640px; }
+
+/* Collection: η επιλεγμένη κατηγορία σε ροζ */
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
