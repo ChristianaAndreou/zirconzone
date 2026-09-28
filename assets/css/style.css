@@ -547,3 +547,7 @@ a.ugc { display: block; }
 /* Όλες οι κατηγορίες φαίνονται (χωρίς κρυφό scroll) */
 .filters { flex-wrap: wrap; overflow: visible; }
 .qv-note { font-size: .9rem; color: var(--ink-soft); } .qv-note strong { color: var(--ink); font-weight: 500; }
+
+/* Λίγο μεγαλύτερα γράμματα: μενού και ροζ ετικέτες πάνω από τους τίτλους */
+.nav a { font-size: .86rem; letter-spacing: .2em; }
+.eyebrow { font-size: .88rem; letter-spacing: .26em; }
