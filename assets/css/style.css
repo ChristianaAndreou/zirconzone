@@ -786,3 +786,28 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 .lb-close { position: absolute; top: 18px; right: 18px; width: 44px; height: 44px; border-radius: 50%; background: #fff; display: grid; place-items: center; }
 .lb-close svg { width: 18px; height: 18px; }
 .wave-lines { overflow: visible; }
+
+/* Orders: ίδιο σχέδιο με το ροζ πλαίσιο (κύματα), με τα κείμενα του Orders */
+.orders-band { position: relative; overflow: hidden; background: var(--accent); color: #fff; text-align: center; padding-block: clamp(50px, 6vw, 90px) clamp(30px, 4vw, 56px); }
+.orders-band > .container { position: relative; z-index: 1; }
+.orders-band .eyebrow { color: #fff; opacity: .85; margin-bottom: 12px; }
+.orders-band h1 { color: #fff; }
+.orders-band p { color: rgba(255, 255, 255, .92); margin: 16px auto 28px; font-size: clamp(1.02rem, 1.3vw, 1.15rem); }
+.orders-band .actions { display: flex; justify-content: center; gap: 14px; }
+.orders-band .cta-icon { width: 56px; height: 56px; }
+.orders-band .dia path { fill: #fff; }
+.orders-band + .wave-fill--down { margin-top: -2px; }
+.wave-fill--down + .section--pink { margin-top: 0; }
+
+/* Events: τίτλος για κάθε event, χωρίς μεγάλο κενό */
+.events-list { padding-top: clamp(36px, 4vw, 60px); }
+.event-name { text-align: center; font-size: clamp(2rem, 3.6vw, 2.8rem); margin: clamp(28px, 4vw, 48px) 0 0; }
+.event-name:first-child { margin-top: 0; }
+.event-name::after { content: ""; display: block; width: 48px; height: 2px; background: var(--accent); margin: 14px auto 0; }
+.events-list .event--compact { padding-block: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 36px); border-top: 0; }
+
+/* Orders: όπως το παλιό ροζ πλαίσιο (κύματα από πάνω), χωρίς διαμαντάκια */
+main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
+.wave-fill + .orders-band { margin-top: -2px; box-shadow: 0 -4px 0 var(--accent); }
+.orders-band { padding-block: clamp(36px, 4.5vw, 64px) clamp(44px, 5vw, 72px); }
+.orders-band + .section--pink { background: var(--accent-soft); }
