@@ -969,3 +969,9 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 }
 .product-tag { font-size: .7rem; }
 @media (max-width: 860px) { .home .cat-grid { grid-template-columns: repeat(5, 38%); } }
+
+/* Home: φωτογραφίες ξανά όρθιες (όχι τετράγωνες) */
+.home .product-media { aspect-ratio: 4 / 5; }
+.home .cat-media { aspect-ratio: 3 / 4; }
+.home .ugc img { aspect-ratio: 4 / 5; }
+.home .split-media img { aspect-ratio: 4 / 5; }
