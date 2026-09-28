@@ -853,3 +853,14 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
   .page-hero-wrap { --wave-h: 64px; }
   .page-hero-wrap .wave-lines, .page-hero-wrap .hero-fill, .page-hero-wrap--soft .hero-soft { height: var(--wave-h); bottom: 0; }
 }
+
+/* ===== Επαναφορά: κορυφές σελίδων σε λευκό με τις ροζ γραμμές (τέλος δοκιμής ροζ) ===== */
+.page-hero-wrap { background: none; }
+.page-hero-wrap .hero-fill, .page-hero-wrap .hero-soft { display: none; }
+.page-hero-wrap .eyebrow { color: var(--accent); opacity: 1; }
+.page-hero-wrap h1 { color: var(--ink); }
+.page-hero-wrap .lead { color: var(--ink-soft); }
+.page-hero-wrap .dia path { fill: #d84e9c; }
+.hero-icons .cta-icon { background: var(--accent-soft); color: var(--accent); }
+.hero-icons .cta-icon:hover { background: var(--accent); color: #fff; }
+.page-hero-wrap--soft + .section--pink { margin-top: 0; padding-top: clamp(44px, 5vw, 72px); }
