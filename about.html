@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=14">
+  <link rel="stylesheet" href="assets/css/style.css?v=15">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -69,20 +69,28 @@
     </div>
     </section>
 
-    <section class="section" style="padding-top:0">
-      <div class="container split about-story">
-        <div class="about-media reveal">
-          <img class="main" src="images/web/S16.webp" alt="Zircon Zone jewelry set" width="800" height="1000">
-          <img class="float" src="images/web/N1.webp" alt="Zircon Zone necklaces" width="400" height="500" loading="lazy">
-          <span class="about-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M6 4h12l3 5-9 11L3 9l3-5z"/><path d="M3 9h18M9 4l3 16M15 4l-3 16"/></svg></span>
-        </div>
-        <div class="split-body reveal">
-          <span class="eyebrow">Zircon Zone</span>
-          <p class="story-lead">Zircon Zone offers carefully selected stainless steel jewelry designed for everyday elegance and special occasions.</p>
-          <span class="story-rule" aria-hidden="true"></span>
-          <p class="lead">Each piece combines elegance, durability, and a touch of everyday shine.</p>
-          <a href="collection.html" class="btn">Collection</a>
-        </div>
+    <section class="about-brush">
+      <svg class="brush" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <filter id="rough" x="-10%" y="-20%" width="120%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.018 0.09" numOctaves="3" seed="7" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="26" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <g filter="url(#rough)" fill="none" stroke="#d84e9c" stroke-linecap="round">
+          <path class="stroke s1" d="M-60,220 C220,120 420,300 720,210 C980,130 1180,190 1500,120" stroke-width="70" opacity=".16"/>
+          <path class="stroke s2" d="M-80,560 C180,470 460,640 760,560 C1040,486 1240,600 1520,520" stroke-width="95" opacity=".12"/>
+          <path class="stroke s3" d="M980,60 C1120,140 1260,90 1480,200" stroke-width="40" opacity=".28"/>
+          <path class="stroke s4" d="M-40,420 C140,380 260,450 420,410" stroke-width="34" opacity=".26"/>
+          <path class="stroke s5" d="M1040,660 C1180,610 1300,690 1480,630" stroke-width="22" opacity=".38"/>
+        </g>
+      </svg>
+      <div class="container about-text reveal">
+        <span class="eyebrow">Zircon Zone</span>
+        <p class="story-lead">Zircon Zone offers carefully selected stainless steel jewelry designed for everyday elegance and special occasions.</p>
+        <span class="story-rule" aria-hidden="true"></span>
+        <p class="lead">Each piece combines elegance, durability, and a touch of everyday shine.</p>
+        <a href="collection.html" class="btn">Collection</a>
       </div>
     </section>
 
@@ -109,12 +117,6 @@
       <div class="container">
         <div class="section-head section-head--center reveal">
           <span class="eyebrow">Collection</span><h2>A little sparkle for <em>every</em> moment</h2>
-        </div>
-        <div class="glimpse">
-          <a href="collection.html?c=Earrings" class="reveal"><img src="images/web/E47.webp" alt="Earrings" loading="lazy"></a>
-          <a href="collection.html?c=Necklaces" class="reveal"><img src="images/web/N4.webp" alt="Necklaces" loading="lazy"></a>
-          <a href="collection.html?c=Sets" class="reveal"><img src="images/web/S11.webp" alt="Sets" loading="lazy"></a>
-          <a href="collection.html?c=Bracelets" class="reveal"><img src="images/web/B7.webp" alt="Bracelets" loading="lazy"></a>
         </div>
         <div class="stats reveal">
           <div><strong data-count="pieces">50+</strong><span>Pieces</span></div>
@@ -152,9 +154,9 @@
     </div>
     <p>© 2026 Zircon Zone. All rights reserved.</p>
   </footer>
-  <script src="assets/js/main.js?v=14"></script>
+  <script src="assets/js/main.js?v=15"></script>
 
-  <script src="assets/js/products.js?v=14"></script>
+  <script src="assets/js/products.js?v=15"></script>
   <script>
     const n = document.querySelector('[data-count="pieces"]'); if (n) n.textContent = PRODUCTS.length;
     const c = document.querySelector('[data-count="categories"]'); if (c) c.textContent = new Set(PRODUCTS.map((p) => p.category)).size;
