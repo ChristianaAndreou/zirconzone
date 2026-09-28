@@ -671,3 +671,10 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 .about-brush { padding-top: clamp(170px, 17vw, 240px); }
 @media (max-width: 700px) { .jewel .pendant { display: none; } .about-brush { padding-top: 150px; } }
 .about-text { margin-top: 30px; } @media (max-width: 700px) { .about-text { margin-top: 0; } }
+
+/* About: πιο αργή κίνηση + η δεύτερη πρόταση σε μία γραμμή */
+.jewel .necklace { animation-duration: 12s; }
+.jewel .pendant { animation-duration: 6s; }
+.jewel .spark { animation-duration: 5.5s; }
+.about-text .lead { max-width: none; }
+@media (min-width: 861px) { .about-text .lead { white-space: nowrap; } }
