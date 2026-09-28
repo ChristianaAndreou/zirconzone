@@ -731,3 +731,11 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 .section--pink { background: var(--accent-soft); }
 .section--pink .faq details { border-bottom-color: rgba(216, 78, 156, .25); }
 .section--pink .faq summary::after { color: var(--accent); }
+
+/* Orders: λιγότερο κενό στις ερωτήσεις */
+.section--pink { padding-block: clamp(44px, 5vw, 72px); }
+.section--pink .section-head { margin-bottom: clamp(18px, 2.4vw, 30px); }
+.section--pink .section-head .eyebrow { margin-bottom: 8px; }
+.faq summary { padding: 18px 0; }
+.faq details p { padding-bottom: 18px; }
+.channels-wrap { padding-bottom: clamp(44px, 5vw, 72px) !important; }
