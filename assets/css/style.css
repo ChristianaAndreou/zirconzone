@@ -875,3 +875,18 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 
 /* About: απαλό ροζ φόντο πίσω από το κείμενο με την αλυσίδα */
 .about-brush { background: var(--accent-soft); }
+
+/* Εναλλαγή απαλό ροζ / ανοιχτό γκρι στις ενότητες, για λιγότερο λευκό */
+.band--pink { background: var(--accent-soft); }
+.band--paper { background: var(--paper); }
+.band--paper > .container { padding-top: clamp(28px, 3.5vw, 48px); }
+.section--pink .product-media, .band--pink .ugc { box-shadow: 0 10px 30px -22px rgba(216, 78, 156, .45); }
+.section--pink .cat-media { background: #fff; }
+/* Events: κάθε event σε δική του ζώνη χρώματος */
+.events-list { padding: 0 !important; max-width: none; width: 100%; }
+.events-list > .event-name, .events-list > .event { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+.events-list > .event-name { padding-top: clamp(36px, 4vw, 56px); margin-top: 0; }
+.ev-band-pink { background: var(--accent-soft); }
+.ev-band-paper { background: var(--paper); }
+.ev-band-pink > *, .ev-band-paper > * { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+.ev-band-pink > .event, .ev-band-paper > .event { padding-bottom: clamp(40px, 5vw, 70px); }
