@@ -531,3 +531,18 @@ a.ugc { display: block; }
 .event-teaser .overlay span { color: var(--accent); opacity: 1; }
 .event-teaser:hover img { transform: none; }
 .event-teasers { align-items: start; }
+
+/* Footer εικονίδια: στο κέντρο, μεγαλύτερα και καθαρά */
+.site-footer--simple { display: flex; flex-direction: column; align-items: center; }
+.site-footer--simple .socials { display: flex; justify-content: center; align-items: center; gap: 16px; margin: 0 auto 20px; width: 100%; }
+.site-footer--simple .socials a {
+  width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+  border: 1px solid rgba(255, 255, 255, .35); color: #fff;
+  transition: background .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease);
+}
+.site-footer--simple .socials a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.site-footer--simple .socials svg { width: 20px; height: 20px; }
+.site-footer--simple p { text-align: center; color: rgba(255, 255, 255, .7); }
+
+/* Όλες οι κατηγορίες φαίνονται (χωρίς κρυφό scroll) */
+.filters { flex-wrap: wrap; overflow: visible; }

@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=5">
+  <link rel="stylesheet" href="assets/css/style.css?v=6">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -41,7 +41,6 @@
         <a href="events.html">Events</a>
       </nav>
       <div class="header-right">
-        <a href="https://www.instagram.com/zirconzone" target="_blank" rel="noopener" class="header-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
         <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
       </div>
     </div>
@@ -83,6 +82,9 @@
             <option value="featured">Featured</option>
             <option value="price-asc">Price: low to high</option>
             <option value="price-desc">Price: high to low</option>
+            <option value="new">New in</option>
+            <option value="best">Best sellers</option>
+            <option value="name">Name: A to Z</option>
           </select>
         </label>
       </div>
@@ -141,9 +143,9 @@
     </div>
     <p>© 2026 Zircon Zone. All rights reserved.</p>
   </footer>
-  <script src="assets/js/main.js?v=5"></script>
+  <script src="assets/js/main.js?v=6"></script>
 
-  <script src="assets/js/products.js?v=5"></script>
+  <script src="assets/js/products.js?v=6"></script>
   <script>
     const CATEGORIES = ["All", "Sets", "Earrings", "Necklaces", "Bracelets", "Rings"];
     const grid = document.getElementById("productGrid");
@@ -158,6 +160,9 @@
       let list = current === "All" ? [...PRODUCTS] : PRODUCTS.filter((p) => p.category === current);
       if (sortSel.value === "price-asc") list.sort((a, b) => a.price - b.price);
       if (sortSel.value === "price-desc") list.sort((a, b) => b.price - a.price);
+      if (sortSel.value === "new") list.sort((a, b) => (b.badge === "New") - (a.badge === "New"));
+      if (sortSel.value === "best") list.sort((a, b) => (b.badge === "Best seller") - (a.badge === "Best seller"));
+      if (sortSel.value === "name") list.sort((a, b) => a.name.localeCompare(b.name, "en", { numeric: true }));
       grid.innerHTML = list.map(productCard).join("");
       filters.querySelectorAll(".filter-btn").forEach((b) => {
         const on = b.dataset.c === current;
