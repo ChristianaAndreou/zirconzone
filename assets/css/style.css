@@ -559,3 +559,19 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 
 /* Events: οι δύο φωτογραφίες κάτω από κάθε event στο ίδιο ύψος (ελάχιστο κόψιμο) */
 .event-gallery img { aspect-ratio: 7 / 10; height: auto; object-fit: cover; object-position: center; }
+
+/* About: Stainless Steel / Modern Style / Made to Shine */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.feature { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: clamp(36px, 5vw, 56px) 20px; text-align: center; position: relative; }
+.feature + .feature::before { content: ""; position: absolute; left: 0; top: 28%; bottom: 28%; width: 1px; background: var(--line); }
+.feature-icon { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: var(--accent-soft); transition: background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease); }
+.feature-icon svg { width: 28px; height: 28px; }
+.feature h3 { font-size: clamp(1.35rem, 2vw, 1.65rem); }
+.feature h3::after { content: ""; display: block; width: 28px; height: 1px; background: var(--accent); margin: 14px auto 0; transition: width .35s var(--ease); }
+.feature:hover .feature-icon { background: var(--accent); color: #fff; transform: translateY(-3px); }
+.feature:hover h3::after { width: 56px; }
+@media (max-width: 700px) {
+  .features { grid-template-columns: 1fr; }
+  .feature + .feature::before { left: 30%; right: 30%; top: 0; bottom: auto; width: auto; height: 1px; }
+  .feature { padding-block: 32px; }
+}
