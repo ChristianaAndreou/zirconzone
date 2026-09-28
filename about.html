@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=13">
+  <link rel="stylesheet" href="assets/css/style.css?v=14">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -70,10 +70,16 @@
     </section>
 
     <section class="section" style="padding-top:0">
-      <div class="container split">
-        <div class="split-media reveal"><img src="images/web/S16.webp" alt="Zircon Zone jewelry" width="800" height="1000"></div>
+      <div class="container split about-story">
+        <div class="about-media reveal">
+          <img class="main" src="images/web/S16.webp" alt="Zircon Zone jewelry set" width="800" height="1000">
+          <img class="float" src="images/web/N1.webp" alt="Zircon Zone necklaces" width="400" height="500" loading="lazy">
+          <span class="about-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M6 4h12l3 5-9 11L3 9l3-5z"/><path d="M3 9h18M9 4l3 16M15 4l-3 16"/></svg></span>
+        </div>
         <div class="split-body reveal">
-          <p class="lead">Zircon Zone offers carefully selected stainless steel jewelry designed for everyday elegance and special occasions.</p>
+          <span class="eyebrow">Zircon Zone</span>
+          <p class="story-lead">Zircon Zone offers carefully selected stainless steel jewelry designed for everyday elegance and special occasions.</p>
+          <span class="story-rule" aria-hidden="true"></span>
           <p class="lead">Each piece combines elegance, durability, and a touch of everyday shine.</p>
           <a href="collection.html" class="btn">Collection</a>
         </div>
@@ -95,6 +101,25 @@
             <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h12l3 5-9 11L3 9l3-5z"/><path d="M3 9h18M9 4l3 16M15 4l-3 16"/></svg></span>
             <h3>Made to Shine</h3>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Collection</span><h2>A little sparkle for <em>every</em> moment</h2>
+        </div>
+        <div class="glimpse">
+          <a href="collection.html?c=Earrings" class="reveal"><img src="images/web/E47.webp" alt="Earrings" loading="lazy"></a>
+          <a href="collection.html?c=Necklaces" class="reveal"><img src="images/web/N4.webp" alt="Necklaces" loading="lazy"></a>
+          <a href="collection.html?c=Sets" class="reveal"><img src="images/web/S11.webp" alt="Sets" loading="lazy"></a>
+          <a href="collection.html?c=Bracelets" class="reveal"><img src="images/web/B7.webp" alt="Bracelets" loading="lazy"></a>
+        </div>
+        <div class="stats reveal">
+          <div><strong data-count="pieces">50+</strong><span>Pieces</span></div>
+          <div><strong data-count="categories">5</strong><span>Categories</span></div>
+          <div><strong>2</strong><span>Markets</span></div>
         </div>
       </div>
     </section>
@@ -127,7 +152,12 @@
     </div>
     <p>© 2026 Zircon Zone. All rights reserved.</p>
   </footer>
-  <script src="assets/js/main.js?v=13"></script>
+  <script src="assets/js/main.js?v=14"></script>
 
+  <script src="assets/js/products.js?v=14"></script>
+  <script>
+    const n = document.querySelector('[data-count="pieces"]'); if (n) n.textContent = PRODUCTS.length;
+    const c = document.querySelector('[data-count="categories"]'); if (c) c.textContent = new Set(PRODUCTS.map((p) => p.category)).size;
+  </script>
 </body>
 </html>
