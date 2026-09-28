@@ -1001,3 +1001,11 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 /* Home hero: μεγαλύτερη η μικρή φωτογραφία (Earrings 19), να κατεβαίνει λίγο πιο χαμηλά */
 .home .hero-media .float { width: 50%; left: -18%; bottom: -8%; }
 @media (max-width: 860px) { .home .hero-media .float { width: 44%; left: -10%; bottom: -6%; } }
+
+/* Home: ΟΛΕΣ οι φωτογραφίες στο ίδιο μέγεθος (Customers και Markets όπως οι κάρτες προϊόντων) */
+@media (min-width: 861px) {
+  .home .ugc-grid { max-width: none; grid-template-columns: repeat(3, var(--card)); justify-content: center; gap: 16px; }
+  .home .ugc img { aspect-ratio: 4 / 5; }
+  .home .event-teasers { max-width: none; grid-template-columns: repeat(2, var(--card)); justify-content: center; gap: 16px; }
+  .home .event-teaser img { aspect-ratio: 4 / 5; }
+}
