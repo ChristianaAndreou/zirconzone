@@ -864,3 +864,14 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .hero-icons .cta-icon { background: var(--accent-soft); color: var(--accent); }
 .hero-icons .cta-icon:hover { background: var(--accent); color: #fff; }
 .page-hero-wrap--soft + .section--pink { margin-top: 0; padding-top: clamp(44px, 5vw, 72px); }
+
+/* Εσωτερικές σελίδες: μία απαλή ίσια ροζ γραμμή αντί για κυματιστές */
+.page-hero-wrap .hero-rule { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: min(100% - 2 * var(--gutter), var(--container)); height: 1px; background: rgba(216, 78, 156, .35); }
+.page-hero { padding-bottom: clamp(36px, 4vw, 56px); }
+.page-hero:has(.hero-icons) { padding-bottom: clamp(40px, 4.5vw, 60px); }
+
+/* Home: οι κυματιστές γραμμές όπως στο Orders (παράλληλες, σε όλο το πλάτος) */
+.hero-wrap .wave-lines { height: clamp(70px, 8.5vw, 130px); bottom: 0; }
+
+/* About: απαλό ροζ φόντο πίσω από το κείμενο με την αλυσίδα */
+.about-brush { background: var(--accent-soft); }
