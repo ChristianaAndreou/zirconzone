@@ -761,3 +761,28 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 /* About: η αλυσίδα απλώνεται σε όλο το πλάτος χωρίς να κόβεται */
 .about-brush .chain-svg { position: absolute; left: 0; top: 0; width: 100%; height: clamp(150px, 16vw, 230px); pointer-events: none; overflow: visible; }
 .chain-svg .necklace { transform-origin: 50% 0; transform-box: view-box; animation: sway 12s ease-in-out infinite alternate; }
+
+/* Οι γραμμές στην κορυφή των σελίδων φαίνονται ολόκληρες (δεν κόβονται) */
+.page-hero-wrap { --fill-top: 58%; }
+.page-hero-wrap .wave-lines, .page-hero-wrap .hero-fill { bottom: 0; }
+@media (max-width: 860px) {
+  .page-hero-wrap { --fill-top: 70%; }
+  .page-hero-wrap .wave-lines, .page-hero-wrap .hero-fill { bottom: 0; }
+}
+
+/* Events: πιο σύντομη παρουσίαση — κείμενο + μωσαϊκό 3 φωτογραφιών */
+.event--compact { padding-block: clamp(36px, 5vw, 64px); }
+.mosaic { display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; height: clamp(420px, 42vw, 580px); }
+.mosaic-tile { padding: 0; overflow: hidden; cursor: zoom-in; display: block; }
+.mosaic-tile.t0 { grid-row: span 2; }
+.mosaic-tile img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transition: transform 1s var(--ease); }
+.mosaic-tile:hover img { transform: scale(1.04); }
+@media (max-width: 860px) { .mosaic { height: 460px; } }
+@media (max-width: 520px) { .mosaic { height: 380px; } }
+
+.lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(27, 25, 24, .88); display: grid; place-items: center; padding: 24px; opacity: 0; visibility: hidden; transition: opacity .3s var(--ease), visibility .3s; cursor: zoom-out; }
+.lightbox.open { opacity: 1; visibility: visible; }
+.lightbox img { max-width: 100%; max-height: calc(100svh - 48px); object-fit: contain; }
+.lb-close { position: absolute; top: 18px; right: 18px; width: 44px; height: 44px; border-radius: 50%; background: #fff; display: grid; place-items: center; }
+.lb-close svg { width: 18px; height: 18px; }
+.wave-lines { overflow: visible; }

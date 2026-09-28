@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=41">
+  <link rel="stylesheet" href="assets/css/style.css?v=44">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -60,8 +60,8 @@
     <svg class="hero-fill" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true"><path d="M-20,-6 L1460,-6 L1460,110 C1220,170 1040,90 760,190 C460,300 240,120 -20,210 Z" fill="#d84e9c"/></svg>
     <svg class="wave-lines" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
       <path d="M-20,210 C240,120 460,300 760,190 C1040,90 1220,170 1460,110" stroke-width="2.5" opacity=".9"/>
-      <path d="M-20,240 C260,160 500,320 800,220 C1060,136 1240,210 1460,150" stroke-width="1.5" opacity=".5"/>
-      <path d="M-20,270 C280,200 540,330 840,250 C1080,184 1260,250 1460,190" stroke-width="1" opacity=".3"/>
+      <path d="M-20,238 C260,168 500,300 800,218 C1060,140 1240,206 1460,150" stroke-width="1.5" opacity=".7"/>
+      <path d="M-20,262 C280,205 540,296 840,246 C1080,200 1260,236 1460,184" stroke-width="1.2" opacity=".55"/>
     </svg>
     
     <div class="page-hero container">
@@ -73,9 +73,13 @@
 
     <section class="container" id="orama" style="padding-bottom:var(--section)">
 
-      <article class="event">
+      <article class="event event--compact">
         <div class="split">
-          <div class="split-media reveal"><img src="images/web/orama1.webp" alt="Our First Market Experience" loading="lazy" style="object-position:top"></div>
+          <div class="mosaic reveal">
+            <button class="mosaic-tile t0" data-full="images/web/orama1.webp" aria-label="Our First Market Experience photo 1"><img src="images/web/orama1.webp" alt="Our First Market Experience" loading="lazy"></button>
+            <button class="mosaic-tile t1" data-full="images/web/orama2.webp" aria-label="Our First Market Experience photo 2"><img src="images/web/orama2.webp" alt="Our First Market Experience" loading="lazy"></button>
+            <button class="mosaic-tile t2" data-full="images/web/orama3.webp" aria-label="Our First Market Experience photo 3"><img src="images/web/orama3.webp" alt="Our First Market Experience" loading="lazy"></button>
+          </div>
           <div class="split-body reveal">
             <span class="event-date">29 | November | 2025</span>
             <h2>Our First Market Experience</h2>
@@ -84,10 +88,6 @@
             <p class="lead">Thank you for your support! ❤️</p>
           </div>
         </div>
-        <div class="event-gallery reveal">
-          <img src="images/web/orama2.webp" alt="Our First Market Experience" loading="lazy">
-          <img src="images/web/orama3.webp" alt="Our First Market Experience" loading="lazy">
-        </div>
       </article>
     </section>
 
@@ -95,9 +95,13 @@
       <div class="container">
         <div class="section-head section-head--center reveal"><h2 style="font-size:clamp(2.4rem,5.2vw,4.4rem)">For You(th) Festival</h2></div>
 
-      <article class="event">
+      <article class="event event--compact">
         <div class="split">
-          <div class="split-media reveal"><img src="images/web/FYF1.webp" alt="Our Second Market Experience" loading="lazy" style="object-position:top"></div>
+          <div class="mosaic reveal">
+            <button class="mosaic-tile t0" data-full="images/web/FYF1.webp" aria-label="Our Second Market Experience photo 1"><img src="images/web/FYF1.webp" alt="Our Second Market Experience" loading="lazy"></button>
+            <button class="mosaic-tile t1" data-full="images/web/fyf2.webp" aria-label="Our Second Market Experience photo 2"><img src="images/web/fyf2.webp" alt="Our Second Market Experience" loading="lazy"></button>
+            <button class="mosaic-tile t2" data-full="images/web/fyf3.webp" aria-label="Our Second Market Experience photo 3"><img src="images/web/fyf3.webp" alt="Our Second Market Experience" loading="lazy"></button>
+          </div>
           <div class="split-body reveal">
             <span class="event-date">9 | May | 2026</span>
             <h2>Our Second Market Experience</h2>
@@ -106,14 +110,11 @@
             <p class="lead">Thank you for choosing us! ❤️</p>
           </div>
         </div>
-        <div class="event-gallery reveal">
-          <img src="images/web/fyf2.webp" alt="Our Second Market Experience" loading="lazy">
-          <img src="images/web/fyf3.webp" alt="Our Second Market Experience" loading="lazy">
-        </div>
       </article>
       </div>
     </section>
   </main>
+  <div class="lightbox" id="lightbox" aria-hidden="true"><button class="lb-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button><img alt=""></div>
 
   <footer class="site-footer site-footer--simple">
     <div class="socials">
@@ -124,7 +125,16 @@
     </div>
     <p>© 2026 Zircon Zone. All rights reserved.</p>
   </footer>
-  <script src="assets/js/main.js?v=41"></script>
+  <script src="assets/js/main.js?v=44"></script>
 
+  <script>
+    const lb = document.getElementById("lightbox"), lbImg = lb.querySelector("img");
+    document.querySelectorAll(".mosaic-tile").forEach((t) => t.addEventListener("click", () => {
+      lbImg.src = t.dataset.full; lb.classList.add("open"); document.body.style.overflow = "hidden";
+    }));
+    const close = () => { lb.classList.remove("open"); document.body.style.overflow = ""; };
+    lb.addEventListener("click", close);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  </script>
 </body>
 </html>
