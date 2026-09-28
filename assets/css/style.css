@@ -902,3 +902,9 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 /* New Arrivals + Most Loved στο ίδιο γκρι: χωρίς διπλό κενό ανάμεσα */
 #new + .section--paper { padding-top: 0; }
 .events-list > div > .event-name { padding-top: clamp(28px, 3vw, 44px); }
+
+/* Home > Markets: μικρότερες φωτογραφίες */
+.event-teasers { max-width: 820px; margin-inline: auto; }
+.event-teaser img { aspect-ratio: 3 / 4; object-position: center 30%; }
+@media (max-width: 860px) { .event-teasers { grid-template-columns: 1fr 1fr; gap: 12px; } .event-teaser .overlay h3 { font-size: 1.3rem; } }
+.event-teasers { max-width: 640px; }
