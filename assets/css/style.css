@@ -646,3 +646,28 @@ h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 @media (prefers-reduced-motion: reduce) {
   .about-brush .stroke { animation: none; stroke-dashoffset: 0; }
 }
+
+/* About: γραμμές εμπνευσμένες από κοσμήματα (κολιέ, πέρλες, δαχτυλίδια, λάμψεις) */
+.about-brush { padding-top: clamp(150px, 16vw, 220px); }
+.about-brush .jewel { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.jewel .necklace { transform-origin: 50% 0; transform-box: view-box; animation: sway 7s ease-in-out infinite alternate; }
+.jewel .chain { stroke-dashoffset: 0; animation: chain-in 2.6s var(--ease) both; }
+.jewel .pendant { animation: pendant-swing 3.5s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 0; }
+.jewel .pearls { animation: pearls-flow 9s linear infinite; }
+.jewel .pearls.p2 { animation-duration: 13s; animation-direction: reverse; }
+.jewel .rings { transform-box: fill-box; transform-origin: center; animation: ring-float 8s ease-in-out infinite alternate; }
+.jewel .rings.r2 { animation-duration: 10s; animation-delay: -3s; }
+.jewel .spark { transform-box: fill-box; transform-origin: center; animation: twinkle 3s ease-in-out infinite; }
+.jewel .k2 { animation-delay: .8s; } .jewel .k3 { animation-delay: 1.5s; } .jewel .k4 { animation-delay: 2.1s; } .jewel .k5 { animation-delay: .4s; }
+@keyframes sway { from { transform: rotate(-.8deg); } to { transform: rotate(.8deg); } }
+@keyframes chain-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pendant-swing { from { rotate: -6deg; } to { rotate: 6deg; } }
+@keyframes pearls-flow { to { stroke-dashoffset: -260; } }
+@keyframes ring-float { from { translate: 0 0; rotate: -4deg; } to { translate: 0 -14px; rotate: 4deg; } }
+@keyframes twinkle { 0%, 100% { opacity: .15; scale: .6; } 50% { opacity: .9; scale: 1.15; } }
+@media (prefers-reduced-motion: reduce) {
+  .jewel *, .jewel .necklace { animation: none !important; }
+}
+.about-brush { padding-top: clamp(170px, 17vw, 240px); }
+@media (max-width: 700px) { .jewel .pendant { display: none; } .about-brush { padding-top: 150px; } }
+.about-text { margin-top: 30px; } @media (max-width: 700px) { .about-text { margin-top: 0; } }
