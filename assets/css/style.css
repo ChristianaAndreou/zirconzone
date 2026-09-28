@@ -912,3 +912,4 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 /* Collection: η επιλεγμένη κατηγορία σε ροζ */
 .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
 .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+#orama, #fyf, .events-list .event-name { padding-top: clamp(32px, 3.6vw, 52px) !important; }
