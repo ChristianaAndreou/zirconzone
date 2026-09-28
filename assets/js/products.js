@@ -52,11 +52,11 @@ const PRODUCTS = [
   { id: "earrings-23", name: "Earrings 23", price: 14, category: "Earrings", images: ["E50"] },
 
   { id: "bracelet-1", name: "Bracelet 1", price: 7, category: "Bracelets", images: ["B7"] },
-  { id: "bracelet-2", name: "Bracelet 2", note: "For men", price: 10, category: "Bracelets", images: ["B4"], badge: "New" },
+  { id: "bracelet-2", name: "Bracelet 2 (for men)", price: 10, category: "Bracelets", images: ["B4"], badge: "New" },
   { id: "bracelet-3", name: "Bracelet 3", price: 7, category: "Bracelets", images: ["B10", "B1"] },
   { id: "bracelet-4", name: "Bracelet 4", price: 3, category: "Bracelets", images: ["B2", "B6"] },
   { id: "bracelet-5", name: "Bracelet 5", price: 7, category: "Bracelets", images: ["B5"] },
-  { id: "bracelet-6", name: "Bracelet 6", note: "For men", price: 10, category: "Bracelets", images: ["B9"] },
+  { id: "bracelet-6", name: "Bracelet 6 (for men)", price: 10, category: "Bracelets", images: ["B9"] },
   { id: "bracelet-7", name: "Bracelet 7", price: 5, category: "Bracelets", images: ["B11"] },
 
   { id: "ring-1", name: "Ring 1", price: 10, category: "Rings", images: ["Cross"] },
@@ -77,26 +77,43 @@ const CONTACT = {
 const euro = (n) => `€${n.toFixed(2)}`;
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-/* Κάρτα προϊόντος — ίδια σε αρχική και collection */
+/* Κάρτα προϊόντος — ίδια σε αρχική και collection.
+   Τα βελάκια αλλάζουν φωτογραφία, το κλικ στην κάρτα ανοίγει quick view. */
 function productCard(p) {
-  const [first, second] = p.images;
+  const multi = p.images.length > 1;
   return `
-    <button class="product-card reveal" id="${p.id}" data-id="${p.id}" aria-label="${esc(p.name)} – quick view">
+    <div class="product-card reveal" id="${p.id}" data-id="${p.id}" data-i="0" tabindex="0" role="button" aria-label="${esc(p.name)} – quick view">
       <div class="product-media">
         ${p.badge ? `<span class="product-tag">${esc(p.badge)}</span>` : ""}
-        <img src="${IMG(first)}" alt="${esc(p.name)}" loading="lazy" width="800" height="1000">
-        ${second ? `<img class="alt" src="${IMG(second)}" alt="" loading="lazy" width="800" height="1000">` : ""}
-        <span class="product-quick">Quick view</span>
+        <img src="${IMG(p.images[0])}" alt="${esc(p.name)}" loading="lazy" width="800" height="1000">
+        ${multi ? `
+        <button class="img-arrow prev" data-dir="-1" aria-label="Previous image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="img-arrow next" data-dir="1" aria-label="Next image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button>
+        <div class="img-dots">${p.images.map((_, i) => `<span class="${i ? "" : "on"}"></span>`).join("")}</div>` : ""}
       </div>
       <div class="product-info">
         <div>
           <h3>${esc(p.name)}</h3>
-          <div class="cat">${esc(p.note || p.category.replace(/s$/, ""))}</div>
+          <div class="cat">${esc(p.category)}</div>
         </div>
         <span class="price">${euro(p.price)}</span>
       </div>
-    </button>`;
+    </div>`;
 }
+
+/* Βελάκια φωτογραφιών (δουλεύει για κάρτες που προστίθενται δυναμικά) */
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".img-arrow");
+  if (!btn) return;
+  e.stopPropagation();
+  const card = btn.closest(".product-card");
+  const p = PRODUCTS.find((x) => x.id === card.dataset.id);
+  const n = p.images.length;
+  const i = (+card.dataset.i + +btn.dataset.dir + n) % n;
+  card.dataset.i = i;
+  card.querySelector(".product-media img").src = IMG(p.images[i]);
+  card.querySelectorAll(".img-dots span").forEach((d, k) => d.classList.toggle("on", k === i));
+}, true);
 
 /* Quick view modal με gallery + κουμπιά παραγγελίας */
 function setupQuickView(root = document) {
@@ -108,7 +125,7 @@ function setupQuickView(root = document) {
 
   function open(p) {
     lastFocus = document.activeElement;
-    qv.querySelector(".qv-cat").textContent = p.note ? `${p.category} · ${p.note}` : p.category;
+    qv.querySelector(".qv-cat").textContent = p.category;
     qv.querySelector(".qv-title").textContent = p.name;
     qv.querySelector(".qv-price").textContent = euro(p.price);
     main.src = IMG(p.images[0]);
@@ -145,10 +162,16 @@ function setupQuickView(root = document) {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && qv.classList.contains("open")) close(); });
 
   root.addEventListener("click", (e) => {
+    if (e.target.closest(".img-arrow")) return;
     const card = e.target.closest(".product-card");
     if (!card) return;
     const p = PRODUCTS.find((x) => x.id === card.dataset.id);
     if (p) open(p);
+  });
+
+  root.addEventListener("keydown", (e) => {
+    const card = e.target.closest?.(".product-card");
+    if (card && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); card.click(); }
   });
 
   return { open };
