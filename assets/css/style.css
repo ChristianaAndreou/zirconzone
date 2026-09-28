@@ -546,3 +546,4 @@ a.ugc { display: block; }
 
 /* Όλες οι κατηγορίες φαίνονται (χωρίς κρυφό scroll) */
 .filters { flex-wrap: wrap; overflow: visible; }
+.qv-note { font-size: .9rem; color: var(--ink-soft); } .qv-note strong { color: var(--ink); font-weight: 500; }

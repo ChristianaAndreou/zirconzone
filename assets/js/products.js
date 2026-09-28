@@ -136,7 +136,7 @@ function setupQuickView(root = document) {
     const msg = `Hi Zircon Zone! I'd like to order ${p.name} (${euro(p.price)}).`;
     const ig = qv.querySelector(".qv-ig");
     ig.onclick = () => { navigator.clipboard?.writeText(msg).catch(() => {}); };
-    qv.querySelector(".qv-note").textContent = "We copy the product name for you — just paste it in the chat.";
+    qv.querySelector(".qv-note").innerHTML = `To order, send us the product number: <strong>${esc(p.name)}</strong>`;
     qv.classList.add("open");
     qv.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
