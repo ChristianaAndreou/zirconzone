@@ -47,7 +47,7 @@ def head(title, desc, image="N4"):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=80">
+  <link rel="stylesheet" href="assets/css/style.css?v=81">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -108,7 +108,7 @@ def footer(scripts=""):
     </div>
     <p>© 2026 Zircon Zone. All rights reserved.</p>
   </footer>
-  <script src="assets/js/main.js?v=80"></script>
+  <script src="assets/js/main.js?v=81"></script>
 {scripts}
 </body>
 </html>
@@ -261,7 +261,7 @@ index = head(None, "Zircon Zone is an online jewelry shop offering carefully sel
     </section>
   </main>
 {QUICKVIEW}""" + footer("""
-  <script src="assets/js/products.js?v=80"></script>
+  <script src="assets/js/products.js?v=81"></script>
   <script>
     document.querySelectorAll(".product-grid[data-badge]").forEach((grid) => {
       grid.innerHTML = PRODUCTS.filter((p) => p.badge === grid.dataset.badge).slice(0, 4).map(productCard).join("");
@@ -295,7 +295,7 @@ collection = head("Collection", "Discover the Zircon Zone collection: stainless 
     </div></section>
   </main>
 {QUICKVIEW}""" + footer("""
-  <script src="assets/js/products.js?v=80"></script>
+  <script src="assets/js/products.js?v=81"></script>
   <script>
     const CATEGORIES = ["All", "Sets", "Earrings", "Necklaces", "Bracelets", "Rings"];
     const grid = document.getElementById("productGrid");
@@ -372,7 +372,7 @@ about = head("About", "About Zircon Zone — carefully selected stainless steel 
     </section>
   </main>
 """ + footer("""
-  <script src="assets/js/products.js?v=80"></script>
+  <script src="assets/js/products.js?v=81"></script>
   <script>
     const n = document.querySelector('[data-count="pieces"]'); if (n) n.textContent = PRODUCTS.length;
     const c = document.querySelector('[data-count="categories"]'); if (c) c.textContent = new Set(PRODUCTS.map((p) => p.category)).size;

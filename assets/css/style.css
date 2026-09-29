@@ -1049,3 +1049,8 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
   .filters::-webkit-scrollbar { display: none; }
   .filter-btn { flex: none; padding: 8px 14px; font-size: .72rem; letter-spacing: .14em; }
 }
+
+/* Μενού κινητού: μικρότερα, πιο κομψά γράμματα */
+.mobile-menu { padding-top: 100px; gap: 2px; }
+.mobile-menu a { font-size: 1.55rem; line-height: 1.5; padding-block: 6px; border-bottom: 1px solid var(--line); }
+.mobile-menu a:last-of-type { border-bottom: 0; }
