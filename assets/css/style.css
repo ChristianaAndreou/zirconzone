@@ -1042,3 +1042,10 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
   .home .hero-media { display: none; }
   .home .hero { padding-block: 36px 44px; }
 }
+
+/* Collection στο κινητό: οι κατηγορίες σε μία γραμμή (σύρεις δεξιά) */
+@media (max-width: 860px) {
+  .filters { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 6px; padding-block: 10px; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); }
+  .filters::-webkit-scrollbar { display: none; }
+  .filter-btn { flex: none; padding: 8px 14px; font-size: .72rem; letter-spacing: .14em; }
+}
