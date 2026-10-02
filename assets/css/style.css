@@ -1055,36 +1055,41 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .mobile-menu a { font-size: 1.55rem; line-height: 1.5; padding-block: 6px; border-bottom: 1px solid var(--line); }
 .mobile-menu a:last-of-type { border-bottom: 0; }
 
-/* ===== Customers wall v3: bento grid με γυάλινες λεζάντες ===== */
+/* ===== Customers wall v4: οριζόντια λωρίδα τύπου Instagram Stories ===== */
 .ugc-grid--wall {
-  display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: clamp(150px, 15vw, 205px);
-  grid-auto-flow: dense; gap: clamp(10px, 1.4vw, 18px);
+  display: flex; gap: clamp(14px, 1.8vw, 24px); overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  padding: 10px 4px 30px; scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
+.ugc-grid--wall::-webkit-scrollbar { display: none; }
 .ugc-grid--wall .ugc, .ugc-grid--wall .ugc:nth-child(1) {
-  grid-row: span 2; grid-column: auto; border-radius: 22px; overflow: hidden; position: relative; isolation: isolate; cursor: zoom-in;
-  box-shadow: 0 18px 40px -30px rgba(216, 78, 156, .6);
+  flex: 0 0 clamp(210px, 22vw, 290px); grid-row: auto; grid-column: auto; scroll-snap-align: start;
+  border-radius: 26px; padding: 3px; position: relative; overflow: visible; cursor: zoom-in;
+  background: linear-gradient(140deg, #d84e9c, #f7b4d6 45%, #1b1918);
+  box-shadow: 0 22px 40px -28px rgba(216, 78, 156, .8);
 }
-.ugc-grid--wall .ugc:nth-child(1) { grid-column: span 2; }
+.ugc-grid--wall .ugc.reveal { opacity: 1; transform: none; transition: transform .5s var(--ease); }
+.ugc-grid--wall .ugc.reveal:hover { transform: translateY(-6px); }
 .ugc-grid--wall .ugc img, .ugc-grid--wall .ugc:nth-child(1) img {
-  width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: center 30%; display: block;
-  transition: transform 1.2s var(--ease);
+  border-radius: 23px; aspect-ratio: 9 / 16; width: 100%; height: auto; object-fit: cover; object-position: center 30%; display: block;
 }
-.ugc-grid--wall .ugc:hover img { transform: scale(1.05); }
+.ugc-grid--wall .ugc:hover img { transform: none; }
 .ugc-grid--wall .ugc figcaption {
-  position: absolute; inset: auto 12px 12px 12px; padding: 9px 14px; display: flex; align-items: center; gap: 9px;
-  background: rgba(255, 255, 255, .2); -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
-  border: 1px solid rgba(255, 255, 255, .35); border-radius: 999px;
-  color: #fff; font-size: 1.05rem; line-height: 1.2; text-shadow: 0 1px 8px rgba(0, 0, 0, .35);
+  position: absolute; inset: auto 3px 3px 3px; border-radius: 0 0 23px 23px; padding: 70px 16px 18px;
+  background: linear-gradient(to top, rgba(27, 25, 24, .8), transparent);
+  color: #fff; font-size: 1.15rem; line-height: 1.25; display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
 }
 /* διαμαντάκι από το logo */
-.ugc-grid--wall .ugc figcaption::before { content: ""; width: 14px; height: 13px; flex: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Cpath d='M18 5h64l13 17L50 87 5 22z' fill='%23d84e9c' stroke='%231b1918' stroke-width='7' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat; }
-.ugc-grid--wall .ugc:nth-child(2) { transition-delay: .08s; }
-.ugc-grid--wall .ugc:nth-child(3) { transition-delay: .16s; }
-.ugc-grid--wall .ugc:nth-child(4) { transition-delay: .24s; }
+.ugc-grid--wall .ugc figcaption::before { content: ""; width: 16px; height: 15px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Cpath d='M18 5h64l13 17L50 87 5 22z' fill='%23d84e9c' stroke='%231b1918' stroke-width='7' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat; }
+.reel-nav { display: flex; justify-content: center; gap: 12px; margin-top: 4px; }
+.reel-nav button {
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--ink); background: #fff; color: var(--ink);
+  font-size: 1.4rem; line-height: 1; cursor: pointer; transition: background .3s, color .3s, opacity .3s;
+}
+.reel-nav button:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); color: #fff; }
+.reel-nav button:disabled { opacity: .3; cursor: default; }
 @media (max-width: 860px) {
-  .ugc-grid--wall { grid-template-columns: repeat(2, 1fr); grid-auto-rows: clamp(120px, 36vw, 200px); gap: 10px; }
-  .ugc-grid--wall .ugc, .ugc-grid--wall .ugc:nth-child(1) { border-radius: 16px; }
-  .ugc-grid--wall .ugc figcaption { inset: auto 8px 8px 8px; padding: 7px 10px; font-size: .9rem; border-radius: 14px; }
+  .ugc-grid--wall .ugc, .ugc-grid--wall .ugc:nth-child(1) { flex-basis: 62vw; }
+  .ugc-grid--wall .ugc figcaption { font-size: 1rem; padding: 56px 14px 16px; }
 }
 
 /* Lightbox */

@@ -58,6 +58,20 @@
       if (!lb.classList.contains("open")) return;
       if (e.key === "Escape") close(); else if (e.key === "ArrowLeft") show(i - 1); else if (e.key === "ArrowRight") show(i + 1);
     });
+    // Βελάκια για τη λωρίδα
+    const prev = document.querySelector(".reel-prev"), next = document.querySelector(".reel-next");
+    const step = () => (items[0]?.offsetWidth || 260) + parseFloat(getComputedStyle(wall).columnGap || 20);
+    const sync = () => {
+      if (!prev) return;
+      prev.disabled = wall.scrollLeft <= 4;
+      next.disabled = wall.scrollLeft + wall.clientWidth >= wall.scrollWidth - 4;
+    };
+    prev?.addEventListener("click", () => wall.scrollBy({ left: -step() }));
+    next?.addEventListener("click", () => wall.scrollBy({ left: step() }));
+    wall.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    sync();
+
     let x0 = null;
     lb.addEventListener("touchstart", (e) => (x0 = e.touches[0].clientX), { passive: true });
     lb.addEventListener("touchend", (e) => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0;
