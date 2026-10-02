@@ -1054,3 +1054,57 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .mobile-menu { padding-top: 100px; gap: 2px; }
 .mobile-menu a { font-size: 1.55rem; line-height: 1.5; padding-block: 6px; border-bottom: 1px solid var(--line); }
 .mobile-menu a:last-of-type { border-bottom: 0; }
+
+/* ===== Customers wall v2: κάρτες polaroid, ζιγκ-ζαγκ, κεντραρισμένες σειρές ===== */
+.ugc-grid--wall {
+  --cols: 4; --gap: clamp(16px, 2.2vw, 32px);
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
+  gap: calc(var(--gap) * 1.6) var(--gap);
+  padding-bottom: clamp(24px, 3vw, 48px);
+}
+.ugc-grid--wall .ugc,
+.ugc-grid--wall .ugc:nth-child(1) {
+  flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+  grid-row: auto; grid-column: auto;
+  background: #fff; padding: 10px 10px 0; overflow: visible; cursor: zoom-in;
+  box-shadow: 0 1px 2px rgba(27, 25, 24, .06), 0 18px 40px -26px rgba(216, 78, 156, .55);
+}
+.ugc-grid--wall .ugc:nth-child(even) { margin-top: clamp(28px, 4vw, 56px) !important; }
+.ugc-grid--wall .ugc.in { transition: opacity 1s var(--ease), transform .5s var(--ease), box-shadow .5s var(--ease); }
+.ugc-grid--wall .ugc.in:hover { transform: translateY(-6px); box-shadow: 0 1px 2px rgba(27, 25, 24, .06), 0 26px 50px -24px rgba(216, 78, 156, .7); }
+.ugc-grid--wall .ugc img,
+.ugc-grid--wall .ugc:nth-child(1) img { aspect-ratio: 3 / 4; height: auto; object-fit: cover; object-position: center 30%; display: block; }
+.ugc-grid--wall .ugc:hover img { transform: none; }
+.ugc-grid--wall .ugc figcaption {
+  position: static; background: none; color: var(--ink); text-align: center;
+  padding: 14px 6px 16px; font-size: 1.15rem; line-height: 1.25;
+}
+.ugc-grid--wall .ugc figcaption::before {
+  content: ""; display: block; width: 7px; height: 7px; margin: 0 auto 10px;
+  background: var(--accent); transform: rotate(45deg);
+}
+.ugc-grid--wall .ugc:nth-child(2) { transition-delay: .08s; }
+.ugc-grid--wall .ugc:nth-child(3) { transition-delay: .16s; }
+.ugc-grid--wall .ugc:nth-child(4) { transition-delay: .24s; }
+.ugc-grid--wall .ugc.in:hover { transition-delay: 0s; }
+@media (max-width: 1024px) { .ugc-grid--wall { --cols: 3; } }
+@media (max-width: 860px) {
+  .ugc-grid--wall { --cols: 2; --gap: 12px; }
+  .ugc-grid--wall .ugc, .ugc-grid--wall .ugc:nth-child(1) { padding: 6px 6px 0; }
+  .ugc-grid--wall .ugc figcaption { font-size: .98rem; padding: 10px 4px 12px; }
+  .ugc-grid--wall .ugc figcaption::before { width: 5px; height: 5px; margin-bottom: 7px; }
+}
+
+/* Lightbox */
+.lb { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: rgba(20, 18, 17, .92);
+  opacity: 0; visibility: hidden; transition: opacity .35s var(--ease), visibility .35s; }
+.lb.open { opacity: 1; visibility: visible; }
+.lb figure { margin: 0; max-width: min(92vw, 720px); text-align: center; }
+.lb img { max-height: 80vh; width: auto; max-width: 100%; margin: 0 auto; display: block; box-shadow: 0 30px 80px -30px #000; }
+.lb figcaption { color: #fff; font-family: var(--font-display); font-style: italic; font-size: 1.4rem; margin-top: 16px; }
+.lb button { position: absolute; background: none; border: 0; color: #fff; cursor: pointer; font-size: 2.2rem; line-height: 1; padding: 16px; opacity: .8; }
+.lb button:hover { opacity: 1; color: var(--accent); }
+.lb .lb-close { top: 8px; right: 12px; }
+.lb .lb-prev { left: 8px; top: 50%; transform: translateY(-50%); }
+.lb .lb-next { right: 8px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 860px) { .lb .lb-prev, .lb .lb-next { top: auto; bottom: 12px; transform: none; } .lb figcaption { font-size: 1.1rem; } }
