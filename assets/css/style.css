@@ -1195,3 +1195,15 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
     letter-spacing: .06em;
   }
 }
+
+
+/* Homepage section rhythm: white / grey / white / grey */
+body.home main > section:nth-of-type(odd) {
+  background-color: #ffffff !important;
+}
+body.home main > section:nth-of-type(even) {
+  background-color: #f5f5f5 !important;
+}
+body.home main > .hero-wrap {
+  background-color: #ffffff !important;
+}
