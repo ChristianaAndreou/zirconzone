@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=86">
+  <link rel="stylesheet" href="assets/css/style.css?v=87">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -29,6 +29,7 @@
 </head>
 <body>
 
+  <div class="ship-bar">Order by DM · Delivery to Akis Express &amp; BOX NOW · Cyprus &amp; EU · For her &amp; for him</div>
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo" aria-label="Zircon Zone home"><img src="images/web/logo.png" alt="Zircon Zone" width="600" height="298"></a>
@@ -121,7 +122,8 @@
 
   <script src="assets/js/products.js?v=81"></script>
   <script>
-    const CATEGORIES = ["All", "Sets", "Earrings", "Necklaces", "Bracelets", "Rings"];
+    const CATEGORIES = ["All", "Sets", "Earrings", "Necklaces", "Bracelets", "Rings", "For Him"];
+    const isForHim = (p) => p.forHim === true || /for men/i.test(p.name);
     const grid = document.getElementById("productGrid");
     const filters = document.querySelector(".filters");
     const sortSel = document.getElementById("sort");
@@ -131,7 +133,7 @@
     filters.innerHTML = CATEGORIES.map((c) => `<button class="filter-btn" role="tab" data-c="${c}">${c}</button>`).join("");
 
     function render() {
-      let list = current === "All" ? [...PRODUCTS] : PRODUCTS.filter((p) => p.category === current);
+      let list = current === "All" ? [...PRODUCTS] : current === "For Him" ? PRODUCTS.filter(isForHim) : PRODUCTS.filter((p) => p.category === current);
       if (sortSel.value === "price-asc") list.sort((a, b) => a.price - b.price);
       if (sortSel.value === "price-desc") list.sort((a, b) => b.price - a.price);
       if (sortSel.value === "new") list.sort((a, b) => (b.badge === "New") - (a.badge === "New"));
