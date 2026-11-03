@@ -1139,3 +1139,59 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 /* Events: Orama σε γκρι, For You(th) σε άσπρο */
 .ev-band-pink { background: #F7F7F7; }
 .ev-band-paper { background: #fff; }
+
+
+/* =========================================================
+   Home refresh — November 2026
+   ========================================================= */
+/* Clean alternating white / soft grey sections */
+.home #new { background: #F7F7F7; }
+.home #new + .section--paper { background: #fff; }
+.home .section--pink { background: #F7F7F7; }
+.home .section--pink + .section--paper { background: #fff; }
+.home .section--pink + .section--paper + .section--pink { background: #F7F7F7; }
+.home .section--pink + .section--paper + .section--pink + .section--paper { background: #fff; }
+
+/* Five balanced category tiles — no separate For Him tile */
+.home .cat-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  width: min(100% - 2 * var(--gutter), 1100px);
+  margin-inline: auto;
+  transform: none;
+  gap: 16px;
+}
+@media (min-width: 861px) {
+  .home .cat-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .home .cat-grid {
+    width: auto;
+    margin-inline: 0;
+    transform: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Compact centered shipping announcement */
+.ship-bar {
+  display: block;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 12px auto 0;
+  padding: 10px 24px;
+  background: #1b1918;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: .12em;
+}
+@media (max-width: 600px) {
+  .ship-bar {
+    width: calc(100% - 24px);
+    max-width: none;
+    margin-top: 8px;
+    padding: 9px 12px;
+    font-size: .62rem;
+    letter-spacing: .06em;
+  }
+}
