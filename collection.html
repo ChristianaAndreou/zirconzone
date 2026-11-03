@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=91">
+  <link rel="stylesheet" href="assets/css/style.css?v=92">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -134,15 +134,7 @@
 
     function renderFilters() {
       filters.innerHTML = CATEGORIES.map((c) => `<button class="filter-btn" role="tab" data-c="${c}">${c}</button>`).join("");
-      if (current === "Bracelets") {
-        filters.innerHTML += `
-          <div class="bracelet-subfilters" aria-label="Bracelet styles">
-            <span class="bracelet-subfilters-label">Bracelets:</span>
-            <button class="filter-btn filter-btn--sub" role="tab" data-g="All">All</button>
-            <button class="filter-btn filter-btn--sub" role="tab" data-g="For Her">For Her</button>
-            <button class="filter-btn filter-btn--sub" role="tab" data-g="For Him">For Him</button>
-          </div>`;
-      }
+
       filters.querySelectorAll(".filter-btn").forEach((b) => {
         const on = b.dataset.c ? b.dataset.c === current : b.dataset.g === braceletGender;
         b.classList.toggle("active", on);
