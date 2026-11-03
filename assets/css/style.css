@@ -1108,3 +1108,34 @@ main > .wave-fill:first-child { margin-top: clamp(16px, 2vw, 28px); }
 .lb .lb-prev { left: 8px; top: 50%; transform: translateY(-50%); }
 .lb .lb-next { right: 8px; top: 50%; transform: translateY(-50%); }
 @media (max-width: 860px) { .lb .lb-prev, .lb .lb-next { top: auto; bottom: 12px; transform: none; } .lb figcaption { font-size: 1.1rem; } }
+
+
+/* =========================================================
+   Γραμμή αποστολής + For Him (Νοέμβριος 2026)
+   ========================================================= */
+.ship-bar {
+  background: var(--ink); color: #fff; text-align: center;
+  font-size: .74rem; letter-spacing: .12em; text-transform: uppercase;
+  padding: 9px 16px; line-height: 1.4;
+}
+@media (max-width: 600px) { .ship-bar { font-size: .64rem; letter-spacing: .08em; } }
+
+/* 6 κατηγορίες αντί για 5 (μπήκε το For Him) */
+.cat-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+@media (min-width: 861px) { .home .cat-grid { grid-template-columns: repeat(6, calc((var(--cat-w) - 80px) / 6)); } }
+@media (max-width: 860px) { .cat-grid { grid-template-columns: repeat(6, 62%); } .home .cat-grid { grid-template-columns: repeat(6, 46%); } }
+
+/* =========================================================
+   Εναλλαγή άσπρο / γκρι αντί για άσπρο / ροζ (Νοέμβριος 2026)
+   ========================================================= */
+/* Home: οι ροζ ενότητες (Shop by Category, Markets) γίνονται άσπρες */
+.home .section--pink { background: #fff; }
+/* Orders: οι ερωτήσεις σε γκρι */
+.section--pink, .page-hero-wrap--soft + .section--pink, .orders-band + .section--pink { background: #F7F7F7; }
+.home .section--pink { background: #fff; }
+/* About: το κείμενο σε γκρι, η επόμενη ενότητα άσπρη */
+.about-brush { background: #F7F7F7; }
+.about-brush + .section--paper { background: #fff; }
+/* Events: Orama σε γκρι, For You(th) σε άσπρο */
+.ev-band-pink { background: #F7F7F7; }
+.ev-band-paper { background: #fff; }
