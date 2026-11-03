@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=87">
+  <link rel="stylesheet" href="assets/css/style.css?v=90">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -122,34 +122,57 @@
 
   <script src="assets/js/products.js?v=81"></script>
   <script>
-    const CATEGORIES = ["All", "Sets", "Earrings", "Necklaces", "Bracelets", "Rings", "For Him"];
-    const isForHim = (p) => p.forHim === true || /for men/i.test(p.name);
+    const CATEGORIES = ["All", "Sets", "Earrings", "Necklaces", "Bracelets", "Rings"];
+    const isForHim = (p) => p.category === "Bracelets" && (p.forHim === true || /for men/i.test(p.name));
+    const isForHer = (p) => p.category === "Bracelets" && !isForHim(p);
     const grid = document.getElementById("productGrid");
     const filters = document.querySelector(".filters");
     const sortSel = document.getElementById("sort");
     const params = new URLSearchParams(location.search);
     let current = CATEGORIES.includes(params.get("c")) ? params.get("c") : "All";
+    let braceletGender = ["For Her", "For Him"].includes(params.get("g")) ? params.get("g") : "All";
 
-    filters.innerHTML = CATEGORIES.map((c) => `<button class="filter-btn" role="tab" data-c="${c}">${c}</button>`).join("");
+    function renderFilters() {
+      filters.innerHTML = CATEGORIES.map((c) => `<button class="filter-btn" role="tab" data-c="${c}">${c}</button>`).join("");
+      if (current === "Bracelets") {
+        filters.innerHTML += `
+          <span class="filter-divider" aria-hidden="true"></span>
+          <button class="filter-btn filter-btn--sub" role="tab" data-g="All">All Bracelets</button>
+          <button class="filter-btn filter-btn--sub" role="tab" data-g="For Her">For Her</button>
+          <button class="filter-btn filter-btn--sub" role="tab" data-g="For Him">For Him</button>`;
+      }
+      filters.querySelectorAll(".filter-btn").forEach((b) => {
+        const on = b.dataset.c ? b.dataset.c === current : b.dataset.g === braceletGender;
+        b.classList.toggle("active", on);
+        b.setAttribute("aria-selected", on);
+      });
+    }
 
     function render() {
-      let list = current === "All" ? [...PRODUCTS] : current === "For Him" ? PRODUCTS.filter(isForHim) : PRODUCTS.filter((p) => p.category === current);
+      let list = current === "All" ? [...PRODUCTS] : PRODUCTS.filter((p) => p.category === current);
+      if (current === "Bracelets" && braceletGender !== "All") {
+        list = list.filter(braceletGender === "For Him" ? isForHim : isForHer);
+      }
       if (sortSel.value === "price-asc") list.sort((a, b) => a.price - b.price);
       if (sortSel.value === "price-desc") list.sort((a, b) => b.price - a.price);
       if (sortSel.value === "new") list.sort((a, b) => (b.badge === "New") - (a.badge === "New"));
       if (sortSel.value === "best") list.sort((a, b) => (b.badge === "Best seller") - (a.badge === "Best seller"));
       grid.innerHTML = list.map(productCard).join("");
-      filters.querySelectorAll(".filter-btn").forEach((b) => {
-        const on = b.dataset.c === current;
-        b.classList.toggle("active", on); b.setAttribute("aria-selected", on);
-      });
+      renderFilters();
       observeReveal(grid);
     }
 
     filters.addEventListener("click", (e) => {
       const b = e.target.closest(".filter-btn"); if (!b) return;
-      current = b.dataset.c;
-      const url = new URL(location); current === "All" ? url.searchParams.delete("c") : url.searchParams.set("c", current);
+      if (b.dataset.c) {
+        current = b.dataset.c;
+        braceletGender = "All";
+      } else if (b.dataset.g) {
+        braceletGender = b.dataset.g;
+      }
+      const url = new URL(location);
+      current === "All" ? url.searchParams.delete("c") : url.searchParams.set("c", current);
+      braceletGender === "All" ? url.searchParams.delete("g") : url.searchParams.set("g", braceletGender);
       url.hash = ""; history.replaceState(null, "", url);
       render();
     });
