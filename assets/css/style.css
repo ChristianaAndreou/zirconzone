@@ -1207,3 +1207,28 @@ body.home main > section:nth-of-type(even) {
 body.home main > .hero-wrap {
   background-color: #ffffff !important;
 }
+
+
+/* Shipping announcement: full-width black strip on every page */
+.ship-bar {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 10px 16px;
+  background: #1b1918;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: .12em;
+}
+@media (max-width: 600px) {
+  .ship-bar {
+    width: 100%;
+    margin: 0;
+    padding: 9px 12px;
+    font-size: .64rem;
+    letter-spacing: .06em;
+  }
+}
