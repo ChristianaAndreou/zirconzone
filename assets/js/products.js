@@ -78,7 +78,31 @@ const PRODUCTS = [
   { id: "ring-3", name: "Ring 3", price: 10, category: "Rings", images: ["R1"] },
   { id: "ring-4", name: "Ring 4", price: 7, category: "Rings", images: ["R2"] },
   { id: "ring-5", name: "Ring 5", price: 5, category: "Rings", images: ["heart"] },
+
 ];
+
+// Add structured Product data; availability is omitted because live stock is not tracked.
+(function addProductStructuredData() {
+  const data = PRODUCTS.map((p) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `Zircon Zone ${p.name}`,
+    "description": `${p.category} from Zircon Zone's stainless steel jewelry collection.`,
+    "image": p.images.map((im) => new URL(IMG(im), location.href).href),
+    "category": p.category,
+    "brand": { "@type": "Brand", "name": "Zircon Zone" },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://christianaandreou.github.io/zirconzone/collection.html#${p.id}`,
+      "priceCurrency": "EUR",
+      "price": p.price.toFixed(2)
+    }
+  }));
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.textContent = JSON.stringify(data);
+  document.head.appendChild(script);
+})();
 
 const CONTACT = {
   instagramDM: "https://ig.me/m/zirconzone",
