@@ -193,8 +193,8 @@ index = head(None, "Zircon Zone is an online jewelry shop offering carefully sel
         </div>
       </div>
       <div class="hero-media reveal">
-        <img class="main" src="{W('NM')}" alt="Necklace 5" width="800" height="1000" fetchpriority="high">
-        <img class="float" src="{W('E19B-zoom')}" alt="Earrings 19" width="400" height="300">
+        <img class="main" src="{W('NM')}" alt="Evil Eye Necklace" width="800" height="1000" fetchpriority="high">
+        <img class="float" src="{W('E19B-zoom')}" alt="Baguette Crystal Hoops" width="400" height="300">
       </div>
     </div>
     </section>

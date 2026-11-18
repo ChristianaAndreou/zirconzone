@@ -22,62 +22,62 @@ document.addEventListener("error", (e) => {
 }, true);
 
 const PRODUCTS = [
-  { id: "set-1", name: "Set 1", price: 12, category: "Sets", images: ["S7"] },
-  { id: "set-2", name: "Set 2", price: 20, category: "Sets", images: ["S2", "S10", "S1"] },
-  { id: "set-3", name: "Set 3", price: 12, category: "Sets", images: ["S5", "S6"] },
-  { id: "set-4", name: "Set 4", price: 20, category: "Sets", images: ["S16", "S8"], badge: "Best seller" },
-  { id: "set-5", name: "Set 5", price: 20, category: "Sets", images: ["S12"] },
-  { id: "set-6", name: "Set 6", price: 20, category: "Sets", images: ["S11"], badge: "New" },
-  { id: "set-7", name: "Set 7", price: 20, category: "Sets", images: ["S13"] },
-  { id: "set-8", name: "Set 8", price: 20, category: "Sets", images: ["S15"] },
-  { id: "set-9", name: "Set 9", price: 20, category: "Sets", images: ["S9S"] },
-  { id: "set-10", name: "Set 10", price: 20, category: "Sets", images: ["S14"] },
+  { id: "set-1", name: "Royal Teardrop Set", price: 12, category: "Sets", images: ["S7"] },
+  { id: "set-2", name: "Emerald Halo Set", price: 20, category: "Sets", images: ["S2", "S10", "S1"] },
+  { id: "set-3", name: "Golden Tennis Set", price: 12, category: "Sets", images: ["S5", "S6"] },
+  { id: "set-4", name: "Sapphire Princess Set", price: 20, category: "Sets", images: ["S16", "S8"], badge: "Best seller" },
+  { id: "set-5", name: "Emerald Royale Set", price: 20, category: "Sets", images: ["S12"] },
+  { id: "set-6", name: "Blossom Charm Set", price: 20, category: "Sets", images: ["S11"], badge: "New" },
+  { id: "set-7", name: "Onyx Halo Set", price: 20, category: "Sets", images: ["S13"] },
+  { id: "set-8", name: "Ruby Teardrop Set", price: 20, category: "Sets", images: ["S15"] },
+  { id: "set-9", name: "Pink Cascade Set", price: 20, category: "Sets", images: ["S9S"] },
+  { id: "set-10", name: "Sapphire Drop Set", price: 20, category: "Sets", images: ["S14"] },
 
-  { id: "necklace-1", name: "Necklace 1", price: 17, category: "Necklaces", images: ["NECK1"], badge: "Best seller" },
-  { id: "necklace-2", name: "Necklace 2", price: 15, category: "Necklaces", images: ["N4"], badge: "New" },
-  { id: "necklace-3", name: "Necklace 3", price: 15, category: "Necklaces", images: ["N3N", "N3", "N2"] },
-  { id: "necklace-4", name: "Necklace 4", price: 15, category: "Necklaces", images: ["N7", "N8"] },
-  { id: "necklace-5", name: "Necklace 5", price: 12, category: "Necklaces", images: ["NM", "N9"] },
-  { id: "necklace-6", name: "Necklace 6", price: 8, category: "Necklaces", images: ["N5"] },
-  { id: "necklace-7", name: "Necklace 7", price: 8, category: "Necklaces", images: ["N6"] },
+  { id: "necklace-1", name: "Square Gem Pendant", price: 17, category: "Necklaces", images: ["NECK1"], badge: "Best seller" },
+  { id: "necklace-2", name: "Golden Teardrop Necklace", price: 15, category: "Necklaces", images: ["N4"], badge: "New" },
+  { id: "necklace-3", name: "Golden Heart Locket", price: 15, category: "Necklaces", images: ["N3N", "N3", "N2"] },
+  { id: "necklace-4", name: "Classic Snake Chain", price: 15, category: "Necklaces", images: ["N7", "N8"] },
+  { id: "necklace-5", name: "Evil Eye Necklace", price: 12, category: "Necklaces", images: ["NM", "N9"] },
+  { id: "necklace-6", name: "Two-Tone Link Chain", price: 8, category: "Necklaces", images: ["N5"] },
+  { id: "necklace-7", name: "Two-Tone Bar Chain", price: 8, category: "Necklaces", images: ["N6"] },
 
-  { id: "earrings-1", name: "Earrings 1", price: 14, category: "Earrings", images: ["E1E", "E1"] },
-  { id: "earrings-2", name: "Earrings 2", price: 20, category: "Earrings", images: ["E43", "E44"] },
-  { id: "earrings-3", name: "Earrings 3", price: 20, category: "Earrings", images: ["E5", "E35"] },
-  { id: "earrings-4", name: "Earrings 4", price: 20, category: "Earrings", images: ["E25E", "E26E", "E27E", "E28E"] },
-  { id: "earrings-5", name: "Earrings 5", price: 20, category: "Earrings", images: ["E42"], badge: "New" },
-  { id: "earrings-6", name: "Earrings 6", price: 20, category: "Earrings", images: ["E47", "E29E"], badge: "Best seller" },
-  { id: "earrings-7", name: "Earrings 7", price: 20, category: "Earrings", images: ["E19", "E41"] },
-  { id: "earrings-8", name: "Earrings 8", price: 20, category: "Earrings", images: ["E16"] },
-  { id: "earrings-9", name: "Earrings 9", price: 20, category: "Earrings", images: ["E8"] },
-  { id: "earrings-10", name: "Earrings 10", price: 20, category: "Earrings", images: ["E33"] },
-  { id: "earrings-11", name: "Earrings 11", price: 20, category: "Earrings", images: ["E48"] },
-  { id: "earrings-12", name: "Earrings 12", price: 15, category: "Earrings", images: ["E46", "E12"], badge: "Best seller" },
-  { id: "earrings-13", name: "Earrings 13", price: 14, category: "Earrings", images: ["E14"] },
-  { id: "earrings-14", name: "Earrings 14", price: 17, category: "Earrings", images: ["E2", "E14E"] },
-  { id: "earrings-15", name: "Earrings 15", price: 15, category: "Earrings", images: ["E20", "E21", "E22", "E23", "E13"] },
-  { id: "earrings-16", name: "Earrings 16", price: 15, category: "Earrings", images: ["E49", "E3"] },
-  { id: "earrings-17", name: "Earrings 17", price: 20, category: "Earrings", images: ["E18", "E17"] },
-  { id: "earrings-18", name: "Earrings 18", price: 20, category: "Earrings", images: ["E45", "E32"] },
-  { id: "earrings-19", name: "Earrings 19", price: 20, category: "Earrings", images: ["E19B", "E34"] },
-  { id: "earrings-20", name: "Earrings 20", price: 14, category: "Earrings", images: ["E39", "WE1"] },
-  { id: "earrings-21", name: "Earrings 21", price: 20, category: "Earrings", images: ["EB1", "EB2"] },
-  { id: "earrings-22", name: "Earrings 22", price: 20, category: "Earrings", images: ["E15"] },
-  { id: "earrings-23", name: "Earrings 23", price: 14, category: "Earrings", images: ["E50"] },
+  { id: "earrings-1", name: "Emerald Heart Drops", price: 14, category: "Earrings", images: ["E1E", "E1"] },
+  { id: "earrings-2", name: "Pink Fringe Earrings", price: 20, category: "Earrings", images: ["E43", "E44"] },
+  { id: "earrings-3", name: "Onyx Petal Studs", price: 20, category: "Earrings", images: ["E5", "E35"] },
+  { id: "earrings-4", name: "Emerald Pavé Hoops", price: 20, category: "Earrings", images: ["E25E", "E26E", "E27E", "E28E"] },
+  { id: "earrings-5", name: "Crystal Fringe Earrings", price: 20, category: "Earrings", images: ["E42"], badge: "New" },
+  { id: "earrings-6", name: "Golden Heart Huggies", price: 20, category: "Earrings", images: ["E47", "E29E"], badge: "Best seller" },
+  { id: "earrings-7", name: "Golden Pavé Hoops", price: 20, category: "Earrings", images: ["E19", "E41"] },
+  { id: "earrings-8", name: "Champagne Fringe Earrings", price: 20, category: "Earrings", images: ["E16"] },
+  { id: "earrings-9", name: "Silver Heart Drops", price: 20, category: "Earrings", images: ["E8"] },
+  { id: "earrings-10", name: "Emerald Teardrop Earrings", price: 20, category: "Earrings", images: ["E33"] },
+  { id: "earrings-11", name: "Crystal Teardrop Earrings", price: 20, category: "Earrings", images: ["E48"] },
+  { id: "earrings-12", name: "White Heart Hoops", price: 15, category: "Earrings", images: ["E46", "E12"], badge: "Best seller" },
+  { id: "earrings-13", name: "White Enamel Hoops", price: 14, category: "Earrings", images: ["E14"] },
+  { id: "earrings-14", name: "Golden Triangle Earrings", price: 17, category: "Earrings", images: ["E2", "E14E"] },
+  { id: "earrings-15", name: "Ruby Crystal Hoops", price: 15, category: "Earrings", images: ["E20", "E21", "E22", "E23", "E13"] },
+  { id: "earrings-16", name: "Golden Flower Drops", price: 15, category: "Earrings", images: ["E49", "E3"] },
+  { id: "earrings-17", name: "Sapphire Teardrop Earrings", price: 20, category: "Earrings", images: ["E18", "E17"] },
+  { id: "earrings-18", name: "Pavé Link Earrings", price: 20, category: "Earrings", images: ["E45", "E32"] },
+  { id: "earrings-19", name: "Baguette Crystal Hoops", price: 20, category: "Earrings", images: ["E19B", "E34"] },
+  { id: "earrings-20", name: "Emerald Vintage Drops", price: 14, category: "Earrings", images: ["E39", "WE1"] },
+  { id: "earrings-21", name: "Sapphire Pavé Hoops", price: 20, category: "Earrings", images: ["EB1", "EB2"] },
+  { id: "earrings-22", name: "Black Enamel Link Earrings", price: 20, category: "Earrings", images: ["E15"] },
+  { id: "earrings-23", name: "Crystal Bow Studs", price: 14, category: "Earrings", images: ["E50"] },
 
-  { id: "bracelet-1", name: "Bracelet 1", price: 7, category: "Bracelets", images: ["B7"] },
-  { id: "bracelet-2", name: "Bracelet 2 (for men)", price: 10, category: "Bracelets", images: ["B4"], badge: "New" },
-  { id: "bracelet-3", name: "Bracelet 3", price: 7, category: "Bracelets", images: ["B10", "B1"] },
-  { id: "bracelet-4", name: "Bracelet 4", price: 3, category: "Bracelets", images: ["B2", "B6"] },
-  { id: "bracelet-5", name: "Bracelet 5", price: 7, category: "Bracelets", images: ["B5"] },
-  { id: "bracelet-6", name: "Bracelet 6 (for men)", price: 10, category: "Bracelets", images: ["B9"] },
-  { id: "bracelet-7", name: "Bracelet 7", price: 5, category: "Bracelets", images: ["B11"] },
+  { id: "bracelet-1", name: "Evil Eye String Bracelet", price: 7, category: "Bracelets", images: ["B7"] },
+  { id: "bracelet-2", name: "Curb Chain Bracelet (for men)", price: 10, category: "Bracelets", images: ["B4"], badge: "New" },
+  { id: "bracelet-3", name: "Colorful Pearl String Bracelet", price: 7, category: "Bracelets", images: ["B10", "B1"] },
+  { id: "bracelet-4", name: "Crystal Bead Bracelet", price: 3, category: "Bracelets", images: ["B2", "B6"] },
+  { id: "bracelet-5", name: "Evil Eye Macramé Bracelet", price: 7, category: "Bracelets", images: ["B5"] },
+  { id: "bracelet-6", name: "Snake Chain Bracelet (for men)", price: 10, category: "Bracelets", images: ["B9"] },
+  { id: "bracelet-7", name: "White Pearl Evil Eye Bracelet", price: 5, category: "Bracelets", images: ["B11"] },
 
-  { id: "ring-1", name: "Ring 1", price: 10, category: "Rings", images: ["Cross"] },
-  { id: "ring-2", name: "Ring 2", price: 10, category: "Rings", images: ["R3"] },
-  { id: "ring-3", name: "Ring 3", price: 10, category: "Rings", images: ["R1"] },
-  { id: "ring-4", name: "Ring 4", price: 7, category: "Rings", images: ["R2"] },
-  { id: "ring-5", name: "Ring 5", price: 5, category: "Rings", images: ["heart"] },
+  { id: "ring-1", name: "Golden Cross Ring", price: 10, category: "Rings", images: ["Cross"] },
+  { id: "ring-2", name: "Golden Band Ring", price: 10, category: "Rings", images: ["R3"] },
+  { id: "ring-3", name: "Black Onyx Sunburst Ring", price: 10, category: "Rings", images: ["R1"] },
+  { id: "ring-4", name: "Amber Stone Ring", price: 7, category: "Rings", images: ["R2"] },
+  { id: "ring-5", name: "Blue Heart Ring", price: 5, category: "Rings", images: ["heart"] },
 
 ];
 
@@ -153,6 +153,27 @@ document.addEventListener("click", (e) => {
   card.querySelectorAll(".img-dots span").forEach((d, k) => d.classList.toggle("on", k === i));
 }, true);
 
+/* Αντιγραφή κειμένου στο πρόχειρο (με εφεδρική λύση για παλιούς browsers) */
+function copyText(text) {
+  if (navigator.clipboard?.writeText) {
+    return navigator.clipboard.writeText(text).then(() => true, () => legacyCopy(text));
+  }
+  return Promise.resolve(legacyCopy(text));
+}
+function legacyCopy(text) {
+  try {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;opacity:0;top:0;left:0";
+    document.body.appendChild(ta);
+    ta.select();
+    const ok = document.execCommand("copy");
+    ta.remove();
+    return ok;
+  } catch { return false; }
+}
+
 /* Quick view modal με gallery + κουμπιά παραγγελίας */
 function setupQuickView(root = document) {
   const qv = document.getElementById("quickview");
@@ -171,9 +192,26 @@ function setupQuickView(root = document) {
     thumbs.innerHTML = p.images.length > 1
       ? p.images.map((im, i) => `<button class="${i ? "" : "active"}" data-src="${IMG(im)}" aria-label="Image ${i + 1}"><img src="${IMG(im)}" alt=""></button>`).join("")
       : "";
-    const msg = `Hi Zircon Zone! I'd like to order ${p.name} (${euro(p.price)}).`;
+    // Μήνυμα παραγγελίας: αντιγράφεται αυτόματα και ο πελάτης κάνει απλώς επικόλληση στο Instagram DM
+    const link = `https://christianaandreou.github.io/zirconzone/collection.html#${p.id}`;
+    const msg = `Hi Zircon Zone! I'd like to order the ${p.name} (${euro(p.price)}). ${link}`;
     const ig = qv.querySelector(".qv-ig");
-    ig.onclick = () => { navigator.clipboard?.writeText(msg).catch(() => {}); };
+    let note = qv.querySelector(".qv-note");
+    if (!note) {
+      note = document.createElement("p");
+      note.className = "qv-note";
+      note.setAttribute("aria-live", "polite");
+      qv.querySelector(".qv-actions").after(note);
+    }
+    const hint = "Tap <strong>Order on Instagram</strong>: your order message is copied automatically, just paste it in the chat.";
+    note.innerHTML = hint;
+    ig.onclick = () => {
+      copyText(msg).then((ok) => {
+        note.innerHTML = ok
+          ? "✓ <strong>Message copied!</strong> Paste it in the Instagram chat to place your order."
+          : `Send us this message on Instagram: <strong>${esc(msg)}</strong>`;
+      });
+    };
     qv.classList.add("open");
     qv.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";

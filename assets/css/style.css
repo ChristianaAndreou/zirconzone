@@ -1271,3 +1271,6 @@ body.home main > .hero-wrap {
   .filters { width: 100%; }
   .sort { align-self: flex-end; }
 }
+
+/* Credit line for event photos */
+.event-credit { font-size: .78rem; letter-spacing: .04em; color: var(--muted); margin-top: 6px; }
