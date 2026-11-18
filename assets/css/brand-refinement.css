@@ -1,0 +1,49 @@
+/* Zircon Zone — Playful Modern / White-first refresh
+   Additive overrides: preserves existing layout, product data and interactions. */
+:root {
+  --ivory: #ffffff;
+  --paper: #ffffff;
+  --sand: #ffffff;
+  --line: #eeeeee;
+  --ink: #292526;
+  --ink-soft: #555052;
+  --accent: #d84e9c;
+  --accent-soft: #fbedf4;
+}
+html, body { background: #fff; }
+.section--paper, .section--sand, .section--pink,
+.about-brush, .ev-band-pink, .ev-band-paper,
+.page-hero-wrap, .page-hero-wrap--soft {
+  background: #fff !important;
+}
+body.home main > section,
+body.home main > section:nth-of-type(odd),
+body.home main > section:nth-of-type(even) {
+  background-color: #fff !important;
+}
+.home .hero-wrap { background: #fff !important; }
+.product-media, .cat-media, .qv-gallery { background: #fff; }
+.channel { background: #fff; border-color: #eeeeee; }
+.filter-btn--sub { background: #fff; border-color: #eeeeee; }
+.ship-bar {
+  background: #fff !important;
+  color: var(--ink) !important;
+  border-bottom: 1px solid #f3d9e7;
+  letter-spacing: .1em;
+}
+.btn { border-radius: 3px; transition: transform .25s var(--ease), background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease); }
+.btn:hover { transform: translateY(-2px); }
+.btn--ghost:hover { background: var(--accent-soft); color: var(--ink); border-color: var(--accent); }
+.nav a.active { color: var(--accent); }
+.nav a.active::after { height: 2px; background: var(--accent); }
+.eyebrow { letter-spacing: .2em; }
+.link-arrow:hover, .cat-tile:hover span { color: var(--accent); }
+.cat-media, .product-media, .market-card, .channel { border-radius: 5px; overflow: hidden; }
+.product-card { transition: transform .3s var(--ease); }
+.product-card:hover { transform: translateY(-3px); }
+.hero .tagline em { color: var(--accent); }
+.hero .btn { box-shadow: 4px 4px 0 var(--accent-soft); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 860px) {
+  .hero .btn { box-shadow: 3px 3px 0 var(--accent-soft); }
+}
