@@ -1317,3 +1317,22 @@ em { color: inherit; }
 /* Home hero: ολόκληρη η φωτογραφία με τα 3 κολιέ (χωρίς crop), λίγο μεγαλύτερη */
 .home .hero-media .float { aspect-ratio: 622 / 735; width: 48%; left: -32%; bottom: -6%; object-fit: cover; }
 @media (max-width: 860px) { .home .hero-media .float { width: 46%; left: -12%; bottom: -12%; } }
+
+/* =========================================================
+   Υφή φύλλου (από τη φωτογραφία του Instagram) — ταυτότητα brand
+   Μόνο σε σημεία που δεν είναι κατάλογος: footer + "About" στην αρχική
+   ========================================================= */
+.site-footer {
+  background: linear-gradient(rgba(16, 24, 16, .62), rgba(16, 24, 16, .74)),
+              url("../../images/web/leaf-texture.webp") center 40% / cover;
+}
+.home .leaf-band {
+  background: linear-gradient(rgba(16, 24, 16, .5), rgba(16, 24, 16, .6)),
+              url("../../images/web/leaf-texture.webp") center / cover !important;
+  color: #fff;
+}
+.leaf-band h2 { color: #fff; }
+.leaf-band .lead { color: rgba(255, 255, 255, .88); }
+.leaf-band .eyebrow { color: #f3b6d3; }
+.leaf-band .link-arrow { color: #fff; border-color: rgba(255, 255, 255, .7); }
+.leaf-band .link-arrow:hover { color: #f3b6d3; }
