@@ -1305,3 +1305,11 @@ em { color: inherit; }
 /* Home hero: portrait floating photo so all three pendants show in full */
 .home .hero-media .float { aspect-ratio: 3 / 4; width: 40%; left: -30%; bottom: -5%; object-fit: cover; }
 @media (max-width: 860px) { .home .hero-media .float { width: 46%; left: -12%; bottom: -12%; } }
+
+/* Home: 4 πελάτισσες στο Happy Customers (2 x 2 στο κινητό) */
+.home .ugc-grid { grid-template-columns: repeat(4, 1fr); }
+@media (min-width: 861px) { .home .ugc-grid { grid-template-columns: repeat(4, var(--card)); } }
+@media (max-width: 860px) { .home .ugc-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Customers: πράσινο διαμαντάκι στην ανδρική φωτογραφία */
+.ugc-grid--wall #customer8 figcaption::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Cpath d='M18 5h64l13 17L50 87 5 22z' fill='%232f8f4e' stroke='%231b1918' stroke-width='7' stroke-linejoin='round'/%3E%3C/svg%3E"); }
