@@ -1325,3 +1325,15 @@ em { color: inherit; }
 /* ενεργό φίλτρο στο Collection */
 .filter-btn.active { background: var(--leaf); border-color: #2f4a2c; color: #fff; }
 
+
+/* =========================================================
+   Λεπτή πράσινη κορνίζα (χρώμα από το φύλλο του Instagram)
+   μόνο στις lifestyle φωτογραφίες της αρχικής — όχι στον κατάλογο
+   ========================================================= */
+:root { --leaf-green: #5a8f4e; }
+/* μεγάλη φωτογραφία πρώτης ενότητας: κορνίζα μετατοπισμένη πίσω της */
+.home .hero-media::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  inset: -16px -16px 16px 16px; border: 2px solid var(--leaf-green);
+}
+.home .hero-media { isolation: isolate; }
