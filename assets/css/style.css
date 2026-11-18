@@ -1324,6 +1324,4 @@ em { color: inherit; }
 :root { --leaf: linear-gradient(rgba(18, 30, 18, .45), rgba(18, 30, 18, .55)), url("../../images/web/leaf-texture.webp") center / cover; }
 /* ενεργό φίλτρο στο Collection */
 .filter-btn.active { background: var(--leaf); border-color: #2f4a2c; color: #fff; }
-/* λεπτή διαχωριστική λωρίδα στην αρχική, αμέσως μετά την πρώτη φωτογραφία (χωρίς κείμενο) */
-.leaf-strip { height: clamp(10px, 1.1vw, 16px); background: var(--leaf); }
 
