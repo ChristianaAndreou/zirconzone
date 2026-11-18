@@ -128,7 +128,7 @@ QUICKVIEW = f"""
         <h2 class="qv-title" id="qv-title"></h2>
         <p class="qv-price"></p>
         <div class="qv-actions">
-          <a class="btn qv-ig" href="https://ig.me/m/zirconzone" target="_blank" rel="noopener">{ICON['ig']} Order on Instagram</a>
+          <a class="btn qv-ig" href="https://www.instagram.com/zirconzone/" target="_blank" rel="noopener">{ICON['ig']} Order on Instagram</a>
           <a class="btn btn--ghost" href="https://www.facebook.com/profile.php?id=100092590311027" target="_blank" rel="noopener">{ICON['fb']} Order on Facebook</a>
         </div>
       </div>
