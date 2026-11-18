@@ -1276,3 +1276,7 @@ body.home main > .hero-wrap {
 .event-credit { font-size: .78rem; letter-spacing: .04em; color: var(--muted); margin-top: 6px; }
 .mosaic--two { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
 .mosaic--two .mosaic-tile.t0 { grid-row: auto; }
+
+/* Bigger floating product photo on the home hero */
+.home .hero-media .float { width: 62%; left: -36%; bottom: -8%; }
+@media (max-width: 860px) { .home .hero-media .float { width: 58%; left: -14%; bottom: -12%; } }
