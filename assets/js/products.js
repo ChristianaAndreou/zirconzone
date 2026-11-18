@@ -105,7 +105,7 @@ const PRODUCTS = [
 })();
 
 const CONTACT = {
-  instagramDM: "https://ig.me/m/zirconzone",
+  instagramDM: "https://www.instagram.com/zirconzone/",
   instagram: "https://www.instagram.com/zirconzone",
   facebook: "https://www.facebook.com/profile.php?id=100092590311027",
   tiktok: "https://www.tiktok.com/@zircon_zone",
@@ -203,12 +203,12 @@ function setupQuickView(root = document) {
       note.setAttribute("aria-live", "polite");
       qv.querySelector(".qv-actions").after(note);
     }
-    const hint = "Tap <strong>Order on Instagram</strong>: your order message is copied automatically, just paste it in the chat.";
+    const hint = "Tap <strong>Order on Instagram</strong>: your order message is copied automatically. On our profile, tap <strong>Message</strong> and paste it.";
     note.innerHTML = hint;
     ig.onclick = () => {
       copyText(msg).then((ok) => {
         note.innerHTML = ok
-          ? "✓ <strong>Message copied!</strong> Paste it in the Instagram chat to place your order."
+          ? "✓ <strong>Message copied!</strong> On our Instagram profile, tap <strong>Message</strong> and paste it to place your order."
           : `Send us this message on Instagram: <strong>${esc(msg)}</strong>`;
       });
     };
