@@ -1317,3 +1317,20 @@ em { color: inherit; }
 /* Home hero: ολόκληρη η φωτογραφία με τα 3 κολιέ (χωρίς crop), λίγο μεγαλύτερη */
 .home .hero-media .float { aspect-ratio: 622 / 735; width: 48%; left: -32%; bottom: -6%; object-fit: cover; }
 @media (max-width: 860px) { .home .hero-media .float { width: 46%; left: -12%; bottom: -12%; } }
+
+/* =========================================================
+   Υφή φύλλου (από τη φωτογραφία του Instagram) — μόνο διακριτικές πινελιές
+   ========================================================= */
+:root { --leaf: linear-gradient(rgba(18, 30, 18, .45), rgba(18, 30, 18, .55)), url("../../images/web/leaf-texture.webp") center / cover; }
+/* ενεργό φίλτρο στο Collection */
+.filter-btn.active { background: var(--leaf); border-color: #2f4a2c; color: #fff; }
+/* λεπτή λωρίδα στην αρχική, αμέσως μετά την πρώτη φωτογραφία */
+.leaf-strip { background: var(--leaf); color: #fff; }
+.leaf-strip ul { list-style: none; margin: 0 auto; padding-block: 16px; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 0; }
+.leaf-strip li { font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; display: flex; align-items: center; }
+.leaf-strip li + li::before { content: ""; width: 5px; height: 5px; margin-inline: clamp(14px, 2.4vw, 34px); background: #f3b6d3; transform: rotate(45deg); }
+@media (max-width: 600px) {
+  .leaf-strip ul { padding-block: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+  .leaf-strip li { font-size: .62rem; letter-spacing: .16em; justify-content: center; }
+  .leaf-strip li + li::before { display: none; }
+}
