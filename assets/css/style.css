@@ -1313,3 +1313,7 @@ em { color: inherit; }
 
 /* Customers: πράσινο διαμαντάκι στην ανδρική φωτογραφία */
 .ugc-grid--wall #customer8 figcaption::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Cpath d='M18 5h64l13 17L50 87 5 22z' fill='%232f8f4e' stroke='%231b1918' stroke-width='7' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+
+/* Home hero: ολόκληρη η φωτογραφία με τα 3 κολιέ (χωρίς crop), λίγο μεγαλύτερη */
+.home .hero-media .float { aspect-ratio: 622 / 735; width: 48%; left: -32%; bottom: -6%; object-fit: cover; }
+@media (max-width: 860px) { .home .hero-media .float { width: 46%; left: -12%; bottom: -12%; } }
