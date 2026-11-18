@@ -1337,3 +1337,12 @@ em { color: inherit; }
   inset: -16px -16px 16px 16px; border: 2px solid var(--leaf-green);
 }
 .home .hero-media { isolation: isolate; }
+/* ίδια κορνίζα πίσω από τις φωτογραφίες κάθε event */
+.events-list .mosaic { position: relative; }
+.ev-band-pink, .ev-band-paper { position: relative; z-index: 0; }
+.events-list .mosaic::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  inset: -14px 14px 14px -14px; border: 2px solid var(--leaf-green);
+}
+.ev-band-pink .mosaic { background: #F7F7F7; }
+.ev-band-paper .mosaic { background: #fff; }
