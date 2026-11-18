@@ -196,22 +196,8 @@ function setupQuickView(root = document) {
     const link = `https://christianaandreou.github.io/zirconzone/collection.html#${p.id}`;
     const msg = `Hi Zircon Zone! I'd like to order the ${p.name} (${euro(p.price)}). ${link}`;
     const ig = qv.querySelector(".qv-ig");
-    let note = qv.querySelector(".qv-note");
-    if (!note) {
-      note = document.createElement("p");
-      note.className = "qv-note";
-      note.setAttribute("aria-live", "polite");
-      qv.querySelector(".qv-actions").after(note);
-    }
-    const hint = "Tap <strong>Order on Instagram</strong>: your order message is copied automatically. On our profile, tap <strong>Message</strong> and paste it.";
-    note.innerHTML = hint;
-    ig.onclick = () => {
-      copyText(msg).then((ok) => {
-        note.innerHTML = ok
-          ? "✓ <strong>Message copied!</strong> On our Instagram profile, tap <strong>Message</strong> and paste it to place your order."
-          : `Send us this message on Instagram: <strong>${esc(msg)}</strong>`;
-      });
-    };
+    // Αντιγράφει αθόρυβα το μήνυμα παραγγελίας (χωρίς σημείωση κάτω από τα κουμπιά)
+    ig.onclick = () => { copyText(msg); };
     qv.classList.add("open");
     qv.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
