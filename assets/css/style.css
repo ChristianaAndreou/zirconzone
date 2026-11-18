@@ -1274,3 +1274,5 @@ body.home main > .hero-wrap {
 
 /* Credit line for event photos */
 .event-credit { font-size: .78rem; letter-spacing: .04em; color: var(--muted); margin-top: 6px; }
+.mosaic--two { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+.mosaic--two .mosaic-tile.t0 { grid-row: auto; }
