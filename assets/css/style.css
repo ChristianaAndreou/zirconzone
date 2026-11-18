@@ -1284,3 +1284,20 @@ body.home main > .hero-wrap {
 .mosaic--four { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
 .mosaic--four .mosaic-tile.t0 { grid-row: auto; }
 .mosaic--four .mosaic-tile img { object-position: center 25%; }
+
+/* =========================================================
+   Λιγότερο ροζ (unisex look — πουλάμε και ανδρικά κοσμήματα)
+   Το ροζ μένει μόνο ως μικρή πινελιά: logo, eyebrows, ενεργό μενού,
+   γραμμούλες κάτω από τίτλους, dots, διαμαντάκια, tagline.
+   ========================================================= */
+.event-date, .mc-date { color: var(--ink-soft); }
+em { color: inherit; }
+.tagline em { color: var(--accent); }
+.btn:hover { background: #3a3634; border-color: #3a3634; }
+.btn--ghost:hover { background: var(--ink); border-color: var(--ink); color: var(--ivory); }
+.filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+.filter-btn.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+.order-pill { background: var(--ink); box-shadow: 0 12px 26px -14px rgba(27, 25, 24, .55); }
+.order-pill:hover { background: #3a3634; }
+.img-arrow:hover { background: var(--ink); }
+.stats strong { color: var(--ink); }
