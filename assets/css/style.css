@@ -1301,3 +1301,7 @@ em { color: inherit; }
 .order-pill:hover { background: #3a3634; }
 .img-arrow:hover { background: var(--ink); }
 .stats strong { color: var(--ink); }
+
+/* Home hero: portrait floating photo so all three pendants show in full */
+.home .hero-media .float { aspect-ratio: 3 / 4; width: 46%; left: -20%; bottom: -5%; object-fit: cover; }
+@media (max-width: 860px) { .home .hero-media .float { width: 46%; left: -12%; bottom: -12%; } }
