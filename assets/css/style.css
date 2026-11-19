@@ -1352,3 +1352,11 @@ em { color: inherit; }
 @media (max-width: 860px) { .page-hero-wrap::after { width: 80px; height: 68px; } }
 /* μπάρα αποστολής σε σκούρο πράσινο */
 .ship-bar { background: #24402D !important; color: #EFE6CF !important; }
+/* Αρχική: φωτογραφίες από τη φωτογράφιση, οριζόντιες και μεγαλύτερες */
+@media (min-width: 861px) {
+  .home .hero { grid-template-columns: .8fr 1.2fr; gap: clamp(28px, 4vw, 64px); }
+  .home .hero-media { max-width: 720px; width: 100%; }
+}
+.home .hero-media .main { aspect-ratio: 3 / 2; object-position: center; }
+.home .hero-media .float { aspect-ratio: 3 / 2; width: 48%; left: -14%; bottom: -12%; object-fit: cover; }
+@media (max-width: 860px) { .home .hero-media { max-width: 100%; } .home .hero-media .float { width: 46%; left: -6%; bottom: -14%; } }
