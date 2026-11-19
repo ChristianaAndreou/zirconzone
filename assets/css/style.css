@@ -1340,18 +1340,15 @@ em { color: inherit; }
    Φύλλα (χωρίς λουλούδι): ίδιο κλαδάκι σε λίγα σημεία, για ενιαίο ύφος
    ========================================================= */
 .site-header { overflow: visible; }
-.home .hero-media::after, .page-hero-wrap::after, .site-footer::before {
+.page-hero-wrap::after, .site-footer::before {
   content: ""; position: absolute; pointer-events: none; background: url("../img/corner-leaves.svg") no-repeat center / contain;
 }
-/* 2. αρχική: ξεπροβάλλει πίσω από τη μεγάλη φωτογραφία */
-.home .hero-media::after { z-index: -1; right: -70px; top: -50px; width: 170px; height: 145px; }
-.home .hero-media { isolation: isolate; }
 /* 3. τίτλος κάθε σελίδας: πάνω δεξιά */
 .page-hero-wrap { position: relative; overflow: hidden; }
 .page-hero-wrap::after { right: 2%; top: 10px; width: 120px; height: 100px; opacity: .9; }
 /* 4. footer: καθρέφτης, πάνω αριστερά */
 .site-footer { position: relative; overflow: hidden; background: #24402D !important; }
 .site-footer::before { left: -6px; top: -6px; width: 140px; height: 118px; transform: scaleX(-1); opacity: .9; filter: brightness(1.5); }
-@media (max-width: 860px) { .home .hero-media::after { right: -30px; top: -30px; width: 100px; height: 85px; } .page-hero-wrap::after { width: 80px; height: 68px; } }
+@media (max-width: 860px) { .page-hero-wrap::after { width: 80px; height: 68px; } }
 /* μπάρα αποστολής σε σκούρο πράσινο */
 .ship-bar { background: #24402D !important; color: #EFE6CF !important; }
