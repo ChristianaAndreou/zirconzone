@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=1107">
+  <link rel="stylesheet" href="assets/css/style.css?v=1202">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80L94WF2SH"></script>
@@ -126,9 +126,9 @@
   </footer>
   <script src="assets/js/main.js?v=86"></script>
 
-  <script src="assets/js/products.js?v=85"></script>
+  <script src="assets/js/products.js?v=90"></script>
   <script>
-    const CATEGORIES = ["All", "Sets", "Earrings", "Necklaces", "Bracelets", "Rings"];
+    const CATEGORIES = ["All", "Sets", "Earrings", "Necklaces", "Bracelets", "Rings", "For him"];
     const grid = document.getElementById("productGrid");
     const filters = document.querySelector(".filters");
     const sortSel = document.getElementById("sort");
@@ -145,7 +145,7 @@
     }
 
     function render() {
-      let list = current === "All" ? [...PRODUCTS] : PRODUCTS.filter((p) => p.category === current);
+      let list = current === "All" ? [...PRODUCTS] : current === "For him" ? PRODUCTS.filter((p) => p.forHim) : PRODUCTS.filter((p) => p.category === current);
       if (sortSel.value === "price-asc") list.sort((a, b) => a.price - b.price);
       if (sortSel.value === "price-desc") list.sort((a, b) => b.price - a.price);
       if (sortSel.value === "new") list.sort((a, b) => (b.badge === "New") - (a.badge === "New"));
