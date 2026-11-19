@@ -1352,3 +1352,7 @@ em { color: inherit; }
 @media (max-width: 860px) { .page-hero-wrap::after { width: 80px; height: 68px; } }
 /* μπάρα αποστολής σε σκούρο πράσινο */
 .ship-bar { background: #24402D !important; color: #EFE6CF !important; }
+/* Αρχική: φωτογραφίες από τη φωτογράφιση (μοντέλο + ανδρικά βραχιόλια) */
+.home .hero-media .main { object-position: center 35%; }
+.home .hero-media .float { aspect-ratio: 4 / 3; width: 62%; left: -30%; bottom: -8%; object-fit: cover; }
+@media (max-width: 860px) { .home .hero-media .float { width: 56%; left: -12%; bottom: -10%; } }
