@@ -122,7 +122,7 @@ function productCard(p) {
   return `
     <div class="product-card reveal" id="${p.id}" data-id="${p.id}" data-i="0" tabindex="0" role="button" aria-label="${esc(p.name)} – quick view">
       <div class="product-media">
-        ${p.badge ? `<span class="product-tag">${esc(p.badge)}</span>` : ""}${p.forHim ? `<span class="him-tag" title="For him">◆ For him</span>` : ""}
+        ${p.badge ? `<span class="product-tag">${esc(p.badge)}</span>` : ""}
         <img src="${IMG(p.images[0])}" alt="${esc(p.name)}" loading="lazy" width="800" height="1000">
         ${multi ? `
         <button class="img-arrow prev" data-dir="-1" aria-label="Previous image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
