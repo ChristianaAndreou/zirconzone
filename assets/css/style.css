@@ -1363,3 +1363,11 @@ em { color: inherit; }
 .home .hero-media .main { aspect-ratio: 4 / 3; }
 .home .hero-media .float { width: 40%; left: -20%; bottom: -10%; }
 @media (max-width: 860px) { .home .hero-media .float { width: 40%; left: -6%; bottom: -14%; } }
+/* Αρχική: κάθετη μεγάλη φωτογραφία (από τον λαιμό και κάτω) */
+@media (min-width: 861px) {
+  .home .hero { grid-template-columns: 1.1fr .9fr; }
+  .home .hero-media { max-width: 480px; }
+}
+.home .hero-media .main { aspect-ratio: 4 / 5; }
+.home .hero-media .float { aspect-ratio: 3 / 2; width: 62%; left: -40%; bottom: -6%; }
+@media (max-width: 860px) { .home .hero-media .float { width: 56%; left: -10%; bottom: -10%; } }
