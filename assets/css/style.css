@@ -1335,3 +1335,14 @@ em { color: inherit; }
 .filter-btn[data-c="For him"] { color: #2f8f4e; border-color: #9cc5a8; }
 .filter-btn.active[data-c="For him"] { color: #fff; }
 .ugc-grid--wall #customer10 figcaption::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Cpath d='M18 5h64l13 17L50 87 5 22z' fill='%232f8f4e' stroke='%231b1918' stroke-width='7' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+
+/* =========================================================
+   Λεπτομέρειες από τις κάρτες Lucky Charm (συσκευασία)
+   ========================================================= */
+/* μπάρα αποστολής: το πράσινο με τα φύλλα της ανδρικής κάρτας */
+.ship-bar { background: #2F4A3B url("../img/card-leaves.svg") center / cover !important; color: #EFE6CF !important; }
+/* μικρή μαργαρίτα της κάρτας πριν από τα ροζ μικρά τίτλα */
+.eyebrow::before {
+  content: ""; display: inline-block; width: 1.25em; height: 1.25em; margin-right: .5em; vertical-align: -.3em;
+  background: url("../img/daisy.png") center / contain no-repeat;
+}
