@@ -543,7 +543,7 @@ a.ugc { display: block; }
   border: 1px solid rgba(255, 255, 255, .35); color: #fff;
   transition: background .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease);
 }
-.site-footer--simple .socials a:hover { background: #D8C6A0; border-color: #D8C6A0; color: #24402D; }
+.site-footer--simple .socials a:hover { background: rgba(255, 255, 255, .7); border-color: rgba(255, 255, 255, .7); color: #24402D; }
 .site-footer--simple .socials svg { width: 20px; height: 20px; }
 .site-footer--simple p { text-align: center; color: rgba(255, 255, 255, .7); }
 
