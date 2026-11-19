@@ -289,6 +289,9 @@ p { margin: 0; }
 .split-body h2 { margin-bottom: 24px; }
 .split-body p + p { margin-top: 18px; }
 .split-body .lead { margin-bottom: 0; }
+
+/* Events: justified text alignment for descriptions */
+.events-list .split-body .lead { text-align: justify; }
 .split-body .btn, .split-body .link-arrow { margin-top: 36px; display: inline-flex; }
 
 .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
