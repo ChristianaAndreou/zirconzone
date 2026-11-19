@@ -1330,20 +1330,8 @@ em { color: inherit; }
 /* =========================================================
    Ίδια «υπογραφή» με το Instagram
    ========================================================= */
-/* ροζ πλάγια λεζάντα πάνω στη μεγάλη φωτογραφία, όπως στα posts */
-.hero-cap {
-  position: absolute; left: 0; right: 0; top: 0; padding: 22px 18px 60px; text-align: center; pointer-events: none;
-  font-family: "Cormorant Garamond", serif; font-style: italic; font-size: clamp(1.3rem, 2.1vw, 1.8rem); line-height: 1.15;
-  color: #f4a6c4; text-shadow: 0 0 10px rgba(255, 255, 255, .45);
-  background: linear-gradient(rgba(20, 22, 18, .55), rgba(20, 22, 18, 0));
-}
-/* σειρά με φωτογραφίες σαν το feed */
-.ig-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
-.ig-grid a { display: block; overflow: hidden; aspect-ratio: 1; }
-.ig-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
-.ig-grid a:hover img { transform: scale(1.05); }
-@media (max-width: 860px) { .ig-grid { grid-template-columns: repeat(3, 1fr); } }
 /* ανδρικά: πράσινο διαμαντάκι, όπως στα highlights και τις κάρτες */
 .him-tag { position: absolute; z-index: 2; right: 10px; top: 10px; background: #fff; color: #2f8f4e; font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; padding: 5px 9px; }
 .filter-btn[data-c="For him"] { color: #2f8f4e; border-color: #9cc5a8; }
 .filter-btn.active[data-c="For him"] { color: #fff; }
+.ugc-grid--wall #customer10 figcaption::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Cpath d='M18 5h64l13 17L50 87 5 22z' fill='%232f8f4e' stroke='%231b1918' stroke-width='7' stroke-linejoin='round'/%3E%3C/svg%3E"); }
