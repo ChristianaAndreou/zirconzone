@@ -66,11 +66,11 @@ const PRODUCTS = [
   { id: "earrings-23", name: "Crystal Bow Studs", price: 14, category: "Earrings", images: ["E50"] },
 
   { id: "bracelet-1", name: "Evil Eye String Bracelet", price: 7, category: "Bracelets", images: ["B7"] },
-  { id: "bracelet-2", name: "Curb Chain Bracelet (for men)", price: 10, category: "Bracelets", images: ["B4"], badge: "New" },
+  { id: "bracelet-2", name: "Curb Chain Bracelet (for men)", price: 10, category: "Bracelets", forHim: true, images: ["B4"], badge: "New" },
   { id: "bracelet-3", name: "Colorful Pearl String Bracelet", price: 7, category: "Bracelets", images: ["B10", "B1"] },
   { id: "bracelet-4", name: "Crystal Bead Bracelet", price: 3, category: "Bracelets", images: ["B2", "B6"] },
   { id: "bracelet-5", name: "Evil Eye Macramé Bracelet", price: 7, category: "Bracelets", images: ["B5"] },
-  { id: "bracelet-6", name: "Snake Chain Bracelet (for men)", price: 10, category: "Bracelets", images: ["B9"] },
+  { id: "bracelet-6", name: "Snake Chain Bracelet (for men)", price: 10, category: "Bracelets", forHim: true, images: ["B9"] },
   { id: "bracelet-7", name: "White Pearl Evil Eye Bracelet", price: 5, category: "Bracelets", images: ["B11"] },
 
   { id: "ring-1", name: "Golden Cross Ring", price: 10, category: "Rings", images: ["Cross"] },
@@ -122,7 +122,7 @@ function productCard(p) {
   return `
     <div class="product-card reveal" id="${p.id}" data-id="${p.id}" data-i="0" tabindex="0" role="button" aria-label="${esc(p.name)} – quick view">
       <div class="product-media">
-        ${p.badge ? `<span class="product-tag">${esc(p.badge)}</span>` : ""}
+        ${p.badge ? `<span class="product-tag">${esc(p.badge)}</span>` : ""}${p.forHim ? `<span class="him-tag" title="For him">◆ For him</span>` : ""}
         <img src="${IMG(p.images[0])}" alt="${esc(p.name)}" loading="lazy" width="800" height="1000">
         ${multi ? `
         <button class="img-arrow prev" data-dir="-1" aria-label="Previous image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
