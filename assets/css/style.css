@@ -1335,3 +1335,17 @@ em { color: inherit; }
 .filter-btn[data-c="For him"] { color: #2f8f4e; border-color: #9cc5a8; }
 .filter-btn.active[data-c="For him"] { color: #fff; }
 .ugc-grid--wall #customer10 figcaption::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Cpath d='M18 5h64l13 17L50 87 5 22z' fill='%232f8f4e' stroke='%231b1918' stroke-width='7' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+
+/* =========================================================
+   Λουλούδι & φύλλα στις γωνίες του header (όπως στο mockup)
+   ========================================================= */
+.site-header { overflow: visible; }
+.site-header::before, .site-header::after {
+  content: ""; position: absolute; z-index: 1; pointer-events: none; background-repeat: no-repeat; background-size: contain;
+}
+.site-header::before { left: -8px; top: -18px; width: 175px; height: 135px; background-image: url("../img/corner-flower.svg"); }
+.site-header::after { right: -4px; top: -8px; width: 130px; height: 110px; background-image: url("../img/corner-leaves.svg"); }
+.site-header > * { position: relative; z-index: 2; }
+@media (max-width: 1100px) { .site-header::before, .site-header::after { display: none; } }
+/* μπάρα αποστολής σε σκούρο πράσινο */
+.ship-bar { background: #24402D !important; color: #EFE6CF !important; }
